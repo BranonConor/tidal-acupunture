@@ -1,7 +1,9 @@
 "use client";
 
 import { Navbar } from "@/components/Navbar";
-import { Box, Image, useColorModeValue } from "@chakra-ui/react";
+import { AboutStrip } from "@/components/sections/AboutStrip";
+import { Hero } from "@/components/sections/Hero";
+import { Box, useColorModeValue } from "@chakra-ui/react";
 
 export default function Home() {
   const bg = useColorModeValue("brand.sand", "brand.royalMoss");
@@ -14,8 +16,14 @@ export default function Home() {
       maxWidth="100%"
       minWidth="100%"
       padding="0"
+      display="flex"
+      justifyContent="center"
     >
-      <Navbar />
+      <Box maxWidth="1440px">
+        <Navbar />
+        <Hero />
+        <AboutStrip />
+      </Box>
     </Box>
   );
 }

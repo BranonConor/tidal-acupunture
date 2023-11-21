@@ -6,6 +6,7 @@ import {
   UnorderedList,
   useColorModeValue,
   Image,
+  Flex,
 } from "@chakra-ui/react";
 import { ColorModeButton } from "./ColorModeButton";
 
@@ -13,21 +14,21 @@ export const Navbar: React.FC = () => {
   const logo = useColorModeValue("/logo-dark.svg", "/logo-light.svg");
 
   return (
-    <Box
+    <Flex
       as="nav"
       width="100%"
-      display="flex"
       alignItems="center"
       justifyContent="space-between"
       height="64px"
       paddingX={4}
+      bgColor="transparent"
     >
       <Image src={logo} width="128px" />
       <UnorderedList
         listStyleType="none"
-        display="grid"
         gridTemplateColumns="1fr 1fr 1fr 1fr"
-        width="500px"
+        width={["200px", "350px", "500px"]}
+        display={["none", "grid", "grid"]}
         justifyContent="space-between"
         ml={0}
         paddingX={0}
@@ -38,6 +39,6 @@ export const Navbar: React.FC = () => {
         <ListItem>Contact</ListItem>
       </UnorderedList>
       <ColorModeButton />
-    </Box>
+    </Flex>
   );
 };
