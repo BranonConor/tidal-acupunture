@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
 import { Providers } from "./providers";
-import { Box } from "@chakra-ui/react";
 
 export const metadata: Metadata = {
   title: "TIDAL Acupunture",
@@ -14,7 +13,10 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en">
+    <html
+      lang="en"
+      style={{ padding: "none", margin: "none", overflowX: "hidden" }}
+    >
       <body>
         <Providers>{children}</Providers>
       </body>
