@@ -16,14 +16,20 @@ export const Navbar: React.FC = () => {
   return (
     <Flex
       as="nav"
-      width="100%"
+      maxWidth="100%"
       alignItems="center"
       justifyContent="space-between"
       height="64px"
       paddingX={4}
       bgColor="transparent"
-      position="relative"
-      zIndex={1}
+      position="fixed"
+      top={0}
+      left={0}
+      zIndex={10}
+      boxSizing="border-box"
+      width="100%"
+      backdropFilter="blur(10px)"
+      bg="rgba(250,250,250,0.5)"
     >
       <Image src={logo} width="128px" />
       <UnorderedList

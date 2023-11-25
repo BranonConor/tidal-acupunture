@@ -12,26 +12,29 @@ export const Hero = () => {
 
   return (
     <Flex
-      width="100%"
-      height="600px"
+      maxWidth="100%"
+      minHeight="600px"
       flexDirection="column"
       justifyContent="space-between"
       position="relative"
+      boxSizing="border-box"
       overflow="hidden"
     >
       <Box
         display="grid"
-        gridTemplateColumns="1fr 1fr"
-        px={8}
-        py={24}
+        gridTemplateColumns={["1fr", "1fr 1fr"]}
+        pt={40}
+        pb={[4, 8]}
+        px={4}
         position="relative"
         zIndex={1}
+        boxSizing="border-box"
       >
-        <Box>
-          <Heading as="h1" size="4xl" pb={4}>
-            Acupuncture for all life's ups and downs.
+        <Box width="100%">
+          <Heading as="h1" size="4xl" pb={4} maxWidth="100%">
+            Acupuncture for all life's highs and lows.
           </Heading>
-          <Text>
+          <Text maxWidth="100%">
             TIDAL is a boutique Southern Californian acupuncture clinic
             delivering the best care Eastern Medicine has to offer.
           </Text>

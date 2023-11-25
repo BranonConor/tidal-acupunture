@@ -17,12 +17,13 @@ export default function Home() {
       bg={bg}
       minHeight="100vh"
       maxWidth="100%"
-      minWidth="100%"
+      width="100%"
       padding="0"
       display="flex"
       justifyContent="center"
+      boxSizing="border-box"
     >
-      <Box maxWidth="1440px" position="relative">
+      <Box maxWidth="1440px" position="relative" overflowX="hidden">
         <Navbar />
         <Hero />
         <WhoWeAre />

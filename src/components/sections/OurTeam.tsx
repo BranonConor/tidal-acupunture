@@ -12,13 +12,14 @@ import { TeamCard } from "../TeamCard";
 export const OurTeam = () => {
   return (
     <Flex
-      px={8}
+      px={[4, 8]}
       py={24}
       color="brand.sand"
       bg="brand.royalMoss"
       flexDirection="column"
       justifyContent="flex-start"
       alignItems="flex-start"
+      boxSizing="border-box"
     >
       <Heading as="h2" size="2xl">
         The TIDAL Team

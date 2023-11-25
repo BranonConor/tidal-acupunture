@@ -9,7 +9,7 @@ interface ICardProps {
 
 export const Card: React.FC<ICardProps> = ({ title, description, icon }) => {
   return (
-    <Box py={12} px={8} borderRadius={2} color="brand.royalMoss">
+    <Box py={12} px={[4, 8]} borderRadius={2} color="brand.royalMoss">
       {icon && <Image src={icon} pb={4} />}
       <Heading as="h3" size="xl" pb={4}>
         {title}

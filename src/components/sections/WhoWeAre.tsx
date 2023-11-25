@@ -13,8 +13,9 @@ export const WhoWeAre = () => {
   return (
     <Flex
       justifyContent="center"
-      px={8}
+      px={[4, 8]}
       py={24}
+      boxSizing="border-box"
       bg={bg}
       position="relative"
       _before={{
@@ -26,6 +27,7 @@ export const WhoWeAre = () => {
         width: "100%",
         zIndex: "0",
       }}
+      overflow="hidden"
     >
       <Box zIndex="0">
         <Heading as="h2" size="3xl" color="brand.royalMoss">
