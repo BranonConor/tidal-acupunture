@@ -2,16 +2,28 @@
 
 import {
   Box,
-  ListItem,
-  UnorderedList,
   useColorModeValue,
   Image,
   Flex,
+  UnorderedList,
+  ListItem,
+  Link,
 } from "@chakra-ui/react";
+import { motion } from "framer-motion";
+import { useState } from "react";
 import { ColorModeButton } from "./ColorModeButton";
 
 export const Navbar: React.FC = () => {
   const logo = useColorModeValue("/logo-dark.svg", "/logo-light.svg");
+  const burgerBg = useColorModeValue("brand.royalMoss", "white");
+  const bg = useColorModeValue(
+    "rgba(250,250,250,0.5)",
+    "rgba(250,250,250,0.15)"
+  );
+  const menuBg = useColorModeValue("brand.gold", "brand.mint");
+  const ball = useColorModeValue("ball-mint.svg", "ball-gold.svg");
+
+  const [isClicked, setIsClicked] = useState(false);
 
   return (
     <Flex
@@ -29,24 +41,125 @@ export const Navbar: React.FC = () => {
       boxSizing="border-box"
       width="100%"
       backdropFilter="blur(10px)"
-      bg="rgba(250,250,250,0.5)"
+      bg={bg}
     >
       <Image src={logo} width="128px" />
-      <UnorderedList
-        listStyleType="none"
-        gridTemplateColumns="1fr 1fr 1fr 1fr"
-        width={["200px", "350px", "500px"]}
-        display={["none", "grid", "grid"]}
-        justifyContent="space-between"
-        ml={0}
-        paddingX={0}
-      >
-        <ListItem>Home</ListItem>
-        <ListItem>About Us</ListItem>
-        <ListItem>Services</ListItem>
-        <ListItem>Contact</ListItem>
-      </UnorderedList>
-      <ColorModeButton />
+      <Flex height="100%" alignItems="center" justifyContent="flex-end">
+        <ColorModeButton />
+        <Flex
+          flexDirection="column"
+          justifyContent="center"
+          alignItems="flex-end"
+          as={motion.button}
+          ml={[4, 6]}
+          mr={isClicked ? 2 : 0}
+          width="30px"
+          initial={{ transform: "scale(1)" }}
+          whileHover={{ width: "34px" }}
+          whileTap={{ transform: "scale(1.15)" }}
+          transition="0.15s ease all"
+          onClick={() => setIsClicked(!isClicked)}
+        >
+          <Box
+            width="30px"
+            height="3px"
+            borderRadius="10px"
+            bg={burgerBg}
+            mb={1}
+            alignSelf="flex-start"
+            transform={`rotate(${isClicked ? "-45deg" : "0"}) translateY(${
+              isClicked ? "9.5px" : "0"
+            })`}
+            transition="0.15s ease all"
+          />
+          <Box
+            width="24px"
+            height="3px"
+            borderRadius="10px"
+            bg={burgerBg}
+            mb={1}
+            alignSelf="flex-end"
+            opacity={isClicked ? "0" : "1"}
+            transition="0.15s ease all"
+          />
+          <Box
+            width="30px"
+            height="3px"
+            borderRadius="10px"
+            bg={burgerBg}
+            alignSelf="flex-start"
+            transform={`rotate(${isClicked ? "45deg" : "0"}) translateY(${
+              isClicked ? "-9.5px" : "0"
+            })`}
+            transition="0.15s ease all"
+          />
+        </Flex>
+      </Flex>
+
+      {isClicked && (
+        <Flex
+          as={motion.div}
+          initial={{ right: -200, top: 64 }}
+          animate={{ right: 0, top: 64 }}
+          transition={{ type: "spring", duration: "0.1s ease all" }}
+          position="fixed"
+          zIndex={10}
+          width="200px"
+          bg={menuBg}
+          backdropFilter="blur(10px)"
+          height="100vh"
+          p={4}
+          boxSizing="border-box"
+          color="brand.royalMoss"
+          boxShadow="lg"
+          overflow="hidden"
+        >
+          <UnorderedList p={0} listStyleType="none">
+            <ListItem mb={2}>
+              <Link display="flex">
+                <Image mr={3} src="icons/home-dark.svg" /> Home
+              </Link>
+            </ListItem>
+            <ListItem mb={2}>
+              <Link display="flex">
+                <Image mr={3} src="icons/about-dark.svg" />
+                About
+              </Link>
+            </ListItem>
+            <ListItem mb={2}>
+              <Link display="flex">
+                <Image mr={3} src="icons/circles-dark.svg" />
+                Services
+              </Link>
+            </ListItem>
+            <ListItem>
+              <Link display="flex">
+                <Image mr={3} src="icons/contact-dark.svg" />
+                Contact
+              </Link>
+            </ListItem>
+          </UnorderedList>
+          <Box
+            transform="rotate(35deg) scale(1)"
+            position="absolute"
+            zIndex={0}
+            bottom={16}
+            right={-8}
+            width="200%"
+          >
+            <Image src="waves-moss.svg" minWidth="100%" />
+          </Box>
+          <Box
+            transform="rotate(35deg) scale(1)"
+            position="absolute"
+            zIndex={0}
+            bottom="200px"
+            right={20}
+          >
+            <Image src={ball} width="40px" />
+          </Box>
+        </Flex>
+      )}
     </Flex>
   );
 };
