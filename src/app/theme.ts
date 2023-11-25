@@ -9,6 +9,8 @@ const colors = {
     rustGold: "#9F7C00",
     mint: "#AEEABB",
     lightMauve: "#DEC6BC",
+    mauve: "#C8B1A4",
+    darkWave: "#759AA6",
   },
 };
 

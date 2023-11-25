@@ -22,6 +22,8 @@ export const Navbar: React.FC = () => {
       height="64px"
       paddingX={4}
       bgColor="transparent"
+      position="relative"
+      zIndex={1}
     >
       <Image src={logo} width="128px" />
       <UnorderedList

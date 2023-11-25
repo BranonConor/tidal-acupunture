@@ -8,7 +8,7 @@ import {
 } from "@chakra-ui/react";
 
 export const Hero = () => {
-  const logo = useColorModeValue("/symbol-dark.svg", "/symbol-light.svg");
+  const bgImage = useColorModeValue("/waves-blue.svg", "/waves-mauve.svg");
 
   return (
     <Flex
@@ -17,8 +17,16 @@ export const Hero = () => {
       flexDirection="column"
       justifyContent="space-between"
       position="relative"
+      overflow="hidden"
     >
-      <Box display="grid" gridTemplateColumns="1fr 1fr" px={8} py={24}>
+      <Box
+        display="grid"
+        gridTemplateColumns="1fr 1fr"
+        px={8}
+        py={24}
+        position="relative"
+        zIndex={1}
+      >
         <Box>
           <Heading as="h1" size="4xl" pb={4}>
             Acupuncture for all life's ups and downs.
@@ -29,15 +37,15 @@ export const Hero = () => {
           </Text>
         </Box>
       </Box>
-      <Image
+      <Box
+        transform="rotate(-35deg) scale(1)"
         position="absolute"
         zIndex={0}
-        bottom={[-24, 8, 32]}
-        right={4}
-        src={logo}
-        width={["200px", "300px", "400px"]}
-        opacity={[1, 0.5, 1]}
-      />
+        bottom={[-16, -24, -16]}
+        right={["-30%", "-30%", "-20%"]}
+      >
+        <Image src={bgImage} minWidth="100%" />
+      </Box>
     </Flex>
   );
 };
