@@ -7,8 +7,9 @@ import {
   Flex,
   UnorderedList,
   ListItem,
-  Link,
+  Link as ChakraLink,
 } from "@chakra-ui/react";
+import Link from "next/link";
 import { motion } from "framer-motion";
 import { useState } from "react";
 import { ColorModeButton } from "./ColorModeButton";
@@ -116,27 +117,27 @@ export const Navbar: React.FC = () => {
         >
           <UnorderedList p={0} listStyleType="none">
             <ListItem mb={2}>
-              <Link display="flex" href="/">
+              <ChakraLink display="flex" href="/" as={Link}>
                 <Image mr={3} src="icons/home-dark.svg" /> Home
-              </Link>
+              </ChakraLink>
             </ListItem>
             <ListItem mb={2}>
-              <Link display="flex" href="/team">
+              <ChakraLink display="flex" href="/team" as={Link}>
                 <Image mr={3} src="icons/about-dark.svg" />
                 About Us
-              </Link>
+              </ChakraLink>
             </ListItem>
             <ListItem mb={2}>
-              <Link display="flex" href="">
+              <ChakraLink display="flex" href="" as={Link}>
                 <Image mr={3} src="icons/circles-dark.svg" />
                 Services
-              </Link>
+              </ChakraLink>
             </ListItem>
             <ListItem>
-              <Link display="flex" href="">
+              <ChakraLink display="flex" href="" as={Link}>
                 <Image mr={3} src="icons/contact-dark.svg" />
                 Contact
-              </Link>
+              </ChakraLink>
             </ListItem>
           </UnorderedList>
           <Box

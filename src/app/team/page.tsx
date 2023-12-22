@@ -25,6 +25,8 @@ export default function Page() {
         position="relative"
         overflowX="hidden"
         boxShadow="lg"
+        pt={16}
+        bg={bg}
       >
         <OurTeam />
       </Box>

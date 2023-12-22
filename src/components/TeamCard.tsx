@@ -45,6 +45,7 @@ export const TeamCard: React.FC<ITeamCardProps> = ({
       }}
       position="relative"
       overflow="hidden"
+      borderRadius={16}
     >
       <Image
         src={image}
@@ -53,6 +54,7 @@ export const TeamCard: React.FC<ITeamCardProps> = ({
         boxShadow="md"
         objectFit="cover"
         transition="0.15s ease all"
+        borderRadius={16}
       />
       <Box
         position="absolute"
@@ -83,6 +85,7 @@ export const TeamCard: React.FC<ITeamCardProps> = ({
         left="0"
         transition="0.25s ease all"
         cursor="pointer"
+        borderRadius={16}
       >
         <Text as="p">Meet Dr. {name.split(" ")[2]} 👋</Text>
       </Flex>

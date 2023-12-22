@@ -20,6 +20,8 @@ export const OurTeam = () => {
       justifyContent="flex-start"
       alignItems="flex-start"
       boxSizing="border-box"
+      borderRadius={16}
+      mb={8}
     >
       <Heading as="h2" size="2xl">
         The TIDAL Team

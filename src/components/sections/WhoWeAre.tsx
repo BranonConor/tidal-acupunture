@@ -12,11 +12,17 @@ import { Card } from "../Card";
 
 export const WhoWeAre = () => {
   const bg = useColorModeValue("brand.wave", "brand.mauve");
+  const palmsImg = useColorModeValue(
+    "/media/palms.png",
+    "/media/palms-sunset.png"
+  );
   return (
     <Flex
       justifyContent="center"
       px={[4, 8]}
       py={[16, 24]}
+      borderRadius={16}
+      mb={16}
       boxSizing="border-box"
       bg={bg}
       position="relative"
@@ -36,9 +42,15 @@ export const WhoWeAre = () => {
           gridTemplateColumns={["1fr", "1fr", "1fr", "1fr 1fr"]}
           gridGap={[4, 8, 12]}
         >
-          <Image src="/media/palms.png" boxShadow="lg" width="100%" mb="4" />
+          <Image
+            src={palmsImg}
+            boxShadow="lg"
+            width="100%"
+            mb="4"
+            borderRadius={16}
+          />
 
-          <Flex flexDirection="column" py={[10, 10, 8, 8]}>
+          <Flex flexDirection="column" pt={[4, 4, 0]}>
             <Heading as="h2" size="3xl" color="brand.royalMoss">
               We're more than a wellness destination.
             </Heading>
@@ -72,7 +84,7 @@ export const WhoWeAre = () => {
         >
           <Card
             icon="icons/heart-dark.svg"
-            title="Passionate Clinicians"
+            title="Passionate"
             description="Nothing invigorates us more than helping our patients lead their healthiest, happiest lifestyles."
           />
           <Card
@@ -84,6 +96,11 @@ export const WhoWeAre = () => {
             icon="icons/users-dark.svg"
             title="Human-centered"
             description="We're people-persons - we value each and every patient at our practice and love meeting folks from all different walks of life."
+          />{" "}
+          <Card
+            icon="icons/users-dark.svg"
+            title="Holistic"
+            description="As stewards of both ancient Eastern medicine traditions and contemporary advancementse, we embrace the interconnectedness of mind, body, and spirit."
           />
         </Grid>
       </Box>

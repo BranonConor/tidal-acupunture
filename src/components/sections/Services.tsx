@@ -1,10 +1,10 @@
 import {
   Flex,
   useColorModeValue,
-  Box,
-  Image,
+  Text,
   Heading,
   Grid,
+  Divider,
 } from "@chakra-ui/react";
 import { Card } from "../Card";
 export const Services = () => {
@@ -30,10 +30,18 @@ export const Services = () => {
         <Heading as="h2" size="3xl" width="100%">
           Our Services
         </Heading>
+        <Divider borderColor="brand.royalMoss" mb={8} mt={4} />
+        <Text as="p">
+          We treat a ton of different conditions, including but not limited to:
+          chronic pain, musculoskeletal injuries, insomnia, anxiety, depression,
+          migraines, autoimmune conditions, gastrointestinal diseases, women’s
+          health, and dermatology
+        </Text>
         <Grid
           gridTemplateColumns={["1fr", "1fr", "1fr 1fr"]}
           width={["100%"]}
           gridGap={4}
+          pt={8}
         >
           <Card
             icon="icons/needles-dark.svg"

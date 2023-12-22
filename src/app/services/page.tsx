@@ -1,14 +1,10 @@
 "use client";
 
 import { Navbar } from "@/components/Navbar";
-import { WhoWeAre } from "@/components/sections/WhoWeAre";
-import { OurTeam } from "@/components/sections/OurTeam";
-
-import { Hero } from "@/components/sections/Hero";
 import { Services } from "@/components/sections/Services";
 import { Box, useColorModeValue } from "@chakra-ui/react";
 
-export default function Home() {
+export default function Page() {
   const bg = useColorModeValue("brand.sand", "brand.royalMoss");
 
   return (
@@ -23,11 +19,13 @@ export default function Home() {
       justifyContent="center"
       boxSizing="border-box"
     >
-      <Box maxWidth="1440px" position="relative" overflowX="hidden">
-        <Navbar />
-        <Hero />
-        <WhoWeAre />
-        <OurTeam />
+      <Navbar />
+      <Box
+        maxWidth="1440px"
+        position="relative"
+        overflowX="hidden"
+        boxShadow="lg"
+      >
         <Services />
       </Box>
     </Box>
