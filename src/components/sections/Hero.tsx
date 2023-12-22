@@ -25,7 +25,7 @@ export const Hero = () => {
         gridTemplateColumns={["1fr", "1fr 1fr"]}
         pt={40}
         pb={[4, 8]}
-        px={4}
+        px={[4, 8]}
         position="relative"
         zIndex={1}
         boxSizing="border-box"

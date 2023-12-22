@@ -25,26 +25,31 @@ export const OurTeam = () => {
         The TIDAL Team
       </Heading>
       <Divider borderColor="brand.sand" mb={8} />
-      <Grid width="100%" gridTemplateColumns={["1fr", "1fr", "2fr 1fr 1fr"]}>
-        <Box mb={[4, 4, 0]}>
-          <Text mb={8}>
-            Nice to meet you! We're Drs. Eusebio and Anderson, and we're the
-            founders of TIDAL Acupuncture. We specialize in Women's Health and
-            Sports Medicine respectively, but we're trained to offer a wide
-            variety of treatments.
-          </Text>
-          <Button>Learn more</Button>
-        </Box>
-
+      <Box mb={[4, 4, 8]}>
+        <Text mb={8}>
+          Nice to meet you! We're Drs. Eusebio and Anderson, and we're the
+          founders of TIDAL Acupuncture. We specialize in Women's Health and
+          Sports Medicine respectively, but we're trained to offer a wide
+          variety of treatments.
+        </Text>
+        <Button>Learn more</Button>
+      </Box>
+      <Grid
+        width="100%"
+        gridGap={8}
+        gridTemplateColumns={["1fr", "1fr", "1fr 1fr"]}
+      >
         <TeamCard
           name="Rachel Eusebio"
           role="Doctor of Acupuncture (DAACM)"
-          image="https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8cG9ydHJhaXR8ZW58MHx8MHx8fDA%3D"
+          image="/media/rachel.png"
+          link="/team/rachel-eusebio"
         />
         <TeamCard
           name="Hannah Anderson"
           role="Doctor of Acupuncture (DAACM)"
-          image="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTV8fHBvcnRyYWl0fGVufDB8fDB8fHww"
+          image="/media/hannah.png"
+          link="/team/hannah-anderson"
         />
       </Grid>
     </Flex>

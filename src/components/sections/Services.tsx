@@ -18,22 +18,23 @@ export const Services = () => {
       pb={24}
       boxSizing="border-box"
       color="brand.royalMoss"
-      alignItems={["flex-start", "flex-end"]}
+      alignItems={["flex-start"]}
       maxWidth="100%"
       overflow="hidden"
     >
       <Flex
         zIndex={1}
         flexDirection="column"
-        alignItems={["flex-start", "flex-end"]}
+        alignItems={["flex-start"]}
         width="100%"
       >
-        <Heading as="h2" size="3xl" width="100%" textAlign="end">
+        <Heading as="h2" size="3xl" width="100%">
           Our Services
         </Heading>
         <Grid
           gridTemplateColumns={["1fr", "1fr", "1fr 1fr"]}
-          width={["100%", "100%", "66%"]}
+          width={["100%"]}
+          gridGap={4}
         >
           <Card
             icon="icons/needles-dark.svg"
@@ -57,16 +58,6 @@ export const Services = () => {
           />
         </Grid>
       </Flex>
-      <Box
-        transform="rotate(-215deg) scale(1)"
-        position="absolute"
-        zIndex={0}
-        top={[-8, -8, -16, -24]}
-        left={["-150px", "-150px", "-500px", "-300px"]}
-        width={["100%", "100%", "auto"]}
-      >
-        <Image src="waves-moss.svg" minWidth="100%" />
-      </Box>
     </Flex>
   );
 };
