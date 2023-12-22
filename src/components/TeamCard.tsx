@@ -86,6 +86,7 @@ export const TeamCard: React.FC<ITeamCardProps> = ({
         transition="0.25s ease all"
         cursor="pointer"
         borderRadius={16}
+        boxShadow="lg"
       >
         <Text as="p">Meet Dr. {name.split(" ")[2]} 👋</Text>
       </Flex>

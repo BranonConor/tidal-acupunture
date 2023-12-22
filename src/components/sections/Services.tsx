@@ -20,6 +20,8 @@ export const Services = () => {
       alignItems={["flex-start"]}
       maxWidth="100%"
       overflow="hidden"
+      borderRadius={8}
+      mb={8}
     >
       <Flex
         zIndex={1}

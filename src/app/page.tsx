@@ -7,6 +7,7 @@ import { OurTeam } from "@/components/sections/OurTeam";
 import { Hero } from "@/components/sections/Hero";
 import { Services } from "@/components/sections/Services";
 import { Box, useColorModeValue } from "@chakra-ui/react";
+import { Info } from "@/components/sections/Info";
 
 export default function Home() {
   const bg = useColorModeValue("brand.sand", "brand.royalMoss");
@@ -29,6 +30,7 @@ export default function Home() {
         <WhoWeAre />
         <OurTeam />
         <Services />
+        <Info />
       </Box>
     </Box>
   );
