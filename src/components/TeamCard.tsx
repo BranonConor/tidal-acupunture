@@ -1,4 +1,5 @@
 import { Image, Heading, Text, Box, Flex } from "@chakra-ui/react";
+import Link from "next/link";
 
 interface ITeamCardProps {
   image: string;
@@ -71,7 +72,7 @@ export const TeamCard: React.FC<ITeamCardProps> = ({
         <Text as="p">{role}</Text>
       </Box>
       <Flex
-        as="a"
+        as={Link}
         href={link}
         className="meet-the-team"
         width="100%"

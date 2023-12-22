@@ -22,7 +22,7 @@ export const Navbar: React.FC = () => {
     "rgba(250,250,250,0.15)"
   );
   const menuBg = useColorModeValue("brand.gold", "brand.mint");
-  const ball = useColorModeValue("ball-mint.svg", "ball-gold.svg");
+  const ball = useColorModeValue("/ball-mint.svg", "/ball-gold.svg");
 
   const [isClicked, setIsClicked] = useState(false);
 
@@ -118,24 +118,24 @@ export const Navbar: React.FC = () => {
           <UnorderedList p={0} listStyleType="none">
             <ListItem mb={2}>
               <ChakraLink display="flex" href="/" as={Link}>
-                <Image mr={3} src="icons/home-dark.svg" /> Home
+                <Image mr={3} src="/icons/home-dark.svg" /> Home
               </ChakraLink>
             </ListItem>
             <ListItem mb={2}>
               <ChakraLink display="flex" href="/team" as={Link}>
-                <Image mr={3} src="icons/about-dark.svg" />
+                <Image mr={3} src="/icons/about-dark.svg" />
                 About Us
               </ChakraLink>
             </ListItem>
             <ListItem mb={2}>
               <ChakraLink display="flex" href="" as={Link}>
-                <Image mr={3} src="icons/circles-dark.svg" />
+                <Image mr={3} src="/icons/circles-dark.svg" />
                 Services
               </ChakraLink>
             </ListItem>
             <ListItem>
               <ChakraLink display="flex" href="" as={Link}>
-                <Image mr={3} src="icons/contact-dark.svg" />
+                <Image mr={3} src="/icons/contact-dark.svg" />
                 Contact
               </ChakraLink>
             </ListItem>
@@ -148,7 +148,7 @@ export const Navbar: React.FC = () => {
             right={-8}
             width="200%"
           >
-            <Image src="waves-moss.svg" minWidth="100%" />
+            <Image src="/waves-moss.svg" minWidth="100%" />
           </Box>
           <Box
             transform="rotate(35deg) scale(1)"
