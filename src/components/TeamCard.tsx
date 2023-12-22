@@ -32,6 +32,12 @@ export const TeamCard: React.FC<ITeamCardProps> = ({
           },
           ".text": {
             top: "10%",
+
+            "@media only screen and (max-width: 400px)": {
+              top: "15%",
+              left: "2",
+              transform: "scale(0.8)",
+            },
           },
         },
       }}
