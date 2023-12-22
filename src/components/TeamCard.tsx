@@ -20,7 +20,6 @@ export const TeamCard: React.FC<ITeamCardProps> = ({
       flexDirection="column"
       alignItems="flex-start"
       justifyContent="center"
-      py={[8, 8, 0]}
       sx={{
         "&:hover": {
           img: {
@@ -32,11 +31,14 @@ export const TeamCard: React.FC<ITeamCardProps> = ({
           },
           ".text": {
             top: "10%",
+            transform: "scale(0.9)",
 
+            "@media only screen and (max-width: 630px)": {
+              top: "12.5%",
+            },
             "@media only screen and (max-width: 400px)": {
               top: "15%",
-              left: "2",
-              transform: "scale(0.8)",
+              left: "16px",
             },
           },
         },
@@ -55,7 +57,7 @@ export const TeamCard: React.FC<ITeamCardProps> = ({
       <Box
         position="absolute"
         top={[12, 14, 4, 8, 8, 10]}
-        left={[4, 12, 10, 12, 16, 16]}
+        left={[4, 8, 4, 12, 16, 16]}
         color="brand.royalMoss"
         maxWidth="100%"
         className="text"
@@ -82,7 +84,7 @@ export const TeamCard: React.FC<ITeamCardProps> = ({
         transition="0.25s ease all"
         cursor="pointer"
       >
-        <Text as="p">Meet Dr. {name.split(" ")[1]} 👋</Text>
+        <Text as="p">Meet Dr. {name.split(" ")[2]} 👋</Text>
       </Flex>
     </Flex>
   );

@@ -14,8 +14,7 @@ export const Services = () => {
       bg={bg}
       position="relative"
       px={[4, 8]}
-      pt={32}
-      pb={24}
+      py={[16, 24]}
       boxSizing="border-box"
       color="brand.royalMoss"
       alignItems={["flex-start"]}

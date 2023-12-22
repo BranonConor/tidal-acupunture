@@ -14,7 +14,7 @@ export const WhoWeAre = () => {
     <Flex
       justifyContent="center"
       px={[4, 8]}
-      py={24}
+      py={[16, 24]}
       boxSizing="border-box"
       bg={bg}
       position="relative"

@@ -13,7 +13,7 @@ export const OurTeam = () => {
   return (
     <Flex
       px={[4, 8]}
-      py={24}
+      py={[16, 24]}
       color="brand.sand"
       bg="brand.royalMoss"
       flexDirection="column"
@@ -38,16 +38,17 @@ export const OurTeam = () => {
         width="100%"
         gridGap={8}
         gridTemplateColumns={["1fr", "1fr", "1fr 1fr"]}
+        py={[8, 12]}
       >
         <TeamCard
-          name="Rachel Eusebio"
-          role="Doctor of Acupuncture (DAACM)"
+          name="Dr. Rachel Eusebio"
+          role="Doctor of Acupuncture (DACM)"
           image="/media/rachel.png"
           link="/team/rachel-eusebio"
         />
         <TeamCard
-          name="Hannah Anderson"
-          role="Doctor of Acupuncture (DAACM)"
+          name="Dr. Hannah Anderson"
+          role="Doctor of Acupuncture (DACM)"
           image="/media/hannah.png"
           link="/team/hannah-anderson"
         />
