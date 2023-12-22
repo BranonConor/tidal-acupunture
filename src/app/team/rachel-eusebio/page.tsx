@@ -23,7 +23,7 @@ export default function Page() {
         maxWidth="1440px"
         position="relative"
         overflowX="hidden"
-        px={[4, 8]}
+        boxShadow="lg"
         pt={24}
       >
         COMING SOON! :)

@@ -23,7 +23,12 @@ export default function Home() {
       justifyContent="center"
       boxSizing="border-box"
     >
-      <Box maxWidth="1440px" position="relative" overflowX="hidden">
+      <Box
+        maxWidth="1440px"
+        position="relative"
+        overflowX="hidden"
+        boxShadow="lg"
+      >
         <Navbar />
         <Hero />
         <WhoWeAre />

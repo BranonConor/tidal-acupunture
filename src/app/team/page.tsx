@@ -1,6 +1,7 @@
 "use client";
 
 import { Navbar } from "@/components/Navbar";
+import { OurTeam } from "@/components/sections/OurTeam";
 import { Box, useColorModeValue } from "@chakra-ui/react";
 
 export default function Page() {
@@ -24,9 +25,8 @@ export default function Page() {
         position="relative"
         overflowX="hidden"
         boxShadow="lg"
-        pt={24}
       >
-        COMING SOON! :)
+        <OurTeam />
       </Box>
     </Box>
   );

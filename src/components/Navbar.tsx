@@ -116,24 +116,24 @@ export const Navbar: React.FC = () => {
         >
           <UnorderedList p={0} listStyleType="none">
             <ListItem mb={2}>
-              <Link display="flex">
+              <Link display="flex" href="/">
                 <Image mr={3} src="icons/home-dark.svg" /> Home
               </Link>
             </ListItem>
             <ListItem mb={2}>
-              <Link display="flex">
+              <Link display="flex" href="/team">
                 <Image mr={3} src="icons/about-dark.svg" />
-                About
+                About Us
               </Link>
             </ListItem>
             <ListItem mb={2}>
-              <Link display="flex">
+              <Link display="flex" href="">
                 <Image mr={3} src="icons/circles-dark.svg" />
                 Services
               </Link>
             </ListItem>
             <ListItem>
-              <Link display="flex">
+              <Link display="flex" href="">
                 <Image mr={3} src="icons/contact-dark.svg" />
                 Contact
               </Link>
