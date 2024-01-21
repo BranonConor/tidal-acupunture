@@ -3,7 +3,7 @@
 import { Navbar } from "@/components/Navbar";
 import { WhoWeAre } from "@/components/sections/WhoWeAre";
 import { OurTeam } from "@/components/sections/OurTeam";
-
+import { Footer } from "@/components/Footer";
 import { Hero } from "@/components/sections/Hero";
 import { Services } from "@/components/sections/Services";
 import { Box, useColorModeValue } from "@chakra-ui/react";
@@ -31,6 +31,7 @@ export default function Home() {
         <OurTeam />
         <Services />
         <Info />
+        <Footer />
       </Box>
     </Box>
   );

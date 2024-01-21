@@ -44,8 +44,8 @@ export const Hero = () => {
             <Button as={Link} href="/services" variant="primary" mr={2}>
               What we do
             </Button>
-            <Button as={Link} href="#" variant="secondary">
-              Business Info
+            <Button as={Link} href="/resources" variant="secondary">
+              Resources
             </Button>
           </Flex>
         </Box>

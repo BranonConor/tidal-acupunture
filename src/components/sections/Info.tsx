@@ -20,8 +20,8 @@ export const Info = () => {
       justifyContent="flex-start"
       alignItems="flex-start"
       boxSizing="border-box"
-      borderRadius={16}
-      mb={8}
+      borderTopRightRadius={16}
+      borderTopLeftRadius={16}
     >
       <Heading as="h2" size="2xl">
         Business Info

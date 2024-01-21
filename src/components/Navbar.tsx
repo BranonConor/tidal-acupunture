@@ -48,7 +48,7 @@ export const Navbar: React.FC = () => {
       <Image src={logo} width="128px" />
       <Flex height="100%" alignItems="center" justifyContent="flex-end">
         <Button
-          display={["none", "none", "block"]}
+          display={["none", "none", "flex"]}
           mr={8}
           variant="secondary"
           as="a"
