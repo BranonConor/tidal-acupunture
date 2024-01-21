@@ -47,7 +47,13 @@ export const Navbar: React.FC = () => {
     >
       <Image src={logo} width="128px" />
       <Flex height="100%" alignItems="center" justifyContent="flex-end">
-        <Button mr={8} variant="secondary" as="a" href="tel:+11234567890">
+        <Button
+          display={["none", "none", "block"]}
+          mr={8}
+          variant="secondary"
+          as="a"
+          href="tel:+11234567890"
+        >
           (123) 456-7890
         </Button>
         <ColorModeButton />
