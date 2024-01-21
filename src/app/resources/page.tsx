@@ -2,6 +2,7 @@
 
 import { Navbar } from "@/components/Navbar";
 import { Box, useColorModeValue } from "@chakra-ui/react";
+import { Footer } from "@/components/Footer";
 
 export default function Page() {
   const bg = useColorModeValue("brand.sand", "brand.royalMoss");
@@ -24,7 +25,12 @@ export default function Page() {
         position="relative"
         overflowX="hidden"
         boxShadow="lg"
-      ></Box>
+      >
+        <Box height="800px" pt={16} px={[4, 4, 8]}>
+          Nothing yet!
+        </Box>
+        <Footer />
+      </Box>
     </Box>
   );
 }

@@ -1,5 +1,6 @@
 "use client";
 
+import { Footer } from "@/components/Footer";
 import { Navbar } from "@/components/Navbar";
 import {
   Box,
@@ -106,6 +107,7 @@ export default function Page() {
             transform="rotate(30deg)"
           />
         </Flex>
+        <Footer />
       </Box>
     </Box>
   );

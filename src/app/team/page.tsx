@@ -3,6 +3,7 @@
 import { Navbar } from "@/components/Navbar";
 import { OurTeam } from "@/components/sections/OurTeam";
 import { Box, useColorModeValue } from "@chakra-ui/react";
+import { Footer } from "@/components/Footer";
 
 export default function Page() {
   const bg = useColorModeValue("brand.sand", "brand.royalMoss");
@@ -29,6 +30,7 @@ export default function Page() {
         bg={bg}
       >
         <OurTeam />
+        <Footer />
       </Box>
     </Box>
   );

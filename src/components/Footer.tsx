@@ -24,15 +24,25 @@ export const Footer = () => {
       py={[12, 12, 8]}
       color={textColor}
     >
-      <Box borderRight={["none", "2px solid"]}>
-        <Image width={8} height={8} src={logo} mb={4} />
-        <Heading as="h2" size="md">
+      <Box
+        borderRight={["none", "2px solid"]}
+        pl={2}
+        pr={4}
+        py={2}
+        boxSizing="border-box"
+      >
+        <Heading as="h2" size="md" mb={4}>
           {`Tidal Acupuncture © ${new Date().toLocaleString("default", {
             year: "numeric",
           })}`}
         </Heading>
+        <Image width={16} height={16} src={logo} />
       </Box>
-      <Box borderRight={["2px solid", "none", "2px solid"]}>
+      <Box
+        borderRight={["2px solid", "none", "2px solid"]}
+        padding={2}
+        boxSizing="border-box"
+      >
         <Heading as="h2" size="md">
           Socials
         </Heading>
@@ -54,7 +64,7 @@ export const Footer = () => {
           </ListItem>
         </UnorderedList>
       </Box>
-      <Box borderRight="2px solid">
+      <Box borderRight="2px solid" padding={2} boxSizing="border-box">
         <Heading as="h2" size="md">
           Resources
         </Heading>
@@ -76,7 +86,11 @@ export const Footer = () => {
           </ListItem>
         </UnorderedList>
       </Box>
-      <Box borderRight={["2px solid", "none"]}>
+      <Box
+        borderRight={["2px solid", "none"]}
+        padding={2}
+        boxSizing="border-box"
+      >
         <Heading as="h2" size="md">
           Company
         </Heading>
