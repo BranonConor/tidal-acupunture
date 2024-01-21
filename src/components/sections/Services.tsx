@@ -42,7 +42,7 @@ export const Services = () => {
         <Grid
           gridTemplateColumns={["1fr", "1fr", "1fr 1fr"]}
           width={["100%"]}
-          gridGap={4}
+          gridGap={[4, 4, 8]}
           pt={8}
         >
           <Card

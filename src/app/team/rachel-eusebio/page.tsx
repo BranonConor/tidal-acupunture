@@ -1,7 +1,14 @@
 "use client";
 
 import { Navbar } from "@/components/Navbar";
-import { Box, useColorModeValue, Image, Flex, Heading } from "@chakra-ui/react";
+import {
+  Box,
+  Text,
+  useColorModeValue,
+  Image,
+  Flex,
+  Heading,
+} from "@chakra-ui/react";
 
 export default function Page() {
   const pageBg = useColorModeValue("brand.sand", "brand.royalMoss");
@@ -40,7 +47,7 @@ export default function Page() {
             boxShadow="lg"
             position="relative"
             zIndex="1"
-            mb={12}
+            mb={[4, 8, 12]}
           />
           <Flex
             position="relative"
@@ -53,9 +60,35 @@ export default function Page() {
             color={color}
             maxWidth="800px"
           >
-            <Heading as="h1" size="3xl" textAlign="center">
+            <Heading mb={8} as="h1" size="3xl" textAlign="center">
               Dr. Rachel Eusebio
             </Heading>
+            <Text as="p" mb={4}>
+              Dr. Eusebio DACM, L.Ac, is board certified by the National
+              Certification Commission for Acupuncture and Oriental Medicine.
+              She received her doctorate in acupuncture from Pacific College of
+              Health and Science in San Diego, CA. She also holds a Bachelor of
+              Science in Kinesiology from Westmont College and integrates her
+              knowledge of anatomy and physiology with the art of traditional
+              healing methods. After experiencing her own battles with health,
+              she discovered Chinese medicine to not only be an effective
+              solution for many conditions, but also a way of life - one that
+              prioritizes rest and wellness.
+            </Text>
+            <Text as="p" mb={4}>
+              Dr. Eusebio is passionate about women's health and empowering
+              women in their unique journey toward optimal health and vitality.
+              Committed to staying at the forefront of healthcare, Dr. Eusebio
+              believes in evidence-based practices. She meticulously
+              incorporates the latest research into her treatment protocols,
+              ensuring that her patients receive the highest quality of care.
+            </Text>
+            <Text as="p">
+              Outside the clinic, Dr. Eusebio enjoys hiking, botany, and
+              photography. Her commitment lies in being not just a healthcare
+              practitioner but a companion on the path to embracing balance and
+              joy in every facet of life.
+            </Text>
           </Flex>
           <Image
             src={"/waves-blue.svg"}

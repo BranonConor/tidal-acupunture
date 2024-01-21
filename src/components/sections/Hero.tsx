@@ -5,7 +5,9 @@ import {
   Text,
   Image,
   useColorModeValue,
+  Button,
 } from "@chakra-ui/react";
+import Link from "next/link";
 
 export const Hero = () => {
   const bgImage = useColorModeValue("/waves-blue.svg", "/waves-mauve.svg");
@@ -23,7 +25,7 @@ export const Hero = () => {
       <Box
         display="grid"
         gridTemplateColumns={["1fr", "1fr 1fr"]}
-        pt={40}
+        pt={[28, 32, 36]}
         pb={[4, 8]}
         px={[4, 8]}
         position="relative"
@@ -38,6 +40,14 @@ export const Hero = () => {
             TIDAL is a boutique Southern Californian acupuncture clinic
             delivering the best care Eastern Medicine has to offer.
           </Text>
+          <Flex my={4}>
+            <Button as={Link} href="/services" variant="primary" mr={2}>
+              What we do
+            </Button>
+            <Button as={Link} href="#" variant="secondary">
+              Business Info
+            </Button>
+          </Flex>
         </Box>
       </Box>
       <Box

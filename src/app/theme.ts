@@ -1,4 +1,5 @@
 import { extendTheme } from "@chakra-ui/react";
+import { buttonTheme } from "./componentOverrides/button";
 
 const colors = {
   brand: {
@@ -19,4 +20,8 @@ const config = {
   useSystemColorMode: true,
 };
 
-export const theme = extendTheme({ colors, config });
+const components = {
+  Button: buttonTheme,
+};
+
+export const theme = extendTheme({ colors, config, components });

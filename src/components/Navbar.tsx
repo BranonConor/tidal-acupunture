@@ -5,6 +5,7 @@ import {
   useColorModeValue,
   Image,
   Flex,
+  Button,
   UnorderedList,
   ListItem,
   Link as ChakraLink,
@@ -18,8 +19,8 @@ export const Navbar: React.FC = () => {
   const logo = useColorModeValue("/logo-dark.svg", "/logo-light.svg");
   const burgerBg = useColorModeValue("brand.royalMoss", "white");
   const bg = useColorModeValue(
-    "rgba(250,250,250,0.5)",
-    "rgba(250,250,250,0.15)"
+    "rgba(255, 237, 202, 0.25)",
+    "rgba(8, 40, 48, 0.20)"
   );
   const menuBg = useColorModeValue("brand.gold", "brand.mint");
   const ball = useColorModeValue("/ball-mint.svg", "/ball-gold.svg");
@@ -46,6 +47,9 @@ export const Navbar: React.FC = () => {
     >
       <Image src={logo} width="128px" />
       <Flex height="100%" alignItems="center" justifyContent="flex-end">
+        <Button mr={8} variant="secondary" as="a" href="tel:+11234567890">
+          (123) 456-7890
+        </Button>
         <ColorModeButton />
         <Flex
           flexDirection="column"
@@ -55,10 +59,12 @@ export const Navbar: React.FC = () => {
           ml={[4, 6]}
           mr={isClicked ? 2 : 0}
           width="30px"
+          maxWidth="30px"
           initial={{ transform: "scale(1)" }}
-          whileHover={{ width: "34px" }}
+          whileHover={{ transform: "scale(1.1)" }}
           whileTap={{ transform: "scale(1.15)" }}
           transition="0.15s ease all"
+          transform={`translateX(${isClicked ? "2px" : "0"})`}
           onClick={() => setIsClicked(!isClicked)}
         >
           <Box
@@ -133,11 +139,16 @@ export const Navbar: React.FC = () => {
                 Services
               </ChakraLink>
             </ListItem>
-            <ListItem>
+            <ListItem mb={8}>
               <ChakraLink display="flex" href="" as={Link}>
                 <Image mr={3} src="/icons/contact-dark.svg" />
                 Contact
               </ChakraLink>
+            </ListItem>
+            <ListItem display={["block", "block", "none"]}>
+              <Button variant="secondary" as="a" href="tel:+11234567890">
+                (123) 456-7890
+              </Button>
             </ListItem>
           </UnorderedList>
           <Box

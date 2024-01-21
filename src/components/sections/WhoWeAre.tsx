@@ -79,7 +79,7 @@ export const WhoWeAre = () => {
         </Grid>
         <Grid
           gridTemplateColumns={["1fr", "1fr 1fr", "1fr 1fr"]}
-          gridGap={4}
+          gridGap={[4, 4, 8]}
           mt={8}
         >
           <Card

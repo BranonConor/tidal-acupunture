@@ -8,6 +8,7 @@ import {
   Button,
 } from "@chakra-ui/react";
 import { TeamCard } from "../TeamCard";
+import Link from "next/link";
 
 export const OurTeam = () => {
   return (
@@ -34,7 +35,9 @@ export const OurTeam = () => {
           Sports Medicine respectively, but we're trained to offer a wide
           variety of treatments.
         </Text>
-        <Button>Learn more</Button>
+        <Button as={Link} href="/team" variant="primary">
+          Meet our team
+        </Button>
       </Box>
       <Grid
         width="100%"
