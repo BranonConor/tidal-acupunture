@@ -13,7 +13,7 @@ import Link from "next/link";
 export const Footer = () => {
   const bg = useColorModeValue("brand.sand", "brand.royalMoss");
   const textColor = useColorModeValue("brand.royalMoss", "brand.sand");
-  const logo = useColorModeValue("/symbol-dark.svg", "symbol-light.svg");
+  const logo = useColorModeValue("/symbol-dark.svg", "/symbol-light.svg");
 
   return (
     <Grid
@@ -44,29 +44,56 @@ export const Footer = () => {
         boxSizing="border-box"
       >
         <Heading as="h2" size="md">
-          Socials
+          Socials ✨
         </Heading>
         <UnorderedList>
           <ListItem>
-            <Text as={Link} href="">
-              Link
+            <Text
+              as={Link}
+              href="https://www.instagram.com/tidalacupuncture/"
+              target="_blank"
+              rel="noopenner noreferrer"
+              textDecoration="underline"
+              _hover={{
+                color: "brand.wave",
+              }}
+            >
+              Instagram
             </Text>
           </ListItem>
           <ListItem>
-            <Text as={Link} href="">
-              Link
+            <Text
+              as={Link}
+              href="https://www.facebook.com/tidalacupuncture"
+              target="_blank"
+              rel="noopenner noreferrer"
+              textDecoration="underline"
+              _hover={{
+                color: "brand.wave",
+              }}
+            >
+              Facebook
             </Text>
           </ListItem>
           <ListItem>
-            <Text as={Link} href="">
-              Link
+            <Text
+              as={Link}
+              href="https://www.tiktok.com/@tidal_acupuncture"
+              target="_blank"
+              rel="noopenner noreferrer"
+              textDecoration="underline"
+              _hover={{
+                color: "brand.wave",
+              }}
+            >
+              Tiktok
             </Text>
           </ListItem>
         </UnorderedList>
       </Box>
       <Box borderRight="2px solid" padding={2} boxSizing="border-box">
         <Heading as="h2" size="md">
-          Resources
+          Resources 📁
         </Heading>
         <UnorderedList>
           <ListItem>
@@ -92,7 +119,7 @@ export const Footer = () => {
         boxSizing="border-box"
       >
         <Heading as="h2" size="md">
-          Company
+          Company 🤝
         </Heading>
         <UnorderedList>
           <ListItem>

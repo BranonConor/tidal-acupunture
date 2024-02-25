@@ -21,7 +21,8 @@ export const OurTeam = () => {
       justifyContent="flex-start"
       alignItems="flex-start"
       boxSizing="border-box"
-      borderRadius={16}
+      borderBottomLeftRadius={16}
+      borderBottomRightRadius={16}
       mb={8}
     >
       <Heading as="h2" size="2xl">
@@ -31,9 +32,9 @@ export const OurTeam = () => {
       <Box mb={[4, 4, 8]}>
         <Text mb={8}>
           Nice to meet you! We're Drs. Eusebio and Anderson, and we're the
-          founders of TIDAL Acupuncture. We specialize in Women's Health and
-          Sports Medicine respectively, but we're trained to offer a wide
-          variety of treatments.
+          founders of TIDAL Acupuncture. We offer a unique focus on women's
+          health and sports medicine, but we are broadly trained to treat a wide
+          variety of conditions.
         </Text>
         <Button as={Link} href="/team" variant="primary">
           Meet our team

@@ -6,16 +6,28 @@ import {
   UnorderedList,
   ListItem,
   AspectRatio,
+  useColorModeValue,
 } from "@chakra-ui/react";
 import { Card } from "../Card";
 
 export const Info = () => {
+  const bg = useColorModeValue("brand.wave", "brand.royalMoss");
+  const textColor = useColorModeValue("brand.royalMoss", "brand.sand");
+  const dividerColor = useColorModeValue("brand.royalMoss", "brand.sand");
+  const phoneIcon = useColorModeValue(
+    "/icons/phone-dark.svg",
+    "/icons/phone-light.svg"
+  );
+  const emailIcon = useColorModeValue(
+    "/icons/email-dark.svg",
+    "/icons/email-light.svg"
+  );
   return (
     <Flex
       px={[4, 8]}
       py={[16, 24]}
-      color="brand.sand"
-      bg="brand.royalMoss"
+      color={textColor}
+      bg={bg}
       flexDirection="column"
       justifyContent="flex-start"
       alignItems="flex-start"
@@ -26,7 +38,7 @@ export const Info = () => {
       <Heading as="h2" size="2xl">
         Business Info
       </Heading>
-      <Divider borderColor="brand.sand" mb={16} />
+      <Divider borderColor={dividerColor} mb={16} />
       <Grid
         gridGap={8}
         gridTemplateColumns={["1fr", "1fr", "1fr 1fr"]}
@@ -38,24 +50,24 @@ export const Info = () => {
               Hours of Operation
             </Heading>
             <UnorderedList py={4}>
-              <ListItem>Monday: 9:00pm - 5:00pm</ListItem>
-              <ListItem>Tuesday: 9:00pm - 5:00pm</ListItem>
-              <ListItem>Wednesday: 9:00pm - 5:00pm</ListItem>
-              <ListItem>Thursday: 9:00pm - 5:00pm</ListItem>
-              <ListItem>Friday: 9:00pm - 5:00pm</ListItem>
+              <ListItem>Monday: 9:00pm - 6:00pm</ListItem>
+              <ListItem>Tuesday: 9:00pm - 6:00pm</ListItem>
+              <ListItem>Wednesday: 9:00pm - 6:00pm</ListItem>
+              <ListItem>Thursday: 9:00pm - 6:00pm</ListItem>
+              <ListItem>Friday: 9:00pm - 6:00pm</ListItem>
               <ListItem>Sat-Sun: CLOSED</ListItem>
             </UnorderedList>
             <Card
               title="Phone Number"
-              description="(123) 456-7890"
-              color="brand.sand"
-              icon="/icons/phone-light.svg"
+              description="(619) 633-7275"
+              icon={phoneIcon}
+              color={textColor}
             />
             <Card
               title="Email"
-              description="tidal@acupuncture.com"
-              color="brand.sand"
-              icon="/icons/email-light.svg"
+              description="tidalacupuncture@gmail.com"
+              icon={emailIcon}
+              color={textColor}
             />
           </Flex>
         </Flex>

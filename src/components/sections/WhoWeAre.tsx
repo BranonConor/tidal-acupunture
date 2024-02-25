@@ -12,6 +12,7 @@ import { Card } from "../Card";
 
 export const WhoWeAre = () => {
   const bg = useColorModeValue("brand.wave", "brand.mauve");
+  const radius = useColorModeValue(0, 16);
   const palmsImg = useColorModeValue(
     "/media/palms.png",
     "/media/palms-sunset.png"
@@ -21,8 +22,10 @@ export const WhoWeAre = () => {
       justifyContent="center"
       px={[4, 8]}
       py={[16, 24]}
-      borderRadius={16}
-      mb={16}
+      borderTopRightRadius={16}
+      borderTopLeftRadius={16}
+      borderBottomRightRadius={radius}
+      borderBottomLeftRadius={radius}
       boxSizing="border-box"
       bg={bg}
       position="relative"
@@ -50,7 +53,7 @@ export const WhoWeAre = () => {
             borderRadius={16}
           />
 
-          <Flex flexDirection="column" pt={[4, 4, 0]}>
+          <Flex flexDirection="column" pt={[4, 4, 0]} justifyContent="center">
             <Heading as="h2" size="3xl" color="brand.royalMoss">
               We're more than a wellness destination.
             </Heading>

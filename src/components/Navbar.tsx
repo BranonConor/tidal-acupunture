@@ -52,9 +52,9 @@ export const Navbar: React.FC = () => {
           mr={8}
           variant="secondary"
           as="a"
-          href="tel:+11234567890"
+          href="tel:+16196337275"
         >
-          (123) 456-7890
+          (619) 633-7275
         </Button>
         <ColorModeButton />
         <Flex
@@ -140,20 +140,20 @@ export const Navbar: React.FC = () => {
               </ChakraLink>
             </ListItem>
             <ListItem mb={2}>
-              <ChakraLink display="flex" href="" as={Link}>
+              <ChakraLink display="flex" href="/services" as={Link}>
                 <Image mr={3} src="/icons/circles-dark.svg" />
                 Services
               </ChakraLink>
             </ListItem>
             <ListItem mb={8}>
-              <ChakraLink display="flex" href="" as={Link}>
+              <ChakraLink display="flex" href="/contact" as={Link}>
                 <Image mr={3} src="/icons/contact-dark.svg" />
                 Contact
               </ChakraLink>
             </ListItem>
             <ListItem display={["block", "block", "none"]}>
-              <Button variant="secondary" as="a" href="tel:+11234567890">
-                (123) 456-7890
+              <Button variant="secondary" as="a" href="tel:+16196337275">
+                (619) 633-7275
               </Button>
             </ListItem>
           </UnorderedList>

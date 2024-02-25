@@ -5,8 +5,11 @@ import {
   Heading,
   Grid,
   Divider,
+  Button,
 } from "@chakra-ui/react";
+import Link from "next/link";
 import { Card } from "../Card";
+
 export const Services = () => {
   const bg = useColorModeValue("brand.sand", "brand.mauve");
   return (
@@ -39,6 +42,14 @@ export const Services = () => {
           migraines, autoimmune conditions, gastrointestinal diseases, women’s
           health, and dermatology
         </Text>
+        <Flex mt={8}>
+          <Button as={Link} variant="primary" href="/services" mr={2}>
+            All Services
+          </Button>
+          <Button as={Link} variant="secondary" href="/services">
+            Learn More
+          </Button>
+        </Flex>
         <Grid
           gridTemplateColumns={["1fr", "1fr", "1fr 1fr"]}
           width={["100%"]}
@@ -46,22 +57,27 @@ export const Services = () => {
           pt={8}
         >
           <Card
-            icon="icons/needles-dark.svg"
+            icon="/icons/needles-dark.svg"
             title="Acupuncture"
             description="Expert needling technique with combined Chinese Medicine theory and Western Medicine knowledge"
           />
           <Card
-            icon="icons/cupping-dark.svg"
+            icon="/icons/cosmetic-dark.svg"
+            title="Cosmetic Acupuncture"
+            description="Skincare with a zen twist, cosmetic acupuncture is a natural approach to improve skin health and appearance"
+          />
+          <Card
+            icon="/icons/cupping-dark.svg"
             title="Cupping"
             description="Traditional fire cupping as well as suction cupping"
           />
           <Card
-            icon="icons/fire-dark.svg"
-            title="Herbal Remedies"
+            icon="/icons/fire-dark.svg"
+            title="Herbal Medicine"
             description="Tailored herbal tinctures and remedies for a myriad of conditions and complaints"
           />
           <Card
-            icon="icons/pen-dark.svg"
+            icon="/icons/pen-dark.svg"
             title="Microneedling"
             description="State-of-the-art microneedling pen treatments for cosmetic conditions"
           />

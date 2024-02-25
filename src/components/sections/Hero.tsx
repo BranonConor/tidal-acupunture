@@ -14,6 +14,7 @@ export const Hero = () => {
 
   return (
     <Flex
+      mt={6}
       maxWidth="100%"
       minHeight="600px"
       flexDirection="column"
