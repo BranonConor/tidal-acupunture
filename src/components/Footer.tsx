@@ -40,6 +40,52 @@ export const Footer = () => {
       <Box
         position="relative"
         zIndex={1}
+        borderLeft="2px solid"
+        pl={4}
+        boxSizing="border-box"
+      >
+        <Heading as="h2" size="md">
+          Resources 📁
+        </Heading>
+        <UnorderedList>
+          <ListItem>
+            <Text
+              as={Link}
+              href=""
+              target="_blank"
+              rel="noopenner noreferrer"
+              textDecoration="underline"
+            >
+              How Acupuncture Works
+            </Text>
+          </ListItem>
+          <ListItem>
+            <Text
+              as={Link}
+              href=""
+              target="_blank"
+              rel="noopenner noreferrer"
+              textDecoration="underline"
+            >
+              Patient Portal
+            </Text>
+          </ListItem>
+          <ListItem>
+            <Text
+              as={Link}
+              href=""
+              target="_blank"
+              rel="noopenner noreferrer"
+              textDecoration="underline"
+            >
+              Online Scheduling
+            </Text>
+          </ListItem>
+        </UnorderedList>
+      </Box>
+      <Box
+        position="relative"
+        zIndex={1}
         borderLeft={["2px solid"]}
         pl={4}
         boxSizing="border-box"
@@ -88,52 +134,6 @@ export const Footer = () => {
               }}
             >
               Tiktok
-            </Text>
-          </ListItem>
-        </UnorderedList>
-      </Box>
-      <Box
-        position="relative"
-        zIndex={1}
-        borderLeft="2px solid"
-        pl={4}
-        boxSizing="border-box"
-      >
-        <Heading as="h2" size="md">
-          Resources 📁
-        </Heading>
-        <UnorderedList>
-          <ListItem>
-            <Text
-              as={Link}
-              href=""
-              target="_blank"
-              rel="noopenner noreferrer"
-              textDecoration="underline"
-            >
-              How Acupuncture Works
-            </Text>
-          </ListItem>
-          <ListItem>
-            <Text
-              as={Link}
-              href=""
-              target="_blank"
-              rel="noopenner noreferrer"
-              textDecoration="underline"
-            >
-              Patient Portal
-            </Text>
-          </ListItem>
-          <ListItem>
-            <Text
-              as={Link}
-              href=""
-              target="_blank"
-              rel="noopenner noreferrer"
-              textDecoration="underline"
-            >
-              Online Scheduling
             </Text>
           </ListItem>
         </UnorderedList>

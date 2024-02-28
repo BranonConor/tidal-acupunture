@@ -4,6 +4,7 @@ import { Navbar } from "@/components/Navbar";
 import { Services } from "@/components/sections/Services";
 import { Box, useColorModeValue } from "@chakra-ui/react";
 import { Footer } from "@/components/Footer";
+import { Hero } from "@/components/sections/Hero";
 
 export default function Page() {
   const bg = useColorModeValue("brand.sand", "brand.royalMoss");
@@ -20,13 +21,18 @@ export default function Page() {
       justifyContent="center"
       boxSizing="border-box"
     >
-      <Navbar />
       <Box
         maxWidth="1440px"
         position="relative"
         overflowX="hidden"
         boxShadow="lg"
+        width="100%"
       >
+        <Navbar />
+        <Hero
+          title="Our Services"
+          description="We offer a wide variety of services, all of which are tailored just for YOU."
+        />
         <Services />
         <Footer />
       </Box>

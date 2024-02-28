@@ -5,11 +5,20 @@ import {
   Text,
   Image,
   useColorModeValue,
-  Button,
 } from "@chakra-ui/react";
-import Link from "next/link";
+import React, { ReactNode } from "react";
 
-export const Hero = () => {
+interface HeroProps {
+  title: string;
+  description: string;
+  ctaSection?: ReactNode;
+}
+
+export const Hero: React.FC<HeroProps> = ({
+  title,
+  description,
+  ctaSection,
+}) => {
   const bgImage = useColorModeValue("/waves-blue.svg", "/waves-mauve.svg");
 
   return (
@@ -35,20 +44,10 @@ export const Hero = () => {
       >
         <Box width="100%">
           <Heading as="h1" size="4xl" pb={4} maxWidth="100%">
-            Acupuncture for all life's highs and lows.
+            {title}
           </Heading>
-          <Text maxWidth="100%">
-            TIDAL is a boutique Southern Californian acupuncture clinic
-            delivering the best care Eastern Medicine has to offer.
-          </Text>
-          <Flex my={4}>
-            <Button as={Link} href="/services" variant="primary" mr={2}>
-              What we do
-            </Button>
-            <Button as={Link} href="/resources" variant="secondary">
-              Resources
-            </Button>
-          </Flex>
+          <Text maxWidth="100%">{description}</Text>
+          {ctaSection && ctaSection}
         </Box>
       </Box>
       <Box
