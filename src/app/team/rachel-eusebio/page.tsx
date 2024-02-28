@@ -2,6 +2,7 @@
 
 import { Footer } from "@/components/Footer";
 import { Navbar } from "@/components/Navbar";
+import { ContactUs } from "@/components/sections/ContactUs";
 import {
   Box,
   Text,
@@ -109,6 +110,7 @@ export default function Page() {
             transform="rotate(30deg)"
           />
         </Flex>
+        <ContactUs />
         <Footer />
       </Box>
     </Box>

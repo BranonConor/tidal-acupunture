@@ -31,6 +31,7 @@ export const ContactUs: React.FC = () => {
       position="relative"
       overflow="hidden"
       borderTopRadius={radius}
+      id="contact-us"
     >
       <Heading as="h2" size="2xl">
         Contact Us

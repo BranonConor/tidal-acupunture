@@ -26,13 +26,13 @@ export default function Home() {
       justifyContent="center"
       boxSizing="border-box"
     >
+      <Navbar />
       <Box
         maxWidth="1440px"
         position="relative"
         overflowX="hidden"
         width="100%"
       >
-        <Navbar />
         <Hero
           title="Acupuncture for all life's highs and lows."
           description="TIDAL is a boutique Southern Californian acupuncture clinic

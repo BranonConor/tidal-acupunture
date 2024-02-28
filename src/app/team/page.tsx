@@ -4,6 +4,7 @@ import { Navbar } from "@/components/Navbar";
 import { Box, useColorModeValue } from "@chakra-ui/react";
 import { Footer } from "@/components/Footer";
 import { Hero } from "@/components/sections/Hero";
+import { ContactUs } from "@/components/sections/ContactUs";
 
 export default function Page() {
   const bg = useColorModeValue("brand.sand", "brand.royalMoss");
@@ -20,6 +21,7 @@ export default function Page() {
       justifyContent="center"
       boxSizing="border-box"
     >
+      <Navbar />
       <Box
         maxWidth="1440px"
         width="100%"
@@ -28,11 +30,11 @@ export default function Page() {
         boxShadow="lg"
         bg={bg}
       >
-        <Navbar />
         <Hero
           title="Who We Are"
           description="We're more than just a wellness destination. We're passionate and skilled healers."
         />
+        <ContactUs />
         <Footer />
       </Box>
     </Box>

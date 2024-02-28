@@ -146,7 +146,7 @@ export const Navbar: React.FC = () => {
               </ChakraLink>
             </ListItem>
             <ListItem mb={8}>
-              <ChakraLink display="flex" href="/contact" as={Link}>
+              <ChakraLink display="flex" href="/#contact-us" as={Link}>
                 <Image mr={3} src="/icons/contact-dark.svg" />
                 Contact
               </ChakraLink>
