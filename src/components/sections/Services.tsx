@@ -12,6 +12,7 @@ import { Card } from "../Card";
 
 export const Services = () => {
   const bg = useColorModeValue("brand.sand", "brand.mauve");
+
   return (
     <Flex
       bg={bg}
