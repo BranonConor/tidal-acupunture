@@ -17,7 +17,7 @@ export const ContactUs: React.FC = () => {
   const bg = useColorModeValue("brand.royalMoss", "brand.mauve");
   const text = useColorModeValue("brand.sand", "brand.royalMoss");
   const textHover = useColorModeValue("brand.wave", "brand.darkWave");
-  const radius = useColorModeValue(0, 8);
+  const radius = useColorModeValue(0, 16);
 
   return (
     <Flex

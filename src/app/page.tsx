@@ -50,7 +50,7 @@ export default function Home() {
         />
         <WhoWeAre />
         <OurTeam />
-        <Services />
+        <Services title="Our Services" />
         <Info />
         <ContactUs />
         <Footer />

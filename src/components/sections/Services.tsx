@@ -8,9 +8,14 @@ import {
   Button,
 } from "@chakra-ui/react";
 import Link from "next/link";
+import React from "react";
 import { Card } from "../Card";
 
-export const Services = () => {
+export interface ServicesProps {
+  title: string;
+}
+
+export const Services: React.FC<ServicesProps> = ({ title }) => {
   const bg = useColorModeValue("brand.sand", "brand.mauve");
 
   return (
@@ -34,7 +39,7 @@ export const Services = () => {
         width="100%"
       >
         <Heading as="h2" size="3xl" width="100%">
-          Our Services
+          {title}
         </Heading>
         <Divider borderColor="brand.royalMoss" mb={8} mt={4} />
         <Text as="p">
