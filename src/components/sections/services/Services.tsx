@@ -9,7 +9,8 @@ import {
 } from "@chakra-ui/react";
 import Link from "next/link";
 import React from "react";
-import { Card } from "../Card";
+import { Card } from "../../Card";
+import { ServicesGrid } from "./ServicesGrid";
 
 export interface ServicesProps {
   title: string;
@@ -17,6 +18,10 @@ export interface ServicesProps {
 
 export const Services: React.FC<ServicesProps> = ({ title }) => {
   const bg = useColorModeValue("brand.sand", "brand.mauve");
+  const servicesTextColor = useColorModeValue(
+    "brand.royalMoss",
+    "brand.royalMoss"
+  );
 
   return (
     <Flex
@@ -56,38 +61,7 @@ export const Services: React.FC<ServicesProps> = ({ title }) => {
             Learn More
           </Button>
         </Flex>
-        <Grid
-          gridTemplateColumns={["1fr", "1fr", "1fr 1fr"]}
-          width={["100%"]}
-          gridGap={[4, 4, 8]}
-          pt={8}
-        >
-          <Card
-            icon="/icons/needles-dark.svg"
-            title="Acupuncture"
-            description="Expert needling technique with combined Chinese Medicine theory and Western Medicine knowledge"
-          />
-          <Card
-            icon="/icons/cosmetic-dark.svg"
-            title="Cosmetic Acupuncture"
-            description="Skincare with a zen twist, cosmetic acupuncture is a natural approach to improve skin health and appearance"
-          />
-          <Card
-            icon="/icons/cupping-dark.svg"
-            title="Cupping"
-            description="Traditional fire cupping as well as suction cupping"
-          />
-          <Card
-            icon="/icons/fire-dark.svg"
-            title="Herbal Medicine"
-            description="Tailored herbal tinctures and remedies for a myriad of conditions and complaints"
-          />
-          <Card
-            icon="/icons/pen-dark.svg"
-            title="Microneedling"
-            description="State-of-the-art microneedling pen treatments for cosmetic conditions"
-          />
-        </Grid>
+        <ServicesGrid textColor={servicesTextColor} />
       </Flex>
     </Flex>
   );

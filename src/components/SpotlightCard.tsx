@@ -1,41 +1,46 @@
 import { Box, Image, Heading, Text, useColorModeValue } from "@chakra-ui/react";
 import React from "react";
+import Link from "next/link";
 
 export interface SpotlightCardProps {
   title: string;
   description: string;
   image: string;
+  href: string;
 }
 
 export const SpotlightCard: React.FC<SpotlightCardProps> = ({
   title,
   description,
   image,
+  href,
 }) => {
-  const cardBg = useColorModeValue("brand.sand", "brand.mint");
   const cardText = useColorModeValue("brand.sand", "brand.sand");
+  const cardBg = useColorModeValue("brand.darkWave", "brand.royalMoss");
   const radius = useColorModeValue(16, 16);
-  const overlay = useColorModeValue(
-    "/media/overlay-dark.png",
-    "/media/overlay-dark.png"
-  );
 
   return (
     <Box
-      boxShadow="md"
+      as={Link}
+      href={href}
+      bg={cardBg}
       borderRadius={radius}
       px={4}
       py={8}
-      bg={cardBg}
       color={cardText}
       position="relative"
       overflow="hidden"
       minHeight="250px"
       _hover={{
         "#spotlight-card-overlay": {
-          opacity: 0.5,
+          opacity: 0.05,
         },
         cursor: "pointer",
+        transition: "0.2s ease all",
+
+        img: {
+          top: "-8px",
+        },
       }}
     >
       <Image
@@ -57,17 +62,7 @@ export const SpotlightCard: React.FC<SpotlightCardProps> = ({
           "scale(1)",
         ]}
       />
-      <Image
-        src={overlay}
-        position="absolute"
-        top="0"
-        left="0"
-        zIndex={1}
-        width="100%"
-        height="100%"
-        transition="0.2s ease all"
-        id="spotlight-card-overlay"
-      />
+
       <Box position="relative" zIndex={2}>
         <Heading as="h3" size="xl" mb={4}>
           {title}

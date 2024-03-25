@@ -18,9 +18,9 @@ export const Info = () => {
     "/icons/phone-dark.svg",
     "/icons/phone-light.svg"
   );
-  const emailIcon = useColorModeValue(
-    "/icons/email-dark.svg",
-    "/icons/email-light.svg"
+  const locationIcon = useColorModeValue(
+    "/icons/location-dark.svg",
+    "/icons/location-light.svg"
   );
   return (
     <Flex
@@ -50,11 +50,11 @@ export const Info = () => {
               Hours of Operation
             </Heading>
             <UnorderedList py={4}>
-              <ListItem>Monday: 9:00pm - 6:00pm</ListItem>
-              <ListItem>Tuesday: 9:00pm - 6:00pm</ListItem>
-              <ListItem>Wednesday: 9:00pm - 6:00pm</ListItem>
-              <ListItem>Thursday: 9:00pm - 6:00pm</ListItem>
-              <ListItem>Friday: 9:00pm - 6:00pm</ListItem>
+              <ListItem>Monday: 9:00am - 6:00pm</ListItem>
+              <ListItem>Tuesday: 9:00am - 6:00pm</ListItem>
+              <ListItem>Wednesday: 9:00am - 6:00pm</ListItem>
+              <ListItem>Thursday: 9:00am - 6:00pm</ListItem>
+              <ListItem>Friday: 9:00am - 6:00pm</ListItem>
               <ListItem>Sat-Sun: CLOSED</ListItem>
             </UnorderedList>
             <Card
@@ -64,10 +64,11 @@ export const Info = () => {
               color={textColor}
             />
             <Card
-              title="Email"
-              description="tidalacupuncture@gmail.com"
-              icon={emailIcon}
+              title="Location"
+              icon={locationIcon}
               color={textColor}
+              linkText="1835 El Cajon Blvd Unit A San Diego CA 92103"
+              href="https://maps.app.goo.gl/gUmy3PW1t7X88Q3X8"
             />
           </Flex>
         </Flex>
@@ -80,7 +81,7 @@ export const Info = () => {
             boxShadow="lg"
           >
             <iframe
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3354.5243506268553!2d-117.1630024229489!3d32.77835338391539!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x80d955479e2d983f%3A0xddc0bb1b08d03fc2!2sPacific%20College%20of%20Health%20and%20Science%20-%20San%20Diego%20Massage%20Therapy%20%26%20Acupuncture%20School!5e0!3m2!1sen!2sus!4v1703276721619!5m2!1sen!2sus"
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3355.407798976671!2d-117.14775932398133!3d32.75491228511468!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x80d954e6b37066e7%3A0xaf9cf4bbd2a51d27!2s1835%20El%20Cajon%20Blvd%20a%2C%20San%20Diego%2C%20CA%2092103!5e0!3m2!1sen!2sus!4v1711331550379!5m2!1sen!2sus"
               allowFullScreen={true}
               loading="lazy"
               referrerPolicy="no-referrer-when-downgrade"

@@ -17,6 +17,7 @@ export default function Page() {
   const bg = useColorModeValue("brand.mauve", "brand.darkWave");
   const color = useColorModeValue("brand.royalMoss", "brand.sand");
   const wave = useColorModeValue("/waves-blue.svg", "/waves-moss.svg");
+  const radius = useColorModeValue(16, 16);
 
   return (
     <Box
@@ -38,7 +39,6 @@ export default function Page() {
           position="relative"
           mb={16}
           borderRadius={16}
-          boxShadow="lg"
           overflow="hidden"
           bg={bg}
           padding={[4, 8]}
@@ -110,7 +110,7 @@ export default function Page() {
             transform="rotate(30deg)"
           />
         </Flex>
-        <ContactUs />
+        <ContactUs radius={radius} />
         <Footer />
       </Box>
     </Box>

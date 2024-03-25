@@ -103,7 +103,7 @@ export const WhoWeAre = () => {
           <Card
             icon="icons/users-dark.svg"
             title="Holistic"
-            description="As stewards of both ancient Eastern medicine traditions and contemporary advancementse, we embrace the interconnectedness of mind, body, and spirit."
+            description="As stewards of both ancient Eastern medicine traditions and contemporary advancements, we embrace the interconnectedness of mind, body, and spirit."
           />
         </Grid>
       </Box>

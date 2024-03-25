@@ -6,32 +6,37 @@ import {
   Grid,
   Heading,
 } from "@chakra-ui/react";
-import { SpotlightCard } from "../SpotlightCard";
+import { SpotlightCard } from "../../SpotlightCard";
 
 export const ServicesSpotlight = () => {
   const bg = useColorModeValue("brand.wave", "brand.mauve");
   const textColor = useColorModeValue("brand.royalMoss", "brand.royalMoss");
   const radius = useColorModeValue(16, 16);
+  const mode = useColorModeValue("light", "dark");
   const spotlightServices = [
     {
       title: "Acupuncture",
-      description: "Acupuncture is awesome! Read more about it.",
-      src: "/media/acupuncture.png",
+      description: "Read more about acupuncture 👉",
+      src: `/media/acupuncture-${mode}.svg`,
+      href: "/services/acupuncture",
     },
     {
       title: "Microneedling",
-      description: "Microneedling is awesome! Read more about it.",
-      src: "/media/microneedling.png",
+      description: "Read more about microneedling 👉",
+      src: `/media/microneedling-${mode}.svg`,
+      href: "/services/microneedling",
     },
     {
       title: "Cosmetic Acupuncture",
-      description: "Cosmetic Acupuncture is awesome! Read more about it.",
-      src: "/media/cosmetic-acupuncture.png",
+      description: "Read more about cosmetic acupuncture 👉",
+      src: `/media/cosmetic-${mode}.svg`,
+      href: "/services/cosmetic-acupuncture",
     },
     {
       title: "Fire Cupping",
-      description: "Fire Cupping is awesome! Read more about it.",
-      src: "/media/fire-cupping.png",
+      description: "Read more about fire cupping 👉",
+      src: `/media/fire-cupping-${mode}.svg`,
+      href: "/services/fire-cupping",
     },
   ];
   return (
@@ -40,7 +45,6 @@ export const ServicesSpotlight = () => {
       px={[4, 8]}
       pt={20}
       pb={24}
-      mb={8}
       borderRadius={radius}
       color={textColor}
     >
@@ -53,6 +57,7 @@ export const ServicesSpotlight = () => {
             title={service.title}
             description={service.description}
             image={service.src}
+            href={service.href}
           />
         ))}
       </Grid>

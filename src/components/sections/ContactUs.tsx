@@ -8,16 +8,20 @@ import {
   Text,
   UnorderedList,
   ListItem,
+  BoxProps,
 } from "@chakra-ui/react";
 import React from "react";
 import { ContactForm } from "../ContactForm";
 import Link from "next/link";
 
-export const ContactUs: React.FC = () => {
+interface ContactUsProps extends Omit<BoxProps, "radius"> {
+  radius: number;
+}
+
+export const ContactUs: React.FC<ContactUsProps> = ({ radius }) => {
   const bg = useColorModeValue("brand.royalMoss", "brand.mauve");
   const text = useColorModeValue("brand.sand", "brand.royalMoss");
   const textHover = useColorModeValue("brand.wave", "brand.darkWave");
-  const radius = useColorModeValue(0, 16);
 
   return (
     <Flex
