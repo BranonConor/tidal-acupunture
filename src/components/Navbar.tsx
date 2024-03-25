@@ -49,6 +49,19 @@ export const Navbar: React.FC = () => {
       <Flex height="100%" alignItems="center" justifyContent="flex-end">
         <Button
           display={["none", "none", "flex"]}
+          alignItems="center"
+          mr={4}
+          variant="primary"
+          as="a"
+          target="_blank"
+          rel="noopener noreferrer"
+          href="https://patient.unifiedpractice.com/tidal-acupuncture"
+        >
+          <Image mr={3} src="/icons/calendar.svg" />
+          Book Appointment
+        </Button>
+        <Button
+          display={["none", "none", "flex"]}
           mr={8}
           variant="secondary"
           as="a"
@@ -145,10 +158,22 @@ export const Navbar: React.FC = () => {
                 Services
               </ChakraLink>
             </ListItem>
-            <ListItem mb={8}>
+            <ListItem mb={2}>
               <ChakraLink display="flex" href="/#contact-us" as={Link}>
                 <Image mr={3} src="/icons/contact-dark.svg" />
                 Contact
+              </ChakraLink>
+            </ListItem>
+            <ListItem mb={8} display={["block", "block", "none"]}>
+              <ChakraLink
+                display="flex"
+                alignItems="flex-start"
+                href="https://patient.unifiedpractice.com/tidal-acupuncture"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <Image mr={3} src="/icons/calendar.svg" />
+                Book Appointment
               </ChakraLink>
             </ListItem>
             <ListItem display={["block", "block", "none"]}>
