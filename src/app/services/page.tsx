@@ -7,6 +7,7 @@ import { Hero } from "@/components/sections/Hero";
 import { ContactUs } from "@/components/sections/ContactUs";
 import { ServicesSpotlight } from "@/components/sections/services/ServicesSpotlight";
 import { ServicesGrid } from "@/components/sections/services/ServicesGrid";
+import { getServices } from "@/components/sections/services/getServices";
 
 export default function Page() {
   const bg = useColorModeValue("brand.sand", "brand.royalMoss");
@@ -38,11 +39,15 @@ export default function Page() {
           description="We offer a wide variety of services, all of which are tailored just for YOU."
         />
         <ServicesSpotlight />
-        <Box py={16}>
+        <Box py={16} px={[4, 4, 8]}>
           <Heading as="h2" size="2xl">
             All Services
           </Heading>
-          <ServicesGrid textColor={textColor} iconMode={iconMode} />
+          <ServicesGrid
+            textColor={textColor}
+            services={getServices(iconMode)}
+            showPrices={true}
+          />
         </Box>
         <ContactUs radius={radius} />
         <Footer />

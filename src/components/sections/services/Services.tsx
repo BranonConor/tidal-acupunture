@@ -10,6 +10,7 @@ import {
 import Link from "next/link";
 import React from "react";
 import { Card } from "../../Card";
+import { getServices } from "./getServices";
 import { ServicesGrid } from "./ServicesGrid";
 
 export interface ServicesProps {
@@ -22,6 +23,7 @@ export const Services: React.FC<ServicesProps> = ({ title }) => {
     "brand.royalMoss",
     "brand.royalMoss"
   );
+  const iconMode = useColorModeValue("dark", "light");
 
   return (
     <Flex
@@ -61,7 +63,10 @@ export const Services: React.FC<ServicesProps> = ({ title }) => {
             Learn More
           </Button>
         </Flex>
-        <ServicesGrid textColor={servicesTextColor} />
+        <ServicesGrid
+          textColor={servicesTextColor}
+          services={getServices(iconMode)}
+        />
       </Flex>
     </Flex>
   );

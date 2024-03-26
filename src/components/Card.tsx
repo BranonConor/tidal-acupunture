@@ -1,4 +1,5 @@
 import { Box, Heading, Text, Image, CardProps } from "@chakra-ui/react";
+import { ReactNode } from "react";
 
 interface ICardProps extends CardProps {
   title: string;
@@ -7,6 +8,7 @@ interface ICardProps extends CardProps {
   color?: string;
   linkText?: string;
   href?: string;
+  priceItem?: ReactNode;
 }
 
 export const Card: React.FC<ICardProps> = ({
@@ -16,6 +18,7 @@ export const Card: React.FC<ICardProps> = ({
   color = "brand.royalMoss",
   linkText,
   href,
+  priceItem,
 }) => {
   return (
     <Box py={8} borderRadius={2} color={color}>
@@ -36,6 +39,7 @@ export const Card: React.FC<ICardProps> = ({
           {linkText}
         </Text>
       )}
+      {priceItem}
     </Box>
   );
 };

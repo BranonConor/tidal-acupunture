@@ -8,6 +8,8 @@ import { ContactUs } from "@/components/sections/ContactUs";
 
 export default function Page() {
   const bg = useColorModeValue("brand.sand", "brand.royalMoss");
+  const color = useColorModeValue("brand.royalMoss", "brand.royalMoss");
+  const noteBg = useColorModeValue("transparent", "brand.mauve");
   const radius = useColorModeValue(16, 16);
 
   return (
@@ -34,9 +36,15 @@ export default function Page() {
           title="Who We Are"
           description="We're more than just a wellness destination. We're passionate and skilled healers."
         />
-        {/* <Box>
-          <Heading>A note to our patients,</Heading>
-          <Text>
+        <Box
+          padding={[4, 4, 8]}
+          color={color}
+          bg={noteBg}
+          borderRadius={radius}
+          mb={8}
+        >
+          <Heading mb={4}>A note to our patients,</Heading>
+          <Text mb={4}>
             We are passionate healers committed to making a difference in
             healthcare. We blend the time-honored wisdom of Eastern Medicine
             with modern research to provide our patients with hands-on,
@@ -45,7 +53,8 @@ export default function Page() {
             understand that healing is not linear, and we want to be your
             trusted partners through the ups and downs of your wellness journey.
           </Text>
-        </Box> */}
+          <Text>- The Tidal Team</Text>
+        </Box>
         <ContactUs radius={radius} />
         <Footer />
       </Box>

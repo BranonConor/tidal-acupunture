@@ -1,15 +1,22 @@
-import { Grid, useColorModeValue } from "@chakra-ui/react";
-import React from "react";
+import { Grid } from "@chakra-ui/react";
+import React, { ReactNode } from "react";
 import { Card } from "../../Card";
-
+export interface Service {
+  icon: string;
+  title: string;
+  description: string;
+  priceItem?: ReactNode;
+}
 interface ServicesGridProps {
+  services: Service[];
   textColor: string;
-  iconMode?: "light" | "dark";
+  showPrices?: boolean;
 }
 
 export const ServicesGrid: React.FC<ServicesGridProps> = ({
+  services,
   textColor,
-  iconMode = "dark",
+  showPrices = false,
 }) => {
   return (
     <Grid
@@ -19,36 +26,15 @@ export const ServicesGrid: React.FC<ServicesGridProps> = ({
       pt={8}
       color={textColor}
     >
-      <Card
-        color={textColor}
-        icon={`/icons/needles-${iconMode}.svg`}
-        title="Acupuncture"
-        description="A comprehensive needling approach that seamlessly blends Chinese medicine theory and biomedical knowledge"
-      />
-      <Card
-        color={textColor}
-        icon={`/icons/cosmetic-${iconMode}.svg`}
-        title="Cosmetic Acupuncture"
-        description="Skincare with a zen twist, cosmetic acupuncture is a natural approach to improve skin health and appearance"
-      />
-      <Card
-        color={textColor}
-        icon={`/icons/cupping-${iconMode}.svg`}
-        title="Cupping"
-        description="Traditional fire cupping to ease pain, release muscle tension, and reduce inflammation"
-      />
-      <Card
-        color={textColor}
-        icon={`/icons/fire-${iconMode}.svg`}
-        title="Herbal Medicine"
-        description="Tailored herbal tinctures and remedies for a myriad of conditions and complaints"
-      />
-      <Card
-        color={textColor}
-        icon={`/icons/pen-${iconMode}.svg`}
-        title="Microneedling"
-        description="A minimally invasive cosmetic procedure that improves skin texture, wrinkles, and scars"
-      />
+      {services.map((service) => (
+        <Card
+          color={textColor}
+          icon={service.icon}
+          title={service.title}
+          description={service.description}
+          priceItem={showPrices && service.priceItem}
+        />
+      ))}
     </Grid>
   );
 };

@@ -99,7 +99,7 @@ export const WhoWeAre = () => {
             icon="icons/users-dark.svg"
             title="Human-centered"
             description="We're people-persons - we value each and every patient at our practice and love meeting folks from all different walks of life."
-          />{" "}
+          />
           <Card
             icon="icons/users-dark.svg"
             title="Holistic"
