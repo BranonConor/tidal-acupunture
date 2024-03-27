@@ -23,7 +23,7 @@ export const Services: React.FC<ServicesProps> = ({ title }) => {
     "brand.royalMoss",
     "brand.royalMoss"
   );
-  const iconMode = useColorModeValue("dark", "light");
+  const iconMode = useColorModeValue("dark", "dark");
 
   return (
     <Flex

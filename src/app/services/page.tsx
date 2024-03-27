@@ -1,7 +1,13 @@
 "use client";
 
 import { Navbar } from "@/components/Navbar";
-import { Box, useColorModeValue, Text, Heading } from "@chakra-ui/react";
+import {
+  Box,
+  Divider,
+  useColorModeValue,
+  Text,
+  Heading,
+} from "@chakra-ui/react";
 import { Footer } from "@/components/Footer";
 import { Hero } from "@/components/sections/Hero";
 import { ContactUs } from "@/components/sections/ContactUs";
@@ -43,6 +49,7 @@ export default function Page() {
           <Heading as="h2" size="2xl">
             All Services
           </Heading>
+          <Divider borderColor={textColor} mb={2} />
           <ServicesGrid
             textColor={textColor}
             services={getServices(iconMode)}

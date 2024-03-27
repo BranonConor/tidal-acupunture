@@ -1,7 +1,14 @@
 "use client";
 
 import { Navbar } from "@/components/Navbar";
-import { Box, useColorModeValue, Heading, Text, Grid } from "@chakra-ui/react";
+import {
+  Box,
+  Divider,
+  useColorModeValue,
+  Heading,
+  Text,
+  Grid,
+} from "@chakra-ui/react";
 import { Footer } from "@/components/Footer";
 import { Hero } from "@/components/sections/Hero";
 import { ContactUs } from "@/components/sections/ContactUs";
@@ -95,9 +102,9 @@ export default function Page() {
           mb={32}
           color={textColor}
         >
-          <Heading mb={4} as="h2">
-            How Does Acupuncture Work?
-          </Heading>
+          <Heading as="h2">How Does Acupuncture Work?</Heading>
+          <Divider borderColor={textColor} mb={8} />
+
           <Text as="p" mb={8}>
             Acupuncture aims to restore balance in the body by stimulating
             points along meridians which coincide with areas rich in blood

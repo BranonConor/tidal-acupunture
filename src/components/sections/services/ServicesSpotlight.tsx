@@ -1,4 +1,10 @@
-import { Box, useColorModeValue, Grid, Heading } from "@chakra-ui/react";
+import {
+  Box,
+  Divider,
+  useColorModeValue,
+  Grid,
+  Heading,
+} from "@chakra-ui/react";
 import React from "react";
 import { SpotlightCard } from "../../SpotlightCard";
 
@@ -54,9 +60,10 @@ export const ServicesSpotlight: React.FC<ServicesSpotlightProps> = ({
       borderRadius={radius}
       color={textColor}
     >
-      <Heading as="h2" size="3xl">
+      <Heading as="h2" size="2xl">
         {title}
       </Heading>
+      <Divider borderColor={textColor} mb={8} />
       <Grid my={8} gridGap={8} gridTemplateColumns={["1fr", "1fr", "1fr 1fr"]}>
         {spotlightServices.map((service) =>
           hide === service.title ? null : (
