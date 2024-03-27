@@ -5,9 +5,25 @@ import Script from "next/script";
 import * as gtag from "../gtag.js";
 
 export const metadata: Metadata = {
-  title: "TIDAL Acupunture",
-  description:
-    "A boutique, human-centered acupuncture clinic founded in San Diego, CA",
+  openGraph: {
+    title: "TIDAL Acupunture",
+    description: "A human-centered acupuncture clinic founded in San Diego, CA",
+    url: "https//:www.tidalacupuncture.com",
+    locale: "en_US",
+    type: "website",
+  },
+  icons: {
+    icon: [
+      {
+        url: "/icons/favicon-light.svg",
+        media: "(prefers-color-scheme: light)",
+      },
+      {
+        url: "/icons/favicon-dark.svg",
+        media: "(prefers-color-scheme: dark)",
+      },
+    ],
+  },
 };
 
 export default function RootLayout({
