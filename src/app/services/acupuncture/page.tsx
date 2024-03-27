@@ -6,67 +6,60 @@ import { Footer } from "@/components/Footer";
 import { Hero } from "@/components/sections/Hero";
 import { ContactUs } from "@/components/sections/ContactUs";
 import { ServicesSpotlight } from "@/components/sections/services/ServicesSpotlight";
-import { ServicesGrid } from "@/components/sections/services/ServicesGrid";
-import { getServices } from "@/components/sections/services/getServices";
 
 export default function Page() {
   const bg = useColorModeValue("brand.sand", "brand.royalMoss");
   const cardBg = useColorModeValue("brand.wave", "brand.mauve");
-  const iconMode = useColorModeValue("dark", "light");
   const textColor = useColorModeValue("brand.royalMoss", "brand.royalMoss");
-  const effectCardTextColor = useColorModeValue(
-    "brand.royalMoss",
-    "brand.sand"
-  );
   const effectCardBg = useColorModeValue("brand.darkWave", "brand.royalMoss");
   const radius = useColorModeValue(16, 16);
 
   const effects = [
     {
       title: "Pain Relief",
-      description: "Alters pain perception and reduces pain intensity",
+      description: "🫶🏿 Alters pain perception and reduces pain intensity",
     },
     {
       title: "Inflammation Reduction",
-      description: "Modulates inflammatory responses",
+      description: "🔥 Modulates inflammatory responses",
     },
     {
       title: "Neurotransmitter Regulation",
       description:
-        "Influences the release of neurotransmitters for improved nerve signaling",
+        "🧠 Influences the release of neurotransmitters for improved nerve signaling",
     },
     {
       title: "Endorphin Release",
       description:
-        "Stimulates the production of endorphins, the body's natural painkillers",
+        "💊 Stimulates the production of endorphins, the body's natural painkillers",
     },
     {
       title: "Immune System Modulation",
-      description: "Enhances immune function and regulates immune responses",
+      description: "🛡️ Enhances immune function and regulates immune responses",
     },
     {
       title: "Blood Flow Enhacement",
-      description: "Improves blood circulation in treated areas",
+      description: "🩸 Improves blood circulation in treated areas",
     },
     {
       title: "Stress and Anxiety Reduction",
-      description: "Induces relaxation and lowers stress and anxiety levels",
+      description: "🧘🏻‍♀️ Induces relaxation and lowers stress and anxiety levels",
     },
     {
       title: "Hormonal balance",
-      description: "Regulates hormonal levels for improved overall balance",
+      description: "⚖️ Regulates hormonal levels for improved overall balance",
     },
     {
       title: "Muscle Tension Reduction",
-      description: "Relaxes muscles and reduces tension",
+      description: "💪🏽 Relaxes muscles and reduces tension",
     },
     {
       title: "Improved Sleep Quality",
-      description: "Positively influences sleep patterns and quality",
+      description: "😴 Positively influences sleep patterns and quality",
     },
     {
       title: "Cognitive Function Improvement",
-      description: "Enhances cognitive functions and mental clarity",
+      description: "⚙️ Enhances cognitive functions and mental clarity",
     },
   ];
 
