@@ -1,15 +1,17 @@
 "use client";
 
 import { Navbar } from "@/components/Navbar";
-import { Box, useColorModeValue, Text, Heading } from "@chakra-ui/react";
+import { Box, useColorModeValue, Grid, Text, Heading } from "@chakra-ui/react";
 import { Footer } from "@/components/Footer";
 import { Hero } from "@/components/sections/Hero";
 import { ContactUs } from "@/components/sections/ContactUs";
+import { TeamCard } from "@/components/TeamCard";
 
 export default function Page() {
   const bg = useColorModeValue("brand.sand", "brand.royalMoss");
   const color = useColorModeValue("brand.royalMoss", "brand.royalMoss");
   const noteBg = useColorModeValue("transparent", "brand.mauve");
+  const teamBg = useColorModeValue("brand.wave", "brand.royalMoss");
   const radius = useColorModeValue(16, 16);
 
   return (
@@ -33,9 +35,39 @@ export default function Page() {
         bg={bg}
       >
         <Hero
-          title="Who We Are"
+          title="About Us"
           description="We're more than just a wellness destination. We're passionate and skilled healers."
         />
+        <Box
+          padding={[4, 4, 8]}
+          color={color}
+          bg={teamBg}
+          borderRadius={radius}
+          mb={8}
+        >
+          <Heading mb={2} as="h2" size="xl">
+            Meet Our Team
+          </Heading>
+          <Grid
+            width="100%"
+            gridGap={8}
+            gridTemplateColumns={["1fr", "1fr", "1fr 1fr"]}
+            py={[8, 12]}
+          >
+            <TeamCard
+              name="Dr. Rachel Eusebio"
+              role="Doctor of Acupuncture (DACM)"
+              image="/media/rachel.png"
+              link="/team/rachel-eusebio"
+            />
+            <TeamCard
+              name="Dr. Hannah Anderson"
+              role="Doctor of Acupuncture (DACM)"
+              image="/media/hannah.png"
+              link="/team/hannah-anderson"
+            />
+          </Grid>
+        </Box>
         <Box
           padding={[4, 4, 8]}
           color={color}

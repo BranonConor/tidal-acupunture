@@ -59,8 +59,8 @@ export const Services: React.FC<ServicesProps> = ({ title }) => {
           <Button as={Link} variant="primary" href="/services" mr={2}>
             All Services
           </Button>
-          <Button as={Link} variant="secondary" href="/services">
-            Learn More
+          <Button as={Link} variant="secondary" href="/services/acupuncture">
+            Learn About Acupuncture
           </Button>
         </Flex>
         <ServicesGrid
