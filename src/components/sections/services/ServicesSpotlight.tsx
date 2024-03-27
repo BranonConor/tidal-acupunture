@@ -1,14 +1,20 @@
-import {
-  Image,
-  Box,
-  Text,
-  useColorModeValue,
-  Grid,
-  Heading,
-} from "@chakra-ui/react";
+import { Box, useColorModeValue, Grid, Heading } from "@chakra-ui/react";
+import React from "react";
 import { SpotlightCard } from "../../SpotlightCard";
 
-export const ServicesSpotlight = () => {
+interface ServicesSpotlightProps {
+  title?: string;
+  hide?:
+    | "Acupuncture"
+    | "Microneedling"
+    | "Cosmetic Acupuncture"
+    | "Fire Cupping";
+}
+
+export const ServicesSpotlight: React.FC<ServicesSpotlightProps> = ({
+  title = "Services Spotlight ✨",
+  hide,
+}) => {
   const bg = useColorModeValue("brand.wave", "brand.mauve");
   const textColor = useColorModeValue("brand.royalMoss", "brand.royalMoss");
   const radius = useColorModeValue(16, 16);
@@ -49,17 +55,19 @@ export const ServicesSpotlight = () => {
       color={textColor}
     >
       <Heading as="h2" size="3xl">
-        Services Spotlight ✨
+        {title}
       </Heading>
       <Grid my={8} gridGap={8} gridTemplateColumns={["1fr", "1fr", "1fr 1fr"]}>
-        {spotlightServices.map((service) => (
-          <SpotlightCard
-            title={service.title}
-            description={service.description}
-            image={service.src}
-            href={service.href}
-          />
-        ))}
+        {spotlightServices.map((service) =>
+          hide === service.title ? null : (
+            <SpotlightCard
+              title={service.title}
+              description={service.description}
+              image={service.src}
+              href={service.href}
+            />
+          )
+        )}
       </Grid>
     </Box>
   );
