@@ -1,7 +1,7 @@
 "use client";
 
 import { Navbar } from "@/components/Navbar";
-import { Box, useColorModeValue, Heading } from "@chakra-ui/react";
+import { Box, useColorModeValue, Text, Heading } from "@chakra-ui/react";
 import { Footer } from "@/components/Footer";
 import { Hero } from "@/components/sections/Hero";
 import { ContactUs } from "@/components/sections/ContactUs";
@@ -48,6 +48,19 @@ export default function Page() {
             services={getServices(iconMode)}
             showPrices={true}
           />
+        </Box>
+        <Box padding={[4, 4, 8]} mb={16}>
+          <Heading as="h3" size="md" mb={4}>
+            ***Cancellation notice
+          </Heading>
+          <Text as="p">
+            We kindly ask that you provide at least a 24-hour notice if you need
+            to cancel or reschedule your appointment with us. In the event of a
+            late cancellation or missed appointment, the full charge of the
+            scheduled service will be applied. Thank you for your understanding
+            and cooperation. Should you have any questions or need to make
+            changes to your appointment, please don't hesitate to contact us.
+          </Text>
         </Box>
         <ContactUs radius={radius} />
         <Footer />
