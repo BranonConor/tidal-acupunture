@@ -47,7 +47,7 @@ export default function Page() {
         <ServicesSpotlight />
         <Box py={16} px={[4, 4, 8]}>
           <Heading as="h2" size="2xl">
-            All Services
+            All Services & Pricing
           </Heading>
           <Divider borderColor={textColor} mb={2} />
           <ServicesGrid
