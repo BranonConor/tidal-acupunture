@@ -44,7 +44,7 @@ export default function Page() {
           padding={[4, 8]}
         >
           <Image
-            src="/media/hannah-headshot.png"
+            src="/media/hannah-pose.png"
             borderRadius="100%"
             boxShadow="lg"
             position="relative"
