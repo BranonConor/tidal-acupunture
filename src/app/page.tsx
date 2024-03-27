@@ -43,8 +43,8 @@ export default function Home() {
               <Button as={Link} href="/services" variant="primary" mr={2}>
                 What we do
               </Button>
-              <Button as={Link} href="/resources" variant="secondary">
-                Resources
+              <Button as={Link} href="/team" variant="secondary">
+                Who We Are
               </Button>
             </Flex>
           }

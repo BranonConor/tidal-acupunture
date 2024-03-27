@@ -5,7 +5,6 @@ import {
   Text,
   Image,
   useColorModeValue,
-  AspectRatio,
 } from "@chakra-ui/react";
 import React, { ReactNode } from "react";
 

@@ -55,7 +55,7 @@ export const ContactUs: React.FC<ContactUsProps> = ({ radius }) => {
               is already here:
             </Text>
             <UnorderedList py={4}>
-              <ListItem>
+              {/* <ListItem>
                 <Text
                   textDecoration="underline"
                   _hover={{ color: textHover }}
@@ -64,13 +64,13 @@ export const ContactUs: React.FC<ContactUsProps> = ({ radius }) => {
                 >
                   FAQs
                 </Text>
-              </ListItem>
+              </ListItem> */}
               <ListItem>
                 <Text
                   textDecoration="underline"
                   _hover={{ color: textHover }}
                   as={Link}
-                  href="/services"
+                  href="/services/acupuncture"
                 >
                   How Acupuncture Works
                 </Text>
@@ -89,8 +89,10 @@ export const ContactUs: React.FC<ContactUsProps> = ({ radius }) => {
                 <Text
                   textDecoration="underline"
                   _hover={{ color: textHover }}
-                  as={Link}
-                  href="/services"
+                  as="a"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  href="https://patient.unifiedpractice.com/tidal-acupuncture"
                 >
                   Online Scheduling
                 </Text>

@@ -51,9 +51,7 @@ export const Footer = () => {
           <ListItem>
             <Text
               as={Link}
-              href=""
-              target="_blank"
-              rel="noopenner noreferrer"
+              href="/services/acupuncture"
               textDecoration="underline"
             >
               How Acupuncture Works
@@ -61,8 +59,8 @@ export const Footer = () => {
           </ListItem>
           <ListItem>
             <Text
-              as={Link}
-              href=""
+              as="a"
+              href="https://patient.unifiedpractice.com/tidal-acupuncture"
               target="_blank"
               rel="noopenner noreferrer"
               textDecoration="underline"
@@ -72,8 +70,8 @@ export const Footer = () => {
           </ListItem>
           <ListItem>
             <Text
-              as={Link}
-              href=""
+              as="a"
+              href="https://patient.unifiedpractice.com/tidal-acupuncture"
               target="_blank"
               rel="noopenner noreferrer"
               textDecoration="underline"
@@ -150,31 +148,19 @@ export const Footer = () => {
         </Heading>
         <UnorderedList>
           <ListItem>
-            <Text
-              as={Link}
-              href=""
-              target="_blank"
-              rel="noopenner noreferrer"
-              textDecoration="underline"
-            >
+            <Text as={Link} href="/team" textDecoration="underline">
               Who We Are
             </Text>
           </ListItem>
           <ListItem>
-            <Text
-              as={Link}
-              href=""
-              target="_blank"
-              rel="noopenner noreferrer"
-              textDecoration="underline"
-            >
+            <Text as={Link} href="" textDecoration="underline">
               Terms & Conditions
             </Text>
           </ListItem>
           <ListItem>
             <Text
               as={Link}
-              href=""
+              href="https://www.linkedin.com/company/tidal-acupuncture-inc/"
               target="_blank"
               rel="noopenner noreferrer"
               textDecoration="underline"
