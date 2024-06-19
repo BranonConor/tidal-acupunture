@@ -13,6 +13,7 @@ import { ContactUs } from "@/components/sections/ContactUs";
 
 export default function Home() {
   const bg = useColorModeValue("brand.sand", "brand.royalMoss");
+  const heroBg = useColorModeValue("brand.wave", "brand.lightSand");
   const radius = useColorModeValue(0, 16);
 
   return (
@@ -24,38 +25,33 @@ export default function Home() {
       width="100%"
       padding="0"
       display="flex"
+      flexDirection="column"
       justifyContent="center"
+      alignItems="center"
       boxSizing="border-box"
     >
       <Navbar />
-      <Box
-        maxWidth="1440px"
-        position="relative"
-        overflowX="hidden"
-        width="100%"
-      >
-        <Hero
-          title="Acupuncture for all life's highs and lows."
-          description="TIDAL is a Southern Californian acupuncture clinic
+      <Hero
+        title="Acupuncture for all life's highs and lows."
+        description="TIDAL is a Southern Californian acupuncture clinic
           delivering the best care Eastern Medicine has to offer."
-          ctaSection={
-            <Flex my={4}>
-              <Button as={Link} href="/services" variant="primary" mr={2}>
-                What we do
-              </Button>
-              <Button as={Link} href="/team" variant="secondary">
-                Who We Are
-              </Button>
-            </Flex>
-          }
-        />
-        <WhoWeAre />
-        <OurTeam />
-        <Services title="Our Services" />
-        <Info />
-        <ContactUs radius={radius} />
-        <Footer />
-      </Box>
+        ctaSection={
+          <Flex my={4}>
+            <Button as={Link} href="/services" variant="primary" mr={2}>
+              What we do
+            </Button>
+            <Button as={Link} href="/team" variant="secondary">
+              Who We Are
+            </Button>
+          </Flex>
+        }
+      />
+      <WhoWeAre />
+      <OurTeam />
+      <Services title="Our Services" />
+      <Info />
+      <ContactUs radius={radius} />
+      <Footer />
     </Box>
   );
 }
