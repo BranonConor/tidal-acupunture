@@ -38,6 +38,7 @@ export const WhoWeAre = () => {
       borderBottomEndRadius={20}
       borderBottomStartRadius={20}
       width="100%"
+      zIndex={1}
     >
       <Box zIndex="0" maxWidth="1440px" bg={bg}>
         <Grid
