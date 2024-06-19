@@ -6,14 +6,17 @@ import {
   Text,
   Box,
   Button,
+  useColorModePreference,
+  useColorModeValue,
 } from "@chakra-ui/react";
 import { TeamCard } from "../TeamCard";
 import Link from "next/link";
 
 export const OurTeam = () => {
+  const shadow = useColorModeValue("xl", "none");
   return (
     <Flex
-      px={[4, 8]}
+      px={[4, 8, 8, 8, 8]}
       pt={[16, 24]}
       pb={8}
       color="brand.sand"
@@ -26,7 +29,8 @@ export const OurTeam = () => {
       borderBottomRightRadius={20}
       mb={8}
       maxWidth="1440px"
-      boxShadow="xl"
+      width="100%"
+      boxShadow={shadow}
     >
       <Heading as="h2" size="2xl">
         The TIDAL Team

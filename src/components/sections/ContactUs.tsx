@@ -30,6 +30,7 @@ export const ContactUs: React.FC<ContactUsProps> = ({ radius }) => {
       py={[16, 24]}
       boxSizing="border-box"
       width="100%"
+      maxWidth="1440px"
       bg={bg}
       color={text}
       position="relative"

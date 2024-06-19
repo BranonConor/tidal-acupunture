@@ -34,6 +34,8 @@ export const Info = () => {
       boxSizing="border-box"
       borderTopRightRadius={16}
       borderTopLeftRadius={16}
+      maxWidth="1440px"
+      width="100%"
     >
       <Heading as="h2" size="2xl">
         Business Info
