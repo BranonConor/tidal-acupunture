@@ -43,7 +43,7 @@ export const Services: React.FC<ServicesProps> = ({ title }) => {
         zIndex={1}
         flexDirection="column"
         alignItems={["flex-start"]}
-        width="100%"
+        maxWidth="1440px"
       >
         <Heading as="h2" size="3xl" width="100%">
           {title}

@@ -25,7 +25,6 @@ export const Hero: React.FC<HeroProps> = ({
 
   return (
     <Flex
-      mt={6}
       flexDirection="column"
       justifyContent="space-between"
       alignItems="center"
@@ -36,11 +35,11 @@ export const Hero: React.FC<HeroProps> = ({
       bg={bg}
     >
       <Box
-        minHeight="600px"
+        minHeight="632px"
         maxWidth="1440px"
         display="grid"
         gridTemplateColumns={["1fr", "1fr 1fr"]}
-        pt={[28, 32, 36]}
+        pt={[28, 32, 36, 40]}
         pb={[4, 8]}
         px={[4, 8]}
         mb={20}
@@ -48,7 +47,8 @@ export const Hero: React.FC<HeroProps> = ({
         zIndex={1}
         boxSizing="border-box"
         bg={innerBg}
-        borderRadius={20}
+        borderBottomStartRadius={20}
+        borderBottomEndRadius={20}
         boxShadow="2xl"
       >
         <Box width="100%">

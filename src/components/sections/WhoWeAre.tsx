@@ -12,7 +12,6 @@ import { Card } from "../Card";
 
 export const WhoWeAre = () => {
   const bg = useColorModeValue("brand.wave", "brand.mauve");
-  const radius = useColorModeValue(0, 16);
   const palmsImg = useColorModeValue(
     "/media/palms.png",
     "/media/palms-sunset.png"
@@ -21,13 +20,10 @@ export const WhoWeAre = () => {
     <Flex
       justifyContent="center"
       px={[4, 8]}
-      py={[16, 24]}
-      borderTopRightRadius={16}
-      borderTopLeftRadius={16}
-      borderBottomRightRadius={radius}
-      borderBottomLeftRadius={radius}
-      boxSizing="border-box"
+      pt={[12, 16]}
+      pb={[16, 20]}
       bg={bg}
+      boxSizing="border-box"
       position="relative"
       _before={{
         content: "''",
@@ -39,8 +35,11 @@ export const WhoWeAre = () => {
         zIndex: "0",
       }}
       overflow="hidden"
+      borderBottomEndRadius={20}
+      borderBottomStartRadius={20}
+      width="100%"
     >
-      <Box zIndex="0">
+      <Box zIndex="0" maxWidth="1440px" bg={bg}>
         <Grid
           gridTemplateColumns={["1fr", "1fr", "1fr", "1fr 1fr"]}
           gridGap={[4, 8, 12]}

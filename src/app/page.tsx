@@ -13,7 +13,6 @@ import { ContactUs } from "@/components/sections/ContactUs";
 
 export default function Home() {
   const bg = useColorModeValue("brand.sand", "brand.royalMoss");
-  const heroBg = useColorModeValue("brand.wave", "brand.lightSand");
   const radius = useColorModeValue(0, 16);
 
   return (
@@ -29,6 +28,7 @@ export default function Home() {
       justifyContent="center"
       alignItems="center"
       boxSizing="border-box"
+      mt={0}
     >
       <Navbar />
       <Hero
