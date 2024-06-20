@@ -18,26 +18,19 @@ export const WhoWeAre = () => {
   );
   return (
     <Flex
+      flexDirection="column"
+      alignItems="center"
+      position="relative"
+      overflow="hidden"
+      width="100%"
+      bg={bg}
+      px={[4, 8, 8]}
+      boxSizing="border-box"
       justifyContent="center"
-      px={[4, 8]}
       pt={[12, 16]}
       pb={[16, 20]}
-      bg={bg}
-      boxSizing="border-box"
-      position="relative"
-      _before={{
-        content: "''",
-        position: "absolute",
-        top: "-8px",
-        background: bg,
-        height: "100%",
-        width: "100%",
-        zIndex: "0",
-      }}
-      overflow="hidden"
       borderBottomEndRadius={20}
       borderBottomStartRadius={20}
-      width="100%"
       zIndex={1}
     >
       <Box zIndex="0" maxWidth="1440px" bg={bg}>

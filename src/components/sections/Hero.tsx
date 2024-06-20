@@ -29,10 +29,11 @@ export const Hero: React.FC<HeroProps> = ({
       justifyContent="space-between"
       alignItems="center"
       position="relative"
-      boxSizing="border-box"
       overflow="hidden"
       width="100%"
       bg={bg}
+      px={[4, 8, 8]}
+      boxSizing="border-box"
     >
       <Box
         minHeight="632px"
@@ -51,7 +52,7 @@ export const Hero: React.FC<HeroProps> = ({
         borderBottomEndRadius={20}
         boxShadow="2xl"
       >
-        <Box width="100%">
+        <Box width="100%" position="relative" zIndex={1}>
           <Heading as="h1" size="4xl" pb={4} maxWidth="100%">
             {title}
           </Heading>

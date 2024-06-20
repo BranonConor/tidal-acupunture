@@ -8,6 +8,7 @@ import { Hero } from "@/components/sections/Hero";
 import { Services } from "@/components/sections/services/Services";
 import { Box, useColorModeValue, Flex, Button } from "@chakra-ui/react";
 import { Info } from "@/components/sections/Info";
+import { PageLayout } from "@/components/PageLayout";
 import Link from "next/link";
 import { ContactUs } from "@/components/sections/ContactUs";
 
@@ -16,25 +17,12 @@ export default function Home() {
   const radius = useColorModeValue(0, 16);
 
   return (
-    <Box
-      as="main"
-      bg={bg}
-      minHeight="100vh"
-      maxWidth="100%"
-      width="100%"
-      padding="0"
-      display="flex"
-      flexDirection="column"
-      justifyContent="center"
-      alignItems="center"
-      boxSizing="border-box"
-      mt={0}
-    >
+    <PageLayout>
       <Navbar />
       <Hero
         title="Acupuncture for all life's highs and lows."
         description="TIDAL is a Southern Californian acupuncture clinic
-          delivering the best care Eastern Medicine has to offer."
+        delivering the best care Eastern Medicine has to offer."
         ctaSection={
           <Flex my={4}>
             <Button as={Link} href="/services" variant="primary" mr={2}>
@@ -52,6 +40,6 @@ export default function Home() {
       <Info />
       <ContactUs radius={radius} />
       <Footer />
-    </Box>
+    </PageLayout>
   );
 }
