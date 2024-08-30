@@ -19,7 +19,6 @@ export default function Page() {
   const bg = useColorModeValue("brand.sand", "brand.royalMoss");
   const textColor = useColorModeValue("brand.royalMoss", "brand.white");
   const iconMode = useColorModeValue("dark", "light");
-  const radius = useColorModeValue(16, 16);
 
   return (
     <Box
@@ -69,7 +68,7 @@ export default function Page() {
             changes to your appointment, please don't hesitate to contact us.
           </Text>
         </Box>
-        <ContactUs radius={radius} />
+        <ContactUs />
         <Footer />
       </Box>
     </Box>

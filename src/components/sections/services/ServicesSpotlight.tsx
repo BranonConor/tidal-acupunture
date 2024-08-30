@@ -23,7 +23,6 @@ export const ServicesSpotlight: React.FC<ServicesSpotlightProps> = ({
 }) => {
   const bg = useColorModeValue("brand.wave", "brand.mauve");
   const textColor = useColorModeValue("brand.royalMoss", "brand.royalMoss");
-  const radius = useColorModeValue(16, 16);
   const mode = useColorModeValue("light", "dark");
   const spotlightServices = [
     {
@@ -52,14 +51,7 @@ export const ServicesSpotlight: React.FC<ServicesSpotlightProps> = ({
     },
   ];
   return (
-    <Box
-      bg={bg}
-      px={[4, 8]}
-      pt={20}
-      pb={24}
-      borderRadius={radius}
-      color={textColor}
-    >
+    <Box bg={bg} px={[4, 8]} pt={20} pb={24} color={textColor}>
       <Heading as="h2" size="2xl">
         {title}
       </Heading>
