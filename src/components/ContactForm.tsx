@@ -31,6 +31,7 @@ export const ContactForm = () => {
       position="relative"
       color={text}
       overflow="hidden"
+      maxWidth={["100%", "100%", "95%", "90%"]}
     >
       <FormControl mb={4} position="relative" zIndex={1}>
         <FormLabel>Full Name*</FormLabel>

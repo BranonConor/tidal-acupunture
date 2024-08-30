@@ -32,6 +32,8 @@ export const Info = () => {
       justifyContent="center"
       overflow="hidden"
       bg={bg}
+      px={[4, 8]}
+      py={[16, 24]}
     >
       <Flex
         zIndex={1}
@@ -39,8 +41,6 @@ export const Info = () => {
         alignItems={["flex-start"]}
         maxWidth="1440px"
         width="100%"
-        px={[4, 8]}
-        py={[16, 24]}
         color={textColor}
       >
         <Heading as="h2" size="2xl">

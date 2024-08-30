@@ -6,7 +6,7 @@ import { OurTeam } from "@/components/sections/OurTeam";
 import { Footer } from "@/components/Footer";
 import { Hero } from "@/components/sections/Hero";
 import { Services } from "@/components/sections/services/Services";
-import { useColorModeValue, Flex, Button } from "@chakra-ui/react";
+import { Flex, Button } from "@chakra-ui/react";
 import { Info } from "@/components/sections/Info";
 import { PageLayout } from "@/components/PageLayout";
 import Link from "next/link";

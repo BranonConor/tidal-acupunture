@@ -20,7 +20,8 @@ export const ContactUs: React.FC = () => {
   const text = useColorModeValue("brand.sand", "brand.royalMoss");
   const textHover = useColorModeValue("brand.wave", "brand.darkWave");
   const radius = useColorModeValue(0, 16);
-  const padding = useColorModeValue(0, [4, 8]);
+  const padding = useColorModeValue([0, 8], [4, 8]);
+  const innerPadding = useColorModeValue([4, 0], [4, 8]);
 
   return (
     <Flex
@@ -36,13 +37,13 @@ export const ContactUs: React.FC = () => {
       px={padding}
     >
       <Flex
+        py={[16, 24]}
+        px={innerPadding}
         zIndex={1}
         flexDirection="column"
         alignItems={["flex-start"]}
         maxWidth="1440px"
         width="100%"
-        px={[4, 8]}
-        py={[16, 24]}
         bg={innerBg}
         borderTopRightRadius={radius}
         borderTopLeftRadius={radius}
@@ -51,7 +52,11 @@ export const ContactUs: React.FC = () => {
           Contact Us
         </Heading>
         <Divider borderColor={text} mb={16} />
-        <Grid gridTemplateColumns={["1fr", "1fr", "1fr 1fr"]} gridGap={8}>
+        <Grid
+          gridTemplateColumns={["1fr", "1fr", "1fr 1fr"]}
+          gridGap={8}
+          width="100%"
+        >
           <Box>
             <ContactForm />
           </Box>

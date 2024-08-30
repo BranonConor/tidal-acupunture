@@ -35,6 +35,7 @@ export const Services: React.FC<ServicesProps> = ({ title }) => {
       justifyContent="center"
       overflow="hidden"
       bg={bg}
+      px={[4, 8]}
     >
       <Flex
         zIndex={1}
@@ -42,7 +43,6 @@ export const Services: React.FC<ServicesProps> = ({ title }) => {
         alignItems={["flex-start"]}
         maxWidth="1440px"
         width="100%"
-        px={[4, 8]}
         py={[16, 24]}
       >
         <Heading as="h2" size="3xl" width="100%">
