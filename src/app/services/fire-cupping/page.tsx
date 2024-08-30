@@ -12,25 +12,15 @@ import { Footer } from "@/components/Footer";
 import { Hero } from "@/components/sections/Hero";
 import { ContactUs } from "@/components/sections/ContactUs";
 import { ServicesSpotlight } from "@/components/sections/services/ServicesSpotlight";
+import { PageLayout } from "@/components/PageLayout";
 
 export default function Page() {
   const bg = useColorModeValue("brand.sand", "brand.royalMoss");
   const cardBg = useColorModeValue("brand.wave", "brand.mauve");
   const textColor = useColorModeValue("brand.royalMoss", "brand.royalMoss");
-  const radius = useColorModeValue(16, 16);
 
   return (
-    <Box
-      as="main"
-      bg={bg}
-      minHeight="100vh"
-      maxWidth="100%"
-      width="100%"
-      padding="0"
-      display="flex"
-      justifyContent="center"
-      boxSizing="border-box"
-    >
+    <PageLayout>
       <Navbar />
       <Box
         maxWidth="1440px"
@@ -42,15 +32,7 @@ export default function Page() {
           title="Fire Cupping"
           description="How it works, what to expect, and more!"
         />
-        <Box
-          px={[4, 4, 8]}
-          pt={16}
-          pb={[4, 4, 8]}
-          bg={cardBg}
-          borderRadius={radius}
-          mb={32}
-          color={textColor}
-        >
+        <Box px={[4, 8]} pt={16} pb={[4, 8]} bg={cardBg} color={textColor}>
           <Heading as="h2">How Does Fire Cupping Work?</Heading>
           <Divider borderColor={textColor} mb={8} />
           <Text as="p" mb={8}>
@@ -63,10 +45,9 @@ export default function Page() {
           </Text>
         </Box>
         <ServicesSpotlight title="Keep Learning 👇🏽" hide="Fire Cupping" />
-        <Box py={16} px={[4, 4, 8]}></Box>
-        <ContactUs radius={radius} />
+        <ContactUs />
         <Footer />
       </Box>
-    </Box>
+    </PageLayout>
   );
 }
