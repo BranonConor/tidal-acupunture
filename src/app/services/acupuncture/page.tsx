@@ -8,8 +8,10 @@ import {
   Heading,
   Text,
   Grid,
+  Flex,
 } from "@chakra-ui/react";
 import { Footer } from "@/components/Footer";
+import { PageLayout } from "@/components/PageLayout";
 import { Hero } from "@/components/sections/Hero";
 import { ContactUs } from "@/components/sections/ContactUs";
 import { ServicesSpotlight } from "@/components/sections/services/ServicesSpotlight";
@@ -19,92 +21,76 @@ export default function Page() {
   const cardBg = useColorModeValue("brand.wave", "brand.mauve");
   const textColor = useColorModeValue("brand.royalMoss", "brand.royalMoss");
   const effectCardBg = useColorModeValue("brand.darkWave", "brand.royalMoss");
-  const radius = useColorModeValue(16, 16);
 
   const effects = [
     {
-      title: "Pain Relief",
-      description: "🫶🏿 Alters pain perception and reduces pain intensity",
+      title: "🫶🏿 Pain Relief",
+      description: "Alters pain perception and reduces pain intensity",
     },
     {
-      title: "Inflammation Reduction",
-      description: "🔥 Modulates inflammatory responses",
+      title: "🔥 Inflammation Reduction",
+      description: "Modulates inflammatory responses",
     },
     {
-      title: "Neurotransmitter Regulation",
+      title: "🧠 Neurotransmitter Regulation",
       description:
-        "🧠 Influences the release of neurotransmitters for improved nerve signaling",
+        "Influences the release of neurotransmitters for improved nerve signaling",
     },
     {
-      title: "Endorphin Release",
+      title: "💊 Endorphin Release",
       description:
-        "💊 Stimulates the production of endorphins, the body's natural painkillers",
+        "Stimulates the production of endorphins, the body's natural painkillers",
     },
     {
-      title: "Immune System Modulation",
-      description: "🛡️ Enhances immune function and regulates immune responses",
+      title: "🛡️ Immune System Modulation",
+      description: "Enhances immune function and regulates immune responses",
     },
     {
-      title: "Blood Flow Enhacement",
-      description: "🩸 Improves blood circulation in treated areas",
+      title: "🩸 Blood Flow Enhacement",
+      description: "Improves blood circulation in treated areas",
     },
     {
-      title: "Stress and Anxiety Reduction",
-      description: "🧘🏻‍♀️ Induces relaxation and lowers stress and anxiety levels",
+      title: "🧘🏻‍♀️ Stress and Anxiety Reduction",
+      description: "Induces relaxation and lowers stress and anxiety levels",
     },
     {
-      title: "Hormonal balance",
-      description: "⚖️ Regulates hormonal levels for improved overall balance",
+      title: "⚖️ Hormonal balance",
+      description: "Regulates hormonal levels for improved overall balance",
     },
     {
-      title: "Muscle Tension Reduction",
-      description: "💪🏽 Relaxes muscles and reduces tension",
+      title: "💪🏽 Muscle Tension Reduction",
+      description: "Relaxes muscles and reduces tension",
     },
     {
-      title: "Improved Sleep Quality",
-      description: "😴 Positively influences sleep patterns and quality",
+      title: "😴 Improved Sleep Quality",
+      description: "Positively influences sleep patterns and quality",
     },
     {
-      title: "Cognitive Function Improvement",
-      description: "⚙️ Enhances cognitive functions and mental clarity",
+      title: "⚙️ Cognitive Function Improvement",
+      description: "Enhances cognitive functions and mental clarity",
     },
   ];
 
   return (
-    <Box
-      as="main"
-      bg={bg}
-      minHeight="100vh"
-      maxWidth="100%"
-      width="100%"
-      padding="0"
-      display="flex"
-      justifyContent="center"
-      boxSizing="border-box"
-    >
+    <PageLayout>
       <Navbar />
-      <Box
-        maxWidth="1440px"
-        position="relative"
-        overflowX="hidden"
+      <Hero
+        title="Acupuncture"
+        description="How it works, what to expect, and more!"
+      />
+      <Flex
+        zIndex={1}
+        flexDirection="column"
+        alignItems="center"
+        px={[4, 8]}
+        py={[16, 24]}
+        bg={cardBg}
+        color={textColor}
         width="100%"
       >
-        <Hero
-          title="Acupuncture"
-          description="How it works, what to expect, and more!"
-        />
-        <Box
-          px={[4, 4, 8]}
-          pt={16}
-          pb={[4, 4, 8]}
-          bg={cardBg}
-          borderRadius={radius}
-          mb={32}
-          color={textColor}
-        >
+        <Box maxWidth="1440px" width="100%">
           <Heading as="h2">How Does Acupuncture Work?</Heading>
           <Divider borderColor={textColor} mb={8} />
-
           <Text as="p" mb={8}>
             Acupuncture aims to restore balance in the body by stimulating
             points along meridians which coincide with areas rich in blood
@@ -148,26 +134,29 @@ export default function Page() {
           >
             {effects.map((effect) => (
               <Box
-                border="2px solid"
-                borderColor={effectCardBg}
-                color={textColor}
+                bg={effectCardBg}
+                color="brand.sand"
                 padding={4}
-                borderRadius={8}
+                borderRadius={16}
                 minHeight="200px"
+                _hover={{
+                  transform: "translateY(-2px)",
+                }}
+                transition="0.2s ease all"
               >
                 <Heading my={2} as="h4" size="md">
                   {effect.title}
                 </Heading>
+                <Divider borderColor="brand.sand" mb={2} width="50%" />
                 <Text>{effect.description}</Text>
               </Box>
             ))}
           </Grid>
         </Box>
-        <ServicesSpotlight title="Keep Learning 👇🏽" hide="Acupuncture" />
-        <Box py={16} px={[4, 4, 8]}></Box>
-        <ContactUs radius={radius} />
-        <Footer />
-      </Box>
-    </Box>
+      </Flex>
+      <ServicesSpotlight title="Keep Learning 👇🏽" hide="Acupuncture" />
+      <ContactUs overrideDarkMode />
+      <Footer />
+    </PageLayout>
   );
 }

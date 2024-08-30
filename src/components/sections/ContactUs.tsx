@@ -8,54 +8,70 @@ import {
   Text,
   UnorderedList,
   ListItem,
-  BoxProps,
 } from "@chakra-ui/react";
 import React from "react";
 import { ContactForm } from "../ContactForm";
 import Link from "next/link";
-
-interface ContactUsProps extends Omit<BoxProps, "radius"> {
-  radius: number;
+interface ContactUsProps {
+  overrideDarkMode?: boolean;
 }
-
-export const ContactUs: React.FC<ContactUsProps> = ({ radius }) => {
-  const bg = useColorModeValue("brand.royalMoss", "brand.mauve");
+export const ContactUs: React.FC<ContactUsProps> = ({ overrideDarkMode }) => {
+  const bg = useColorModeValue("brand.royalMoss", "brand.royalMoss");
+  const innerBg = useColorModeValue("brand.royalMoss", "brand.mauve");
   const text = useColorModeValue("brand.sand", "brand.royalMoss");
   const textHover = useColorModeValue("brand.wave", "brand.darkWave");
+  const radius = useColorModeValue(0, 16);
+  const padding = useColorModeValue([0, 8], [4, 8]);
+  const innerPadding = useColorModeValue([4, 0], [4, 8]);
 
   return (
     <Flex
-      flexDirection={["column"]}
-      px={[4, 8]}
-      py={[16, 24]}
-      boxSizing="border-box"
-      width="100%"
-      bg={bg}
-      color={text}
       position="relative"
+      boxSizing="border-box"
+      color={overrideDarkMode ? "brand.sand" : text}
+      alignItems={["flex-start"]}
+      width="100%"
+      justifyContent="center"
       overflow="hidden"
-      borderTopRadius={radius}
+      bg={overrideDarkMode ? innerBg : bg}
       id="contact-us"
+      px={overrideDarkMode ? innerPadding : padding}
     >
-      <Heading as="h2" size="2xl">
-        Contact Us
-      </Heading>
-      <Divider borderColor={text} mb={16} />
-      <Grid gridTemplateColumns={["1fr", "1fr", "1fr 1fr"]} gridGap={8}>
-        <Box>
-          <ContactForm />
-        </Box>
-        <Box>
-          <Flex flexDirection="column">
-            <Heading as="h3" size="lg">
-              We can't wait to hear from you.
-            </Heading>
-            <Text my={4} as="p">
-              Here's some quick links just in case the answer to your question
-              is already here:
-            </Text>
-            <UnorderedList py={4}>
-              {/* <ListItem>
+      <Flex
+        py={[16, 24]}
+        px={overrideDarkMode ? padding : innerPadding}
+        zIndex={1}
+        flexDirection="column"
+        alignItems={["flex-start"]}
+        maxWidth="1440px"
+        width="100%"
+        bg={overrideDarkMode ? bg : innerBg}
+        borderTopRightRadius={radius}
+        borderTopLeftRadius={radius}
+      >
+        <Heading as="h2" size="2xl">
+          Contact Us
+        </Heading>
+        <Divider borderColor={overrideDarkMode ? "brand.sand" : text} mb={16} />
+        <Grid
+          gridTemplateColumns={["1fr", "1fr", "1fr 1fr"]}
+          gridGap={8}
+          width="100%"
+        >
+          <Box>
+            <ContactForm />
+          </Box>
+          <Box>
+            <Flex flexDirection="column">
+              <Heading as="h3" size="lg">
+                We can't wait to hear from you.
+              </Heading>
+              <Text my={4} as="p">
+                Here's some quick links just in case the answer to your question
+                is already here:
+              </Text>
+              <UnorderedList py={4}>
+                {/* <ListItem>
                 <Text
                   textDecoration="underline"
                   _hover={{ color: textHover }}
@@ -65,42 +81,43 @@ export const ContactUs: React.FC<ContactUsProps> = ({ radius }) => {
                   FAQs
                 </Text>
               </ListItem> */}
-              <ListItem>
-                <Text
-                  textDecoration="underline"
-                  _hover={{ color: textHover }}
-                  as={Link}
-                  href="/services/acupuncture"
-                >
-                  How Acupuncture Works
-                </Text>
-              </ListItem>
-              <ListItem>
-                <Text
-                  textDecoration="underline"
-                  _hover={{ color: textHover }}
-                  as={Link}
-                  href="/services"
-                >
-                  Our Services
-                </Text>
-              </ListItem>
-              <ListItem>
-                <Text
-                  textDecoration="underline"
-                  _hover={{ color: textHover }}
-                  as="a"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  href="https://patient.unifiedpractice.com/tidal-acupuncture"
-                >
-                  Online Scheduling
-                </Text>
-              </ListItem>
-            </UnorderedList>
-          </Flex>
-        </Box>
-      </Grid>
+                <ListItem>
+                  <Text
+                    textDecoration="underline"
+                    _hover={{ color: textHover }}
+                    as={Link}
+                    href="/services/acupuncture"
+                  >
+                    How Acupuncture Works
+                  </Text>
+                </ListItem>
+                <ListItem>
+                  <Text
+                    textDecoration="underline"
+                    _hover={{ color: textHover }}
+                    as={Link}
+                    href="/services"
+                  >
+                    Our Services
+                  </Text>
+                </ListItem>
+                <ListItem>
+                  <Text
+                    textDecoration="underline"
+                    _hover={{ color: textHover }}
+                    as="a"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    href="https://patient.unifiedpractice.com/tidal-acupuncture"
+                  >
+                    Online Scheduling
+                  </Text>
+                </ListItem>
+              </UnorderedList>
+            </Flex>
+          </Box>
+        </Grid>
+      </Flex>
     </Flex>
   );
 };

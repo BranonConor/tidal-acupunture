@@ -27,23 +27,23 @@ export const Services: React.FC<ServicesProps> = ({ title }) => {
 
   return (
     <Flex
-      bg={bg}
       position="relative"
-      px={[4, 8]}
-      py={[16, 24]}
       boxSizing="border-box"
       color="brand.royalMoss"
       alignItems={["flex-start"]}
-      maxWidth="100%"
+      width="100%"
+      justifyContent="center"
       overflow="hidden"
-      borderRadius={16}
-      mb={8}
+      bg={bg}
+      px={[4, 8]}
     >
       <Flex
         zIndex={1}
         flexDirection="column"
         alignItems={["flex-start"]}
+        maxWidth="1440px"
         width="100%"
+        py={[16, 24]}
       >
         <Heading as="h2" size="3xl" width="100%">
           {title}

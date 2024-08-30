@@ -2,6 +2,7 @@
 
 import { Footer } from "@/components/Footer";
 import { Navbar } from "@/components/Navbar";
+import { PageLayout } from "@/components/PageLayout";
 import { ContactUs } from "@/components/sections/ContactUs";
 import {
   Box,
@@ -13,26 +14,20 @@ import {
 } from "@chakra-ui/react";
 
 export default function Page() {
-  const pageBg = useColorModeValue("brand.sand", "brand.royalMoss");
   const bg = useColorModeValue("brand.mauve", "brand.darkWave");
   const color = useColorModeValue("brand.royalMoss", "brand.sand");
   const wave = useColorModeValue("/waves-blue.svg", "/waves-moss.svg");
-  const radius = useColorModeValue(16, 16);
 
   return (
-    <Box
-      as="main"
-      bg={pageBg}
-      minHeight="100vh"
-      maxWidth="100%"
-      width="100%"
-      padding="0"
-      display="flex"
-      justifyContent="center"
-      boxSizing="border-box"
-    >
+    <PageLayout>
       <Navbar />
-      <Box maxWidth="1440px" width="100%" position="relative" pt={24} px={[4]}>
+      <Box
+        maxWidth="1440px"
+        width="100%"
+        position="relative"
+        pt={24}
+        px={[4, 8, 8, 8, 8, 0]}
+      >
         <Flex
           flexDirection="column"
           alignItems="center"
@@ -110,9 +105,9 @@ export default function Page() {
             transform="rotate(30deg)"
           />
         </Flex>
-        <ContactUs radius={radius} />
-        <Footer />
       </Box>
-    </Box>
+      <ContactUs />
+      <Footer />
+    </PageLayout>
   );
 }

@@ -4,6 +4,7 @@ import {
   useColorModeValue,
   Grid,
   Heading,
+  Flex,
 } from "@chakra-ui/react";
 import React from "react";
 import { SpotlightCard } from "../../SpotlightCard";
@@ -23,7 +24,6 @@ export const ServicesSpotlight: React.FC<ServicesSpotlightProps> = ({
 }) => {
   const bg = useColorModeValue("brand.wave", "brand.mauve");
   const textColor = useColorModeValue("brand.royalMoss", "brand.royalMoss");
-  const radius = useColorModeValue(16, 16);
   const mode = useColorModeValue("light", "dark");
   const spotlightServices = [
     {
@@ -52,30 +52,47 @@ export const ServicesSpotlight: React.FC<ServicesSpotlightProps> = ({
     },
   ];
   return (
-    <Box
+    <Flex
+      position="relative"
+      boxSizing="border-box"
+      color="brand.royalMoss"
+      alignItems={["flex-start"]}
+      width="100%"
+      justifyContent="center"
+      overflow="hidden"
       bg={bg}
       px={[4, 8]}
-      pt={20}
-      pb={24}
-      borderRadius={radius}
-      color={textColor}
     >
-      <Heading as="h2" size="2xl">
-        {title}
-      </Heading>
-      <Divider borderColor={textColor} mb={8} />
-      <Grid my={8} gridGap={8} gridTemplateColumns={["1fr", "1fr", "1fr 1fr"]}>
-        {spotlightServices.map((service) =>
-          hide === service.title ? null : (
-            <SpotlightCard
-              title={service.title}
-              description={service.description}
-              image={service.src}
-              href={service.href}
-            />
-          )
-        )}
-      </Grid>
-    </Box>
+      <Flex
+        zIndex={1}
+        flexDirection="column"
+        alignItems={["flex-start"]}
+        maxWidth="1440px"
+        width="100%"
+        py={[16, 24]}
+      >
+        <Heading as="h2" size="2xl">
+          {title}
+        </Heading>
+        <Divider borderColor={textColor} mb={8} />
+        <Grid
+          my={8}
+          gridGap={8}
+          gridTemplateColumns={["1fr", "1fr", "1fr 1fr"]}
+          width="100%"
+        >
+          {spotlightServices.map((service) =>
+            hide === service.title ? null : (
+              <SpotlightCard
+                title={service.title}
+                description={service.description}
+                image={service.src}
+                href={service.href}
+              />
+            )
+          )}
+        </Grid>
+      </Flex>
+    </Flex>
   );
 };
