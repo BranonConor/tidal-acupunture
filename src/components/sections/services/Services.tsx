@@ -34,12 +34,10 @@ export const Services: React.FC<ServicesProps> = ({ title }) => {
       width="100%"
       justifyContent="center"
       overflow="hidden"
-      mb={8}
+      bg={bg}
     >
       <Flex
-        borderRadius={16}
         zIndex={1}
-        bg={bg}
         flexDirection="column"
         alignItems={["flex-start"]}
         maxWidth="1440px"

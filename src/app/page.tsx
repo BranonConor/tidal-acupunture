@@ -13,8 +13,6 @@ import Link from "next/link";
 import { ContactUs } from "@/components/sections/ContactUs";
 
 export default function Home() {
-  const radius = useColorModeValue(0, 16);
-
   return (
     <PageLayout>
       <Navbar />
@@ -37,7 +35,7 @@ export default function Home() {
       <OurTeam />
       <Services title="Our Services" />
       <Info />
-      <ContactUs radius={radius} />
+      <ContactUs />
       <Footer />
     </PageLayout>
   );

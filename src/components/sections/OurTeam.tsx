@@ -18,7 +18,6 @@ export const OurTeam = () => {
       width="100%"
       justifyContent="center"
       position="relative"
-      top="-16px"
       zIndex={0}
     >
       <Flex
