@@ -26,7 +26,7 @@ export const ContactForm = () => {
       onSubmit={handleSubmit}
       bg={bg}
       boxShadow="lg"
-      borderRadius={8}
+      borderRadius={16}
       padding={8}
       position="relative"
       color={text}

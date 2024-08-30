@@ -76,7 +76,7 @@ export const Info = () => {
           <AspectRatio
             maxW="100%"
             ratio={1}
-            borderRadius={8}
+            borderRadius={16}
             overflow="hidden"
             boxShadow="lg"
           >
