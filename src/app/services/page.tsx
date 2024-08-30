@@ -29,7 +29,6 @@ export default function Page() {
         description="We offer a wide variety of services, all of which are tailored just for YOU."
       />
       <ServicesSpotlight />
-
       <Box
         py={16}
         px={[4, 8]}
