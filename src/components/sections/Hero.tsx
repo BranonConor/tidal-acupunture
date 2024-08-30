@@ -54,7 +54,7 @@ export const Hero: React.FC<HeroProps> = ({
         boxShadow="2xl"
       >
         <Box position="relative" zIndex={1} maxWidth="100%">
-          <Heading as="h1" size="4xl" pb={4}>
+          <Heading as="h1" size={["3xl", "4xl"]} pb={4}>
             {title}
           </Heading>
           <Text maxWidth="100%">{description}</Text>
