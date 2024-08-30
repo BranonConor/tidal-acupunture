@@ -32,8 +32,6 @@ export const Info = () => {
       justifyContent="flex-start"
       alignItems="flex-start"
       boxSizing="border-box"
-      borderTopRightRadius={16}
-      borderTopLeftRadius={16}
       maxWidth="1440px"
       width="100%"
     >

@@ -16,6 +16,7 @@ export const WhoWeAre = () => {
     "/media/palms.png",
     "/media/palms-sunset.png"
   );
+
   return (
     <Flex
       flexDirection="column"
@@ -24,13 +25,11 @@ export const WhoWeAre = () => {
       overflow="hidden"
       width="100%"
       bg={bg}
-      px={[4, 8, 8]}
+      px={[4, 8]}
       boxSizing="border-box"
       justifyContent="center"
       pt={[12, 16]}
       pb={[16, 20]}
-      borderBottomEndRadius={20}
-      borderBottomStartRadius={20}
       zIndex={1}
     >
       <Box zIndex="0" maxWidth="1440px" bg={bg}>

@@ -1,4 +1,11 @@
-import { Image, Heading, Text, Box, Flex } from "@chakra-ui/react";
+import {
+  Image,
+  Heading,
+  Text,
+  Box,
+  Flex,
+  useColorModeValue,
+} from "@chakra-ui/react";
 import Link from "next/link";
 
 interface ITeamCardProps {
@@ -14,6 +21,8 @@ export const TeamCard: React.FC<ITeamCardProps> = ({
   role,
   link,
 }) => {
+  const buttonBg = useColorModeValue("brand.sand", "brand.mauve");
+
   return (
     <Flex
       width="100%"
@@ -77,7 +86,7 @@ export const TeamCard: React.FC<ITeamCardProps> = ({
         className="meet-the-team"
         width="100%"
         height="25%"
-        bg="brand.sand"
+        bg={buttonBg}
         color="brand.royalMoss"
         alignItems="center"
         justifyContent="center"

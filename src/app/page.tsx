@@ -6,14 +6,13 @@ import { OurTeam } from "@/components/sections/OurTeam";
 import { Footer } from "@/components/Footer";
 import { Hero } from "@/components/sections/Hero";
 import { Services } from "@/components/sections/services/Services";
-import { Box, useColorModeValue, Flex, Button } from "@chakra-ui/react";
+import { useColorModeValue, Flex, Button } from "@chakra-ui/react";
 import { Info } from "@/components/sections/Info";
 import { PageLayout } from "@/components/PageLayout";
 import Link from "next/link";
 import { ContactUs } from "@/components/sections/ContactUs";
 
 export default function Home() {
-  const bg = useColorModeValue("brand.sand", "brand.royalMoss");
   const radius = useColorModeValue(0, 16);
 
   return (

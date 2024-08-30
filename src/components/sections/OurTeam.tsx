@@ -6,8 +6,6 @@ import {
   Text,
   Box,
   Button,
-  useColorModePreference,
-  useColorModeValue,
 } from "@chakra-ui/react";
 import { TeamCard } from "../TeamCard";
 import Link from "next/link";

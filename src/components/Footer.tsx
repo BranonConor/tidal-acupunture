@@ -30,7 +30,7 @@ export const Footer = () => {
       <Grid
         gridGap={4}
         gridTemplateColumns={["1fr", "1fr 1fr", "1fr 1fr 1fr 1fr"]}
-        px={[4, 4, 8]}
+        px={[4, 8]}
         py={[12, 12, 8]}
         color={textColor}
         maxWidth="1440px"

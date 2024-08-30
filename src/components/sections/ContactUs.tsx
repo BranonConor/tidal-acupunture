@@ -15,7 +15,7 @@ import { ContactForm } from "../ContactForm";
 import Link from "next/link";
 
 interface ContactUsProps extends Omit<BoxProps, "radius"> {
-  radius: number;
+  radius?: number;
 }
 
 export const ContactUs: React.FC<ContactUsProps> = ({ radius }) => {

@@ -32,11 +32,12 @@ export const Hero: React.FC<HeroProps> = ({
       overflow="hidden"
       width="100%"
       bg={bg}
-      px={[4, 8, 8]}
+      px={[4, 8]}
       boxSizing="border-box"
     >
       <Box
         minHeight="632px"
+        width="100%"
         maxWidth="1440px"
         display="grid"
         gridTemplateColumns={["1fr", "1fr 1fr"]}
@@ -52,12 +53,12 @@ export const Hero: React.FC<HeroProps> = ({
         borderBottomEndRadius={20}
         boxShadow="2xl"
       >
-        <Box width="100%" position="relative" zIndex={1}>
-          <Heading as="h1" size="4xl" pb={4} maxWidth="100%">
+        <Box position="relative" zIndex={1} maxWidth="100%">
+          <Heading as="h1" size="4xl" pb={4}>
             {title}
           </Heading>
           <Text maxWidth="100%">{description}</Text>
-          {ctaSection && ctaSection}
+          {ctaSection}
         </Box>
         <Box
           transform="rotate(-35deg) scale(1)"
@@ -66,7 +67,7 @@ export const Hero: React.FC<HeroProps> = ({
           bottom={[-16, -24, -16]}
           right={["-30%", "-30%", "-20%"]}
         >
-          <Image src={bgImage} minWidth="100%" />
+          <Image src={bgImage} />
         </Box>
       </Box>
     </Flex>
