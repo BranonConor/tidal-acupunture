@@ -45,7 +45,9 @@ export const Navbar: React.FC = () => {
       backdropFilter="blur(10px)"
       bg={bg}
     >
-      <Image src={logo} width="128px" />
+      <Link href="/">
+        <Image src={logo} width="128px" />
+      </Link>
       <Flex height="100%" alignItems="center" justifyContent="flex-end">
         <Button
           display={["none", "none", "flex"]}
