@@ -21,7 +21,13 @@ export default function Page() {
   return (
     <PageLayout>
       <Navbar />
-      <Box maxWidth="1440px" width="100%" position="relative" pt={24} px={[4]}>
+      <Box
+        maxWidth="1440px"
+        width="100%"
+        position="relative"
+        pt={24}
+        px={[4, 8, 8, 8, 8, 0]}
+      >
         <Flex
           flexDirection="column"
           alignItems="center"

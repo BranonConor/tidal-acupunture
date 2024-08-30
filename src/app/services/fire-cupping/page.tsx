@@ -7,6 +7,7 @@ import {
   Heading,
   Text,
   Divider,
+  Flex,
 } from "@chakra-ui/react";
 import { Footer } from "@/components/Footer";
 import { Hero } from "@/components/sections/Hero";
@@ -22,17 +23,22 @@ export default function Page() {
   return (
     <PageLayout>
       <Navbar />
-      <Box
-        maxWidth="1440px"
-        position="relative"
-        overflowX="hidden"
+
+      <Hero
+        title="Fire Cupping"
+        description="How it works, what to expect, and more!"
+      />
+      <Flex
+        zIndex={1}
+        flexDirection="column"
+        alignItems="center"
+        px={[4, 8]}
+        py={[12, 14]}
+        bg={cardBg}
+        color={textColor}
         width="100%"
       >
-        <Hero
-          title="Fire Cupping"
-          description="How it works, what to expect, and more!"
-        />
-        <Box px={[4, 8]} pt={16} pb={[4, 8]} bg={cardBg} color={textColor}>
+        <Box maxWidth="1440px" width="100%">
           <Heading as="h2">How Does Fire Cupping Work?</Heading>
           <Divider borderColor={textColor} mb={8} />
           <Text as="p" mb={8}>
@@ -44,10 +50,10 @@ export default function Page() {
             those looking to boost their athletic recovery and performance.
           </Text>
         </Box>
-        <ServicesSpotlight title="Keep Learning 👇🏽" hide="Fire Cupping" />
-        <ContactUs />
-        <Footer />
-      </Box>
+      </Flex>
+      <ServicesSpotlight title="Keep Learning 👇🏽" hide="Fire Cupping" />
+      <ContactUs overrideDarkMode />
+      <Footer />
     </PageLayout>
   );
 }

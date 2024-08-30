@@ -8,8 +8,10 @@ import {
   Heading,
   Text,
   Grid,
+  Flex,
 } from "@chakra-ui/react";
 import { Footer } from "@/components/Footer";
+import { PageLayout } from "@/components/PageLayout";
 import { Hero } from "@/components/sections/Hero";
 import { ContactUs } from "@/components/sections/ContactUs";
 import { ServicesSpotlight } from "@/components/sections/services/ServicesSpotlight";
@@ -70,32 +72,25 @@ export default function Page() {
   ];
 
   return (
-    <Box
-      as="main"
-      bg={bg}
-      minHeight="100vh"
-      maxWidth="100%"
-      width="100%"
-      padding="0"
-      display="flex"
-      justifyContent="center"
-      boxSizing="border-box"
-    >
+    <PageLayout>
       <Navbar />
-      <Box
-        maxWidth="1440px"
-        position="relative"
-        overflowX="hidden"
+      <Hero
+        title="Acupuncture"
+        description="How it works, what to expect, and more!"
+      />
+      <Flex
+        zIndex={1}
+        flexDirection="column"
+        alignItems="center"
+        px={[4, 8]}
+        py={[16, 24]}
+        bg={cardBg}
+        color={textColor}
         width="100%"
       >
-        <Hero
-          title="Acupuncture"
-          description="How it works, what to expect, and more!"
-        />
-        <Box px={[4, 8]} pt={16} pb={[4, 8]} bg={cardBg} color={textColor}>
+        <Box maxWidth="1440px" width="100%">
           <Heading as="h2">How Does Acupuncture Work?</Heading>
           <Divider borderColor={textColor} mb={8} />
-
           <Text as="p" mb={8}>
             Acupuncture aims to restore balance in the body by stimulating
             points along meridians which coincide with areas rich in blood
@@ -158,10 +153,10 @@ export default function Page() {
             ))}
           </Grid>
         </Box>
-        <ServicesSpotlight title="Keep Learning 👇🏽" hide="Acupuncture" />
-        <ContactUs />
-        <Footer />
-      </Box>
-    </Box>
+      </Flex>
+      <ServicesSpotlight title="Keep Learning 👇🏽" hide="Acupuncture" />
+      <ContactUs overrideDarkMode />
+      <Footer />
+    </PageLayout>
   );
 }

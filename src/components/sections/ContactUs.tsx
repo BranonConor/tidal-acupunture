@@ -8,13 +8,14 @@ import {
   Text,
   UnorderedList,
   ListItem,
-  BoxProps,
 } from "@chakra-ui/react";
 import React from "react";
 import { ContactForm } from "../ContactForm";
 import Link from "next/link";
-
-export const ContactUs: React.FC = () => {
+interface ContactUsProps {
+  overrideDarkMode?: boolean;
+}
+export const ContactUs: React.FC<ContactUsProps> = ({ overrideDarkMode }) => {
   const bg = useColorModeValue("brand.royalMoss", "brand.royalMoss");
   const innerBg = useColorModeValue("brand.royalMoss", "brand.mauve");
   const text = useColorModeValue("brand.sand", "brand.royalMoss");
@@ -27,31 +28,31 @@ export const ContactUs: React.FC = () => {
     <Flex
       position="relative"
       boxSizing="border-box"
-      color={text}
+      color={overrideDarkMode ? "brand.sand" : text}
       alignItems={["flex-start"]}
       width="100%"
       justifyContent="center"
       overflow="hidden"
-      bg={bg}
+      bg={overrideDarkMode ? innerBg : bg}
       id="contact-us"
-      px={padding}
+      px={overrideDarkMode ? innerPadding : padding}
     >
       <Flex
         py={[16, 24]}
-        px={innerPadding}
+        px={overrideDarkMode ? padding : innerPadding}
         zIndex={1}
         flexDirection="column"
         alignItems={["flex-start"]}
         maxWidth="1440px"
         width="100%"
-        bg={innerBg}
+        bg={overrideDarkMode ? bg : innerBg}
         borderTopRightRadius={radius}
         borderTopLeftRadius={radius}
       >
         <Heading as="h2" size="2xl">
           Contact Us
         </Heading>
-        <Divider borderColor={text} mb={16} />
+        <Divider borderColor={overrideDarkMode ? "brand.sand" : text} mb={16} />
         <Grid
           gridTemplateColumns={["1fr", "1fr", "1fr 1fr"]}
           gridGap={8}

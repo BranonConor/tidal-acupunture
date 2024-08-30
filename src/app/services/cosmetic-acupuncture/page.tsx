@@ -7,6 +7,7 @@ import {
   Heading,
   Text,
   Divider,
+  Flex,
 } from "@chakra-ui/react";
 import { Footer } from "@/components/Footer";
 import { Hero } from "@/components/sections/Hero";
@@ -26,13 +27,17 @@ export default function Page() {
         title="Cosmetic Acupuncture"
         description="How it works, what to expect, and more!"
       />
-      <Box
-        maxWidth="1440px"
-        position="relative"
-        overflowX="hidden"
+      <Flex
+        zIndex={1}
+        flexDirection="column"
+        alignItems="center"
+        px={[4, 8]}
+        py={[12, 14]}
+        bg={cardBg}
+        color={textColor}
         width="100%"
       >
-        <Box px={[4, 8]} pt={16} pb={[4, 8]} bg={cardBg} color={textColor}>
+        <Box maxWidth="1440px" width="100%">
           <Heading as="h2">How Does Cosmetic Acupuncture Work?</Heading>
           <Divider borderColor={textColor} mb={8} />
           <Text as="p" mb={8}>
@@ -53,13 +58,10 @@ export default function Page() {
             twice per week for 5-7 weeks for lasting results
           </Text>
         </Box>
-        <ServicesSpotlight
-          title="Keep Learning 👇🏽"
-          hide="Cosmetic Acupuncture"
-        />
-        <ContactUs />
-        <Footer />
-      </Box>
+      </Flex>
+      <ServicesSpotlight title="Keep Learning 👇🏽" hide="Cosmetic Acupuncture" />
+      <ContactUs overrideDarkMode />
+      <Footer />
     </PageLayout>
   );
 }

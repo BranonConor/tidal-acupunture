@@ -6,6 +6,7 @@ import {
   useColorModeValue,
   Heading,
   Text,
+  Flex,
   Divider,
 } from "@chakra-ui/react";
 import { Footer } from "@/components/Footer";
@@ -15,7 +16,6 @@ import { ServicesSpotlight } from "@/components/sections/services/ServicesSpotli
 import { PageLayout } from "@/components/PageLayout";
 
 export default function Page() {
-  const bg = useColorModeValue("brand.sand", "brand.royalMoss");
   const cardBg = useColorModeValue("brand.wave", "brand.mauve");
   const textColor = useColorModeValue("brand.royalMoss", "brand.royalMoss");
 
@@ -26,13 +26,17 @@ export default function Page() {
         title="Microneedling"
         description="How it works, what to expect, and more!"
       />
-      <Box
-        maxWidth="1440px"
-        position="relative"
-        overflowX="hidden"
+      <Flex
+        zIndex={1}
+        flexDirection="column"
+        alignItems="center"
+        px={[4, 8]}
+        py={[12, 14]}
+        bg={cardBg}
+        color={textColor}
         width="100%"
       >
-        <Box px={[4, 8]} pt={16} pb={[4, 8]} bg={cardBg} color={textColor}>
+        <Box maxWidth="1440px" width="100%">
           <Heading as="h2">How Does Microneedling Work?</Heading>
           <Divider borderColor={textColor} mb={8} />
           <Text as="p" mb={8}>
@@ -55,10 +59,10 @@ export default function Page() {
             every 12 weeks; 4-6 treatments are recommended for best results
           </Text>
         </Box>
-        <ServicesSpotlight title="Keep Learning 👇🏽" hide="Microneedling" />
-        <ContactUs />
-        <Footer />
-      </Box>
+      </Flex>
+      <ServicesSpotlight title="Keep Learning 👇🏽" hide="Microneedling" />
+      <ContactUs overrideDarkMode />
+      <Footer />
     </PageLayout>
   );
 }
