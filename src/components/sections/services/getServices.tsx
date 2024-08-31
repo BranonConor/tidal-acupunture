@@ -1,12 +1,25 @@
 import { PriceItem } from "./PriceItem";
-import { Box, Heading } from "@chakra-ui/react";
+import { Box, Heading, Text } from "@chakra-ui/react";
+import Link from "next/link";
 
 export const getServices = (iconMode: string) => {
   const services = [
     {
       title: "Acupuncture",
-      description:
-        "A comprehensive needling approach that seamlessly blends Chinese medicine theory and biomedical knowledge",
+      description: (
+        <>
+          A comprehensive needling approach that seamlessly blends Chinese
+          medicine theory and biomedical knowledge.{" "}
+          <Text
+            as={Link}
+            href="/services/acupuncture#acupuncture-process"
+            _hover={{ color: "brand.darkWave" }}
+            textDecoration="underline"
+          >
+            Learn more about the process here!
+          </Text>
+        </>
+      ),
       icon: `/icons/needles-${iconMode}.svg`,
       priceItem: (
         <Box my={4}>
@@ -14,7 +27,8 @@ export const getServices = (iconMode: string) => {
             Pricing
           </Heading>
           <PriceItem text="$135 - New Patient Consult and Acupuncture Treatment" />
-          <PriceItem text="$110 - Return Patient Acupuncture Treatment" />
+          <PriceItem text="$75 - Return Patient Acupuncture Treatment (30 mins)" />
+          <PriceItem text="$110 - Return Patient Acupuncture Treatment (60 mins)" />
           <PriceItem text="$150 - Return Patient Acupuncture and Cupping Therapy" />
         </Box>
       ),

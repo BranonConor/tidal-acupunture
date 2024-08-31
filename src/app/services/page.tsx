@@ -17,7 +17,6 @@ import { getServices } from "@/components/sections/services/getServices";
 import { PageLayout } from "@/components/PageLayout";
 
 export default function Page() {
-  const bg = useColorModeValue("brand.sand", "brand.royalMoss");
   const textColor = useColorModeValue("brand.royalMoss", "brand.white");
   const iconMode = useColorModeValue("dark", "light");
 
