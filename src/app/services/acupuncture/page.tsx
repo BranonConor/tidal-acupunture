@@ -3,12 +3,13 @@
 import { Navbar } from "@/components/Navbar";
 import {
   Box,
-  Divider,
   useColorModeValue,
-  Heading,
-  Text,
   Grid,
   Flex,
+  Heading,
+  Text,
+  Divider,
+  Image,
 } from "@chakra-ui/react";
 import { Footer } from "@/components/Footer";
 import { PageLayout } from "@/components/PageLayout";
@@ -83,26 +84,48 @@ export default function Page() {
         flexDirection="column"
         alignItems="center"
         px={[4, 8]}
-        py={[16, 24]}
+        pt={[16, 24]}
+        pb={12}
         bg={cardBg}
         color={textColor}
         width="100%"
       >
         <Box maxWidth="1440px" width="100%">
-          <Heading as="h2">How Does Acupuncture Work?</Heading>
-          <Divider borderColor={textColor} mb={8} />
-          <Text as="p" mb={8}>
-            Acupuncture aims to restore balance in the body by stimulating
-            points along meridians which coincide with areas rich in blood
-            vessels, nerves, and tissue. Stimulation at these points sends
-            signals that reduce inflammation, inhibit pain pathways, and
-            stimulate a variety of neurotransmitters providing immediate and
-            long-term relief. This leads to benefits such as pain relief, muscle
-            relaxation, anti-inflammatory effects, and immune regulation among
-            many others. Acupuncture meridians have unique properties relating
-            to electricity, heat, sound, light, and magnetism which are absent
-            in other body areas, supporting the existence of these meridians.
-          </Text>
+          <Grid
+            gridTemplateColumns={["1fr", "1fr", "1fr 1fr"]}
+            gridGap={8}
+            mb={[12, 24]}
+          >
+            <Box>
+              <Image
+                src={"/media/clinic/acu-1.png"}
+                boxShadow="lg"
+                borderRadius={16}
+                draggable={false}
+              />
+            </Box>
+            <Flex height="100%" flexDirection="column" justifyContent="center">
+              <Heading as="h2">How Does Acupuncture Work? 💭</Heading>
+              <Divider borderColor={textColor} mb={8} />
+              <Text as="p" mb={8}>
+                Acupuncture aims to restore balance in the body by stimulating
+                points along meridians which coincide with areas rich in blood
+                vessels, nerves, and tissue. Stimulation at these points sends
+                signals that reduce inflammation, inhibit pain pathways, and
+                stimulate a variety of neurotransmitters providing immediate and
+                long-term relief.
+              </Text>
+              <Text as="p" mb={8}>
+                This leads to benefits such as pain relief, muscle relaxation,
+                anti-inflammatory effects, and immune regulation among many
+                others. Acupuncture meridians have unique properties relating to
+                electricity, heat, sound, light, and magnetism which are absent
+                in other body areas, supporting the existence of these
+                meridians.
+              </Text>
+            </Flex>
+          </Grid>
+
           <Heading as="h3" size="lg" mb={4}>
             For the science nerds 🤓
           </Heading>
@@ -151,6 +174,28 @@ export default function Page() {
                 <Text>{effect.description}</Text>
               </Box>
             ))}
+          </Grid>
+
+          <Grid
+            gridTemplateColumns={["1fr", "1fr", "1fr 1fr"]}
+            gridGap={8}
+            mt={[12, 24]}
+          >
+            <Flex height="100%" flexDirection="column" justifyContent="center">
+              <Heading as="h2">The Acupuncture Experience @ TIDAL ✨</Heading>
+              <Divider borderColor={textColor} mb={8} />
+              <Text as="p" mb={8}>
+                TBD
+              </Text>
+            </Flex>
+            <Box>
+              <Image
+                src={"/media/clinic/acu-2.png"}
+                boxShadow="lg"
+                borderRadius={16}
+                draggable={false}
+              />
+            </Box>
           </Grid>
         </Box>
       </Flex>

@@ -44,6 +44,7 @@ export const SpotlightCard: React.FC<SpotlightCardProps> = ({
       }}
     >
       <Image
+        draggable={false}
         src={image}
         position="absolute"
         top="0"
