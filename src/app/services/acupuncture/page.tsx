@@ -160,8 +160,9 @@ export default function Page() {
                 bg={effectCardBg}
                 color="brand.sand"
                 padding={4}
+                pt={[2, 4]}
                 borderRadius={16}
-                minHeight="200px"
+                minHeight={["100px", "200px"]}
                 _hover={{
                   transform: "translateY(-2px)",
                 }}

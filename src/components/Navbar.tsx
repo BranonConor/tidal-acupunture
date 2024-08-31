@@ -155,9 +155,14 @@ export const Navbar: React.FC = () => {
               </ChakraLink>
             </ListItem>
             <ListItem mb={2}>
-              <ChakraLink display="flex" href="/services" as={Link}>
+              <ChakraLink
+                display="flex"
+                href="/services"
+                as={Link}
+                alignItems="flex-start"
+              >
                 <Image mr={3} src="/icons/circles-dark.svg" />
-                Services
+                Services & Pricing
               </ChakraLink>
             </ListItem>
             <ListItem mb={2}>
