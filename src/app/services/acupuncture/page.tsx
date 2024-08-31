@@ -18,7 +18,6 @@ import { ContactUs } from "@/components/sections/ContactUs";
 import { ServicesSpotlight } from "@/components/sections/services/ServicesSpotlight";
 
 export default function Page() {
-  const bg = useColorModeValue("brand.sand", "brand.royalMoss");
   const cardBg = useColorModeValue("brand.wave", "brand.mauve");
   const textColor = useColorModeValue("brand.royalMoss", "brand.royalMoss");
   const effectCardBg = useColorModeValue("brand.darkWave", "brand.royalMoss");
