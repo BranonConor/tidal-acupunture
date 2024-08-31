@@ -4,7 +4,7 @@ import { Card } from "../../Card";
 export interface Service {
   icon: string;
   title: string;
-  description: string;
+  description: ReactNode;
   priceItem?: ReactNode;
 }
 interface ServicesGridProps {

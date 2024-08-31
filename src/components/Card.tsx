@@ -3,7 +3,7 @@ import { ReactNode } from "react";
 
 interface ICardProps extends CardProps {
   title: string;
-  description?: string;
+  description?: ReactNode;
   icon?: string;
   color?: string;
   linkText?: string;
