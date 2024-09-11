@@ -24,8 +24,8 @@ export default function Page() {
     <PageLayout>
       <Navbar />
       <Hero
-        title="Our Services"
-        description="We offer a wide variety of services, all of which are tailored just for YOU."
+        title="Our Services & Pricing"
+        description="We offer a wide variety of services, all of which are tailored to YOU."
       />
       <ServicesSpotlight />
       <Box
