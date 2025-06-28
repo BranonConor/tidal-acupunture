@@ -28,6 +28,7 @@ export const ServicesGrid: React.FC<ServicesGridProps> = ({
     >
       {services.map((service) => (
         <Card
+          key={service.title}
           color={textColor}
           icon={service.icon}
           title={service.title}
