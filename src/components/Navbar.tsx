@@ -57,7 +57,7 @@ export const Navbar: React.FC = () => {
           as="a"
           target="_blank"
           rel="noopener noreferrer"
-          href="https://patient.unifiedpractice.com/tidal-acupuncture"
+          href="https://tidal.janeapp.com/"
         >
           <Image mr={3} src="/icons/calendar.svg" />
           Book Appointment
@@ -175,7 +175,7 @@ export const Navbar: React.FC = () => {
               <ChakraLink
                 display="flex"
                 alignItems="flex-start"
-                href="https://patient.unifiedpractice.com/tidal-acupuncture"
+                href="https://tidal.janeapp.com/"
                 target="_blank"
                 rel="noopener noreferrer"
               >
