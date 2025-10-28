@@ -49,6 +49,8 @@ export default function Home() {
         bg={bannerContainerBg}
         px={[4, 4, 8]}
         position="relative"
+        display="flex"
+        justifyContent="center"
       >
         <Box id="fall-2025-update" position="absolute" top="-64px" />
         <Box
@@ -57,6 +59,7 @@ export default function Home() {
           py={4}
           borderRadius={16}
           color="brand.royalMoss"
+          maxWidth="1440px"
         >
           <Heading variant="h2" as="h2">
             {wavingHand} Fall 2025 Update!
