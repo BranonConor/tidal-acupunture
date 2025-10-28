@@ -39,7 +39,7 @@ export const Navbar: React.FC = () => {
       position="fixed"
       top={0}
       left={0}
-      zIndex={10}
+      zIndex={9999}
       boxSizing="border-box"
       width="100%"
       backdropFilter="blur(10px)"
