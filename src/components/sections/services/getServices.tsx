@@ -26,10 +26,9 @@ export const getServices = (iconMode: string) => {
           <Heading as="h4" size="md" mb={2}>
             Pricing
           </Heading>
-          <PriceItem text="$135 - New Patient Consult and Acupuncture Treatment" />
-          <PriceItem text="$80 - Return Patient Acupuncture Treatment (30 mins)" />
-          <PriceItem text="$110 - Return Patient Acupuncture Treatment (60 mins)" />
-          <PriceItem text="$150 - Return Patient Acupuncture and Cupping Therapy" />
+          <PriceItem text="$150 - New Patient Consult and Acupuncture Treatment" />
+          <PriceItem text="$130 - Return Patient Acupuncture Treatment" />
+          <PriceItem text="$180 - Return Patient Acupuncture and Cupping Therapy" />
         </Box>
       ),
     },

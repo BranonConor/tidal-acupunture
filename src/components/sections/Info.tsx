@@ -16,11 +16,11 @@ export const Info = () => {
   const dividerColor = useColorModeValue("brand.royalMoss", "brand.sand");
   const phoneIcon = useColorModeValue(
     "/icons/phone-dark.svg",
-    "/icons/phone-light.svg"
+    "/icons/phone-light.svg",
   );
   const locationIcon = useColorModeValue(
     "/icons/location-dark.svg",
-    "/icons/location-light.svg"
+    "/icons/location-light.svg",
   );
   return (
     <Flex
@@ -58,12 +58,9 @@ export const Info = () => {
                 Hours of Operation
               </Heading>
               <UnorderedList py={4}>
-                <ListItem>Monday: 9:00am - 6:00pm</ListItem>
                 <ListItem>Tuesday: 9:00am - 6:00pm</ListItem>
-                <ListItem>Wednesday: 9:00am - 6:00pm</ListItem>
                 <ListItem>Thursday: 9:00am - 6:00pm</ListItem>
-                <ListItem>Friday: 9:00am - 6:00pm</ListItem>
-                <ListItem>Sat-Sun: CLOSED</ListItem>
+                <ListItem>All other days: CLOSED</ListItem>
               </UnorderedList>
               <Card
                 title="Phone Number"
@@ -75,8 +72,14 @@ export const Info = () => {
                 title="Location"
                 icon={locationIcon}
                 color={textColor}
-                linkText="1835 El Cajon Blvd Unit A San Diego CA 92103"
-                href="https://maps.app.goo.gl/gUmy3PW1t7X88Q3X8"
+                linkText={
+                  <>
+                    1515 State Street Suite 1B
+                    <br />
+                    Santa Barbara, CA 93101
+                  </>
+                }
+                href="https://www.google.com/maps/search/?api=1&query=1515+State+Street+Suite+1B+Santa+Barbara+CA+93101"
               />
             </Flex>
           </Flex>
@@ -89,7 +92,7 @@ export const Info = () => {
               boxShadow="lg"
             >
               <iframe
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3355.407798976671!2d-117.14775932398133!3d32.75491228511468!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x80d954e6b37066e7%3A0xaf9cf4bbd2a51d27!2s1835%20El%20Cajon%20Blvd%20a%2C%20San%20Diego%2C%20CA%2092103!5e0!3m2!1sen!2sus!4v1711331550379!5m2!1sen!2sus"
+                src="https://maps.google.com/maps?q=1515%20State%20Street%20Suite%201B%2C%20Santa%20Barbara%2C%20CA%2093101&output=embed"
                 allowFullScreen={true}
                 loading="lazy"
                 referrerPolicy="no-referrer-when-downgrade"

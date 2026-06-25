@@ -65,12 +65,6 @@ export default function Page() {
               image="/media/rachel.png"
               link="/team/rachel-eusebio"
             />
-            <TeamCard
-              name="Dr. Hannah Anderson"
-              role="Doctor of Acupuncture (DACM)"
-              image="/media/hannah.png"
-              link="/team/hannah-anderson"
-            />
           </Grid>
         </Box>
       </Flex>

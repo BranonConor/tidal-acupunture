@@ -6,10 +6,12 @@ import { GA_TRACKING_ID } from "../gtag";
 
 export const metadata: Metadata = {
   title: "TIDAL Acupuncture",
-  description: "A human-centered acupuncture clinic founded in San Diego, CA",
+  description:
+    "A human-centered acupuncture clinic located in Santa Barbara, CA",
   openGraph: {
     title: "TIDAL Acupunture",
-    description: "A human-centered acupuncture clinic founded in San Diego, CA",
+    description:
+      "A human-centered acupuncture clinic located in Santa Barbara, CA",
     url: "https//:www.tidalacupuncture.com",
     locale: "en_US",
     type: "website",

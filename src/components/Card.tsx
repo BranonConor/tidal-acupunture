@@ -6,7 +6,7 @@ interface ICardProps extends CardProps {
   description?: ReactNode;
   icon?: string;
   color?: string;
-  linkText?: string;
+  linkText?: ReactNode;
   href?: string;
   priceItem?: ReactNode;
 }
