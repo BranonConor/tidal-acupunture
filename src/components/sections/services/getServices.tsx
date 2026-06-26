@@ -57,21 +57,7 @@ export const getServices = (iconMode: string) => {
           <Heading as="h4" size="md" mb={2}>
             Pricing
           </Heading>
-          <PriceItem text="$75 - Cupping Therapy" />
-        </Box>
-      ),
-    },
-    {
-      title: "Herbal Medicine",
-      description:
-        "Tailored herbal tinctures and remedies for a myriad of conditions and complaints",
-      icon: `/icons/fire-${iconMode}.svg`,
-      priceItem: (
-        <Box my={4}>
-          <Heading as="h4" size="md" mb={2}>
-            Pricing
-          </Heading>
-          <PriceItem text="$125 - Herbal Consultation" />
+          <PriceItem text="$80 - Cupping Therapy" />
         </Box>
       ),
     },
@@ -87,20 +73,6 @@ export const getServices = (iconMode: string) => {
           </Heading>
           <PriceItem text="$300 - Microneedling (Face Only)" />
           <PriceItem text="$375 - Microneedling (Face, Neck, Decolletage)" />
-        </Box>
-      ),
-    },
-    {
-      title: "Gua Sha",
-      description:
-        "Traditional Chinese medicine technique involving a jade tool abrasion/skin massage",
-      icon: `/icons/gua-sha-${iconMode}.svg`,
-      priceItem: (
-        <Box my={4}>
-          <Heading as="h4" size="md" mb={2}>
-            Pricing
-          </Heading>
-          <PriceItem text="$50 - Gua Sha Session" />
         </Box>
       ),
     },

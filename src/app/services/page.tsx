@@ -27,7 +27,6 @@ export default function Page() {
         title="Our Services & Pricing"
         description="We offer a wide variety of services, all of which are tailored to YOU."
       />
-      <ServicesSpotlight />
       <Box
         py={16}
         px={[4, 8]}
@@ -58,6 +57,7 @@ export default function Page() {
           to your appointment, please don't hesitate to contact us.
         </Text>
       </Box>
+      <ServicesSpotlight />
       <ContactUs />
       <Footer />
     </PageLayout>
