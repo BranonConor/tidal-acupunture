@@ -154,16 +154,6 @@ export default function Page() {
                   </Text>
                 </Flex>
               </ScrollReveal>
-              <ScrollReveal delay={0.2}>
-                <Image
-                  src="/media/signature.svg"
-                  alt="Dr. Rachel Eusebio signature"
-                  height={["56px", "72px"]}
-                  mt={10}
-                  opacity={0.9}
-                  draggable={false}
-                />
-              </ScrollReveal>
             </Box>
           </Flex>
         </Flex>

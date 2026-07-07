@@ -100,7 +100,7 @@ export const Info = () => {
                   <ListItem
                     display="flex"
                     justifyContent="space-between"
-                    maxWidth="280px"
+                    maxWidth={["100%", "100%", "280px"]}
                     borderBottom="1px solid"
                     borderColor={useColorModeValue(
                       "rgba(8, 40, 48, 0.08)",
@@ -114,7 +114,7 @@ export const Info = () => {
                   <ListItem
                     display="flex"
                     justifyContent="space-between"
-                    maxWidth="280px"
+                    maxWidth={["100%", "100%", "280px"]}
                     borderBottom="1px solid"
                     borderColor={useColorModeValue(
                       "rgba(8, 40, 48, 0.08)",
@@ -128,7 +128,7 @@ export const Info = () => {
                   <ListItem
                     display="flex"
                     justifyContent="space-between"
-                    maxWidth="280px"
+                    maxWidth={["100%", "100%", "280px"]}
                   >
                     <Text>All other days</Text>
                     <Text>Closed</Text>
