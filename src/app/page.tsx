@@ -18,11 +18,10 @@ export default function Home() {
       <Navbar />
       <Hero
         title="Acupuncture for all life's highs and lows."
-        description="TIDAL is an acupuncture clinic in Santa Barbara, CA
-        delivering the best care Eastern Medicine has to offer."
+        description="TIDAL is an acupuncture clinic in Santa Barbara, CA delivering the best care Eastern Medicine has to offer."
         ctaSection={
-          <Flex my={4}>
-            <Button as={Link} href="/services" variant="primary" mr={2}>
+          <Flex gap={3}>
+            <Button as={Link} href="/services" variant="primary">
               What we do
             </Button>
             <Button as={Link} href="/team" variant="secondary">

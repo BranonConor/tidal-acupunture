@@ -61,13 +61,13 @@ export const ServicesSpotlight: React.FC<ServicesSpotlightProps> = ({
       justifyContent="center"
       overflow="hidden"
       bg={bg}
-      px={[4, 8]}
+      px={[6, 8, 12]}
     >
       <Flex
         zIndex={1}
         flexDirection="column"
         alignItems={["flex-start"]}
-        maxWidth="1440px"
+        maxWidth="1200px"
         width="100%"
         py={[16, 24]}
       >
@@ -84,6 +84,7 @@ export const ServicesSpotlight: React.FC<ServicesSpotlightProps> = ({
           {spotlightServices.map((service) =>
             hide === service.title ? null : (
               <SpotlightCard
+                key={service.title}
                 title={service.title}
                 description={service.description}
                 image={service.src}
