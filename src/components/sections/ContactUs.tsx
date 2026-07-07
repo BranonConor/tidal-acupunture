@@ -1,8 +1,8 @@
+"use client";
+
 import {
   Grid,
-  Box,
   Heading,
-  Divider,
   useColorModeValue,
   Flex,
   Text,
@@ -11,111 +11,152 @@ import {
 } from "@chakra-ui/react";
 import React from "react";
 import { ContactForm } from "../ContactForm";
+import { ScrollReveal } from "../ScrollReveal";
 import Link from "next/link";
+
 interface ContactUsProps {
   overrideDarkMode?: boolean;
 }
+
 export const ContactUs: React.FC<ContactUsProps> = ({ overrideDarkMode }) => {
-  const bg = useColorModeValue("brand.royalMoss", "brand.royalMoss");
-  const innerBg = useColorModeValue("brand.royalMoss", "brand.mauve");
-  const text = useColorModeValue("brand.sand", "brand.royalMoss");
-  const textHover = useColorModeValue("brand.wave", "brand.darkWave");
-  const radius = useColorModeValue(0, 16);
-  const padding = useColorModeValue([0, 8], [4, 8]);
-  const innerPadding = useColorModeValue([4, 0], [4, 8]);
+  const bg = "brand.royalMoss";
+  const text = useColorModeValue("brand.sand", "brand.sand");
+  const subtleText = useColorModeValue("brand.wave", "brand.wave");
+  const textHover = useColorModeValue("brand.gold", "brand.mint");
+  const accentColor = useColorModeValue("brand.gold", "brand.mint");
 
   return (
     <Flex
       position="relative"
       boxSizing="border-box"
-      color={overrideDarkMode ? "brand.sand" : text}
-      alignItems={["flex-start"]}
+      color={text}
+      alignItems="flex-start"
       width="100%"
       justifyContent="center"
       overflow="hidden"
-      bg={overrideDarkMode ? innerBg : bg}
+      bg={bg}
       id="contact-us"
-      px={overrideDarkMode ? innerPadding : padding}
+      px={[6, 8, 12]}
     >
       <Flex
-        py={[16, 24]}
-        px={overrideDarkMode ? padding : innerPadding}
+        py={[20, 28, 36]}
         zIndex={1}
         flexDirection="column"
-        alignItems={["flex-start"]}
-        maxWidth="1440px"
+        alignItems="flex-start"
+        maxWidth="1200px"
         width="100%"
-        bg={overrideDarkMode ? bg : innerBg}
-        borderTopRightRadius={radius}
-        borderTopLeftRadius={radius}
       >
-        <Heading as="h2" size="2xl">
-          Contact Us
-        </Heading>
-        <Divider borderColor={overrideDarkMode ? "brand.sand" : text} mb={16} />
         <Grid
           gridTemplateColumns={["1fr", "1fr", "1fr 1fr"]}
-          gridGap={8}
+          gridTemplateRows={["auto", "auto", "auto 1fr"]}
+          gridTemplateAreas={[
+            `"title" "media" "desc"`,
+            `"title" "media" "desc"`,
+            `"media title" "media desc"`,
+          ]}
+          gridColumnGap={[6, 8, 12, 16]}
+          gridRowGap={[6, 8, 5]}
+          alignItems="start"
           width="100%"
         >
-          <Box>
+          <ScrollReveal gridArea="media" delay={0.1} mb={[4, 0]}>
             <ContactForm />
-          </Box>
-          <Box>
-            <Flex flexDirection="column">
-              <Heading as="h3" size="lg">
+          </ScrollReveal>
+
+          <ScrollReveal gridArea="title" delay={0.15}>
+            <Flex flexDirection="column" pl={[0, 0, 8]}>
+              <Text
+                textTransform="uppercase"
+                letterSpacing="0.2em"
+                fontSize="xs"
+                fontWeight="bold"
+                color={accentColor}
+                mb={4}
+              >
+                Get in Touch
+              </Text>
+              <Heading
+                as="h2"
+                fontSize={["2xl", "3xl", "4xl"]}
+                lineHeight={1.15}
+                mb={4}
+              >
+                Contact Us
+              </Heading>
+              <Heading as="h3" fontSize="xl">
                 We can't wait to hear from you.
               </Heading>
-              <Text my={4} as="p">
+            </Flex>
+          </ScrollReveal>
+
+          <ScrollReveal gridArea="desc" delay={0.2}>
+            <Flex flexDirection="column" pl={[0, 0, 8]} pt={[0, 0, 8]}>
+              <Text
+                as="p"
+                color={subtleText}
+                fontSize="lg"
+                lineHeight={1.8}
+              >
                 Here's some quick links just in case the answer to your question
                 is already here:
               </Text>
-              <UnorderedList py={4}>
-                {/* <ListItem>
-                <Text
-                  textDecoration="underline"
-                  _hover={{ color: textHover }}
-                  as={Link}
-                  href="/frequently-asked-questions"
-                >
-                  FAQs
-                </Text>
-              </ListItem> */}
+              <UnorderedList listStyleType="none" ml={0} spacing={3} mt={4}>
                 <ListItem>
                   <Text
-                    textDecoration="underline"
-                    _hover={{ color: textHover }}
                     as={Link}
                     href="/services/acupuncture"
+                    fontSize="lg"
+                    borderBottom="1px solid"
+                    borderColor="transparent"
+                    _hover={{
+                      color: textHover,
+                      borderColor: textHover,
+                    }}
+                    transition="0.2s ease all"
+                    pb={1}
                   >
-                    How Acupuncture Works
+                    → How Acupuncture Works
                   </Text>
                 </ListItem>
                 <ListItem>
                   <Text
-                    textDecoration="underline"
-                    _hover={{ color: textHover }}
                     as={Link}
                     href="/services"
+                    fontSize="lg"
+                    borderBottom="1px solid"
+                    borderColor="transparent"
+                    _hover={{
+                      color: textHover,
+                      borderColor: textHover,
+                    }}
+                    transition="0.2s ease all"
+                    pb={1}
                   >
-                    Our Services
+                    → Our Services
                   </Text>
                 </ListItem>
                 <ListItem>
                   <Text
-                    textDecoration="underline"
-                    _hover={{ color: textHover }}
                     as="a"
                     target="_blank"
                     rel="noopener noreferrer"
                     href="https://patient.unifiedpractice.com/tidal-acupuncture"
+                    fontSize="lg"
+                    borderBottom="1px solid"
+                    borderColor="transparent"
+                    _hover={{
+                      color: textHover,
+                      borderColor: textHover,
+                    }}
+                    transition="0.2s ease all"
+                    pb={1}
                   >
-                    Online Scheduling
+                    → Online Scheduling
                   </Text>
                 </ListItem>
               </UnorderedList>
             </Flex>
-          </Box>
+          </ScrollReveal>
         </Grid>
       </Flex>
     </Flex>

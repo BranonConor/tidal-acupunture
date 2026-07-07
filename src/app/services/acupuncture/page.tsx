@@ -8,18 +8,20 @@ import {
   Flex,
   Heading,
   Text,
-  Divider,
-  Image,
 } from "@chakra-ui/react";
 import { Footer } from "@/components/Footer";
 import { PageLayout } from "@/components/PageLayout";
 import { Hero } from "@/components/sections/Hero";
 import { ContactUs } from "@/components/sections/ContactUs";
 import { ServicesSpotlight } from "@/components/sections/services/ServicesSpotlight";
+import { FeatureRow } from "@/components/editorial/FeatureRow";
+import { Eyebrow } from "@/components/editorial/Eyebrow";
+import { ScrollReveal } from "@/components/ScrollReveal";
 
 export default function Page() {
   const cardBg = useColorModeValue("brand.wave", "brand.mauve");
-  const textColor = useColorModeValue("brand.royalMoss", "brand.royalMoss");
+  const textColor = "brand.royalMoss";
+  const accent = useColorModeValue("brand.gold", "brand.mint");
   const effectCardBg = useColorModeValue("brand.darkWave", "brand.royalMoss");
 
   const effects = [
@@ -82,140 +84,122 @@ export default function Page() {
         zIndex={1}
         flexDirection="column"
         alignItems="center"
-        px={[4, 8]}
-        pt={[16, 24]}
-        pb={12}
+        px={[6, 8, 12]}
+        py={[16, 24]}
         bg={cardBg}
         color={textColor}
         width="100%"
       >
-        <Box maxWidth="1440px" width="100%">
-          <Grid
-            gridTemplateColumns={["1fr", "1fr", "1fr 1fr"]}
-            gridGap={8}
-            mb={[12, 24]}
-          >
-            <Box>
-              <Image
-                src={"/media/clinic/acu-1.png"}
-                boxShadow="lg"
-                borderRadius={16}
-                draggable={false}
-              />
-            </Box>
-            <Flex height="100%" flexDirection="column" justifyContent="center">
-              <Heading as="h2">How Does Acupuncture Work? 💭</Heading>
-              <Divider borderColor={textColor} mb={8} />
-              <Text as="p" mb={8}>
-                Acupuncture aims to restore balance in the body by stimulating
-                points along meridians which coincide with areas rich in blood
-                vessels, nerves, and tissue. Stimulation at these points sends
-                signals that reduce inflammation, inhibit pain pathways, and
-                stimulate a variety of neurotransmitters providing immediate and
-                long-term relief.
-              </Text>
-              <Text as="p" mb={8}>
-                This leads to benefits such as pain relief, muscle relaxation,
-                anti-inflammatory effects, and immune regulation among many
-                others. Acupuncture meridians have unique properties relating to
-                electricity, heat, sound, light, and magnetism which are absent
-                in other body areas, supporting the existence of these
-                meridians.
-              </Text>
-            </Flex>
-          </Grid>
-
-          <Heading as="h3" size="lg" mb={4}>
-            For the science nerds 🤓
-          </Heading>
-          <Text as="p" mb={8}>
-            During acupuncture, blood vessels, mast cells, and nerve fibers are
-            stimulated, sending signals to the body to reduce inflammation and
-            inhibit certain pathways associated with pain. This leads to
-            immediate and long-term pain relief by affecting spinal microglia
-            and astrocytes. Acupuncture also influences the brain's pain
-            modulation system, involving various neurotransmitters like
-            endogenous opioids, serotonin, and glutamate, among others. Studies
-            have indicated that acupuncture has various actions, such as
-            analgesic, muscle relaxing, anti-inflammatory and antidepressant
-            actions, with biological mechanisms that influence the nervous
-            system, intestinal flora, immune regulation, oxidative stress, and
-            neuroinflammation.
-          </Text>
-          <Heading as="h3" size="md" mb={8}>
-            Put simply, Acupuncture has the following effects:
-          </Heading>
-          <Grid
-            gridGap={4}
-            gridTemplateColumns={[
-              "1fr",
-              "1fr 1fr",
-              "1fr 1fr 1fr",
-              "1fr 1fr 1fr 1fr",
+        <Flex
+          maxWidth="1200px"
+          width="100%"
+          flexDirection="column"
+          gap={[16, 24, 28]}
+        >
+          <FeatureRow
+            eyebrow="How It Works"
+            title="How Does Acupuncture Work? 💭"
+            imageSrc="/media/clinic/acu-1.png"
+            imageAlt="Acupuncture treatment at TIDAL"
+            imageSide="left"
+            body={[
+              "Acupuncture aims to restore balance in the body by stimulating points along meridians which coincide with areas rich in blood vessels, nerves, and tissue. Stimulation at these points sends signals that reduce inflammation, inhibit pain pathways, and stimulate a variety of neurotransmitters providing immediate and long-term relief.",
+              "This leads to benefits such as pain relief, muscle relaxation, anti-inflammatory effects, and immune regulation among many others. Acupuncture meridians have unique properties relating to electricity, heat, sound, light, and magnetism which are absent in other body areas, supporting the existence of these meridians.",
             ]}
-          >
-            {effects.map((effect) => (
-              <Box
-                bg={effectCardBg}
-                color="brand.sand"
-                padding={4}
-                pt={[2, 4]}
-                borderRadius={16}
-                minHeight={["100px", "200px"]}
-                _hover={{
-                  transform: "translateY(-2px)",
-                }}
-                transition="0.2s ease all"
-              >
-                <Heading my={2} as="h4" size="md">
-                  {effect.title}
-                </Heading>
-                <Divider borderColor="brand.sand" mb={2} width="50%" />
-                <Text>{effect.description}</Text>
-              </Box>
-            ))}
-          </Grid>
+          />
 
-          <Grid
-            gridTemplateColumns={["1fr", "1fr", "1fr 1fr"]}
-            gridGap={8}
-            mt={[12, 24]}
+          {/* The science — full-measure editorial block */}
+          <Box>
+            <ScrollReveal>
+              <Eyebrow color={textColor} accentColor={accent}>
+                The Science
+              </Eyebrow>
+              <Heading as="h2" fontSize={["2xl", "3xl", "4xl"]} mb={6}>
+                For the science nerds 🤓
+              </Heading>
+              <Text
+                as="p"
+                fontSize={["md", "lg"]}
+                lineHeight={1.9}
+                maxWidth="820px"
+              >
+                During acupuncture, blood vessels, mast cells, and nerve fibers
+                are stimulated, sending signals to the body to reduce
+                inflammation and inhibit certain pathways associated with pain.
+                This leads to immediate and long-term pain relief by affecting
+                spinal microglia and astrocytes. Acupuncture also influences the
+                brain's pain modulation system, involving various
+                neurotransmitters like endogenous opioids, serotonin, and
+                glutamate, among others. Studies have indicated that acupuncture
+                has various actions, such as analgesic, muscle relaxing,
+                anti-inflammatory and antidepressant actions, with biological
+                mechanisms that influence the nervous system, intestinal flora,
+                immune regulation, oxidative stress, and neuroinflammation.
+              </Text>
+            </ScrollReveal>
+
+            <ScrollReveal>
+              <Heading as="h3" size="md" mt={[10, 12]} mb={6}>
+                Put simply, acupuncture has the following effects:
+              </Heading>
+            </ScrollReveal>
+            <Grid
+              gridGap={4}
+              gridTemplateColumns={[
+                "1fr",
+                "1fr 1fr",
+                "1fr 1fr 1fr",
+                "1fr 1fr 1fr 1fr",
+              ]}
+            >
+              {effects.map((effect, i) => (
+                <ScrollReveal key={effect.title} delay={(i % 4) * 0.08}>
+                  <Box
+                    bg={effectCardBg}
+                    color="brand.sand"
+                    padding={5}
+                    borderRadius={16}
+                    height="100%"
+                    minHeight={["auto", "200px"]}
+                    position="relative"
+                    overflow="hidden"
+                    transition="0.25s ease all"
+                    _hover={{
+                      transform: "translateY(-4px)",
+                      boxShadow: "xl",
+                    }}
+                  >
+                    <Heading mb={3} as="h4" size="md">
+                      {effect.title}
+                    </Heading>
+                    <Box
+                      width="32px"
+                      height="3px"
+                      borderRadius="full"
+                      bg={accent}
+                      mb={3}
+                    />
+                    <Text lineHeight={1.7}>{effect.description}</Text>
+                  </Box>
+                </ScrollReveal>
+              ))}
+            </Grid>
+          </Box>
+
+          <FeatureRow
             id="acupuncture-process"
-          >
-            <Flex height="100%" flexDirection="column" justifyContent="center">
-              <Heading as="h2">The Acupuncture experience at TIDAL ✨</Heading>
-              <Divider borderColor={textColor} mb={8} />
-              <Text as="p" mb={8}>
-                Each acupuncture regimen at TIDAL begins with our New Patient
-                Consult + Treatment visit, where we gather crucial medical
-                history and learn more about who you are as a person + provide
-                an initial acupuncture treatment.
-              </Text>
-              <Text as="p" mb={8}>
-                From there, we'll recommend any number of follow-up sessions
-                ranging from 30-60 minutes depending on your case. We may also
-                recommend other services as well to catalyze your healing
-                journey further. And don't worry - we'll make sure you're as
-                informed as possible on our recommendations so you know what
-                may/may not be optimal for your case and condition.
-              </Text>
-              <Text as="p" mb={8}>
-                We are also working on packages, memberships, and more exciting
-                ways to provide you with ample options for your plan of care -
-                more on that soon! Until then contact us any time if you have
-                questions. We can't wait to meet you!
-              </Text>
-            </Flex>
-            <Box>
-              <Image
-                src={"/media/clinic/acu-2.png"}
-                boxShadow="lg"
-                borderRadius={16}
-                draggable={false}
-              />
-            </Box>
-          </Grid>
-        </Box>
+            eyebrow="Your Visit"
+            title="The Acupuncture experience at TIDAL ✨"
+            imageSrc="/media/clinic/acu-2.png"
+            imageAlt="Inside the TIDAL treatment room"
+            imageSide="right"
+            body={[
+              "Each acupuncture regimen at TIDAL begins with our New Patient Consult + Treatment visit, where we gather crucial medical history and learn more about who you are as a person + provide an initial acupuncture treatment.",
+              "From there, we'll recommend any number of follow-up sessions ranging from 30-60 minutes depending on your case. We may also recommend other services as well to catalyze your healing journey further. And don't worry - we'll make sure you're as informed as possible on our recommendations so you know what may/may not be optimal for your case and condition.",
+              "We are also working on packages, memberships, and more exciting ways to provide you with ample options for your plan of care - more on that soon! Until then contact us any time if you have questions. We can't wait to meet you!",
+            ]}
+          />
+        </Flex>
       </Flex>
       <ServicesSpotlight title="Keep Learning 👇🏽" hide="Acupuncture" />
       <ContactUs overrideDarkMode />
