@@ -22,8 +22,12 @@ export default function Page() {
   const cardBg = useColorModeValue("brand.sand", "brand.royalMoss");
   const textColor = useColorModeValue("brand.royalMoss", "brand.sand");
   const accent = useColorModeValue("brand.gold", "brand.mint");
-  const effectCardBg = useColorModeValue("brand.wave", "brand.deepMoss");
+  const effectCardBg = useColorModeValue("white", "brand.deepMoss");
   const effectCardText = useColorModeValue("brand.royalMoss", "brand.sand");
+  const effectCardBorder = useColorModeValue(
+    "rgba(8, 40, 48, 0.1)",
+    "rgba(255, 245, 226, 0.1)"
+  );
 
   const effects = [
     {
@@ -158,7 +162,7 @@ export default function Page() {
                   <Box
                     bg={effectCardBg}
                     color={effectCardText}
-                    padding={6}
+                    p={[6, 7, 8]}
                     borderRadius={24}
                     height="100%"
                     minHeight={["auto", "220px"]}
@@ -166,20 +170,11 @@ export default function Page() {
                     overflow="hidden"
                     transition="0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94) all"
                     border="1px solid"
-                    borderColor={useColorModeValue(
-                      "rgba(8, 40, 48, 0.08)",
-                      "rgba(255, 245, 226, 0.08)"
-                    )}
+                    borderColor={effectCardBorder}
                     _hover={{
-                      transform: "translateY(-6px)",
-                      boxShadow: useColorModeValue(
-                        "0 20px 60px rgba(0, 0, 0, 0.08)",
-                        "0 20px 60px rgba(0, 0, 0, 0.3)"
-                      ),
-                      borderColor: useColorModeValue(
-                        "rgba(8, 40, 48, 0.15)",
-                        "rgba(255, 245, 226, 0.15)"
-                      ),
+                      transform: "translateY(-4px)",
+                      boxShadow: "0 16px 48px rgba(0, 0, 0, 0.08)",
+                      borderColor: accent,
                     }}
                   >
                     <Text fontSize="2xl" mb={3}>
@@ -189,8 +184,8 @@ export default function Page() {
                       {effect.title.split(" ").slice(1).join(" ")}
                     </Heading>
                     <Box
-                      width="24px"
-                      height="2px"
+                      width="32px"
+                      height="3px"
                       borderRadius="full"
                       bg={accent}
                       mb={3}
