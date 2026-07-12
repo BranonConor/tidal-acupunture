@@ -26,7 +26,7 @@ export const CornerAccents: React.FC<CornerAccentsProps> = ({
       borderTop="3px solid"
       borderLeft="3px solid"
       borderColor={color}
-      borderTopLeftRadius={16}
+      borderTopLeftRadius={24}
       opacity={0.8}
       pointerEvents="none"
     />
@@ -39,7 +39,7 @@ export const CornerAccents: React.FC<CornerAccentsProps> = ({
       borderBottom="3px solid"
       borderRight="3px solid"
       borderColor={color}
-      borderBottomRightRadius={16}
+      borderBottomRightRadius={24}
       opacity={0.8}
       pointerEvents="none"
     />

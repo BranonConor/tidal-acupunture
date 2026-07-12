@@ -94,7 +94,7 @@ export const Services: React.FC<ServicesProps> = ({ title }) => {
                 borderTop="3px solid"
                 borderLeft="3px solid"
                 borderColor={accentColor}
-                borderTopLeftRadius={16}
+                borderTopLeftRadius={24}
                 opacity={0.8}
               />
               <Box
@@ -106,7 +106,7 @@ export const Services: React.FC<ServicesProps> = ({ title }) => {
                 borderBottom="3px solid"
                 borderRight="3px solid"
                 borderColor={accentColor}
-                borderBottomRightRadius={16}
+                borderBottomRightRadius={24}
                 opacity={0.8}
               />
             </Box>

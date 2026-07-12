@@ -11,6 +11,7 @@ import { Info } from "@/components/sections/Info";
 import { PageLayout } from "@/components/PageLayout";
 import Link from "next/link";
 import { ContactUs } from "@/components/sections/ContactUs";
+import { Testimonials } from "@/components/sections/testimonials/Testimonials";
 
 export default function Home() {
   return (
@@ -33,6 +34,7 @@ export default function Home() {
       <WhoWeAre />
       <OurTeam />
       <Services title="Our Services" />
+      <Testimonials />
       <Info />
       <ContactUs />
       <Footer />

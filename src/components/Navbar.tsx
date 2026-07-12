@@ -212,6 +212,18 @@ export const Navbar: React.FC = () => {
             <ListItem>
               <ChakraLink
                 display="flex"
+                href="/testimonials"
+                as={Link}
+                fontWeight="600"
+                onClick={() => setIsClicked(false)}
+              >
+                <Image mr={3} src="/icons/heart-dark.svg" width="18px" />
+                Testimonials
+              </ChakraLink>
+            </ListItem>
+            <ListItem>
+              <ChakraLink
+                display="flex"
                 href="/#contact-us"
                 as={Link}
                 fontWeight="600"
@@ -222,22 +234,28 @@ export const Navbar: React.FC = () => {
               </ChakraLink>
             </ListItem>
             <ListItem mt={8} display={["block", "block", "none"]}>
-              <Button
-                variant="secondary"
-                as="a"
+              <ChakraLink
+                display="flex"
+                href="https://tidal.janeapp.com/"
                 target="_blank"
                 rel="noopener noreferrer"
-                href="https://tidal.janeapp.com/"
-                width="100%"
-                size="sm"
+                fontWeight="600"
+                alignItems="center"
               >
+                <Image mr={3} src="/icons/calendar.svg" width="18px" />
                 Book Appointment
-              </Button>
+              </ChakraLink>
             </ListItem>
             <ListItem display={["block", "block", "none"]}>
-              <Button variant="secondary" as="a" href="tel:+16196337275" width="100%" size="sm">
+              <ChakraLink
+                display="flex"
+                href="tel:+16196337275"
+                fontWeight="600"
+                alignItems="center"
+              >
+                <Image mr={3} src="/icons/phone-dark.svg" width="18px" />
                 (619) 633-7275
-              </Button>
+              </ChakraLink>
             </ListItem>
           </UnorderedList>
           <Box

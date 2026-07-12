@@ -92,7 +92,7 @@ export const WhoWeAre = () => {
                 borderTop="3px solid"
                 borderLeft="3px solid"
                 borderColor={accentLine}
-                borderTopLeftRadius={16}
+                borderTopLeftRadius={24}
                 opacity={0.8}
               />
               <Box
@@ -104,7 +104,7 @@ export const WhoWeAre = () => {
                 borderBottom="3px solid"
                 borderRight="3px solid"
                 borderColor={accentLine}
-                borderBottomRightRadius={16}
+                borderBottomRightRadius={24}
                 opacity={0.8}
               />
             </Box>

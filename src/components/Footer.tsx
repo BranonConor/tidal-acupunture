@@ -243,6 +243,18 @@ export const Footer = () => {
               <ListItem>
                 <Text
                   as={Link}
+                  href="/testimonials"
+                  color={subtleText}
+                  _hover={{ color: hoverColor }}
+                  transition="0.2s ease color"
+                  fontSize="sm"
+                >
+                  Testimonials
+                </Text>
+              </ListItem>
+              <ListItem>
+                <Text
+                  as={Link}
                   href="/terms"
                   color={subtleText}
                   _hover={{ color: hoverColor }}
@@ -281,6 +293,39 @@ export const Footer = () => {
         >
           <Image src={bgImage} minWidth={["1100px", "1400px", "1700px"]} />
         </Box>
+      </Flex>
+
+      {/* Developer attribution */}
+      <Flex
+        width="100%"
+        justifyContent="center"
+        borderTop="1px solid"
+        borderTopColor="rgba(255, 245, 226, 0.06)"
+        px={[6, 8, 12]}
+        py={4}
+      >
+        <Text
+          fontSize="xs"
+          color={subtleText}
+          textAlign="center"
+          opacity={0.7}
+          letterSpacing="0.02em"
+        >
+          crafted with caffeinated precision by{" "}
+          <Text
+            as="a"
+            href="https://www.branon.dev"
+            target="_blank"
+            rel="noopener noreferrer"
+            color={accentColor}
+            _hover={{ opacity: 0.8 }}
+            transition="0.2s ease opacity"
+            fontWeight="600"
+          >
+            branon.dev
+          </Text>
+          {" "}🤙
+        </Text>
       </Flex>
     </Flex>
   );

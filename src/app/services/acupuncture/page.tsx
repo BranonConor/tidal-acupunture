@@ -157,29 +157,37 @@ export default function Page() {
                   <Box
                     bg={effectCardBg}
                     color="brand.sand"
-                    padding={5}
-                    borderRadius={16}
+                    padding={6}
+                    borderRadius={24}
                     height="100%"
-                    minHeight={["auto", "200px"]}
+                    minHeight={["auto", "220px"]}
                     position="relative"
                     overflow="hidden"
-                    transition="0.25s ease all"
+                    transition="0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94) all"
+                    border="1px solid"
+                    borderColor="rgba(255, 245, 226, 0.08)"
                     _hover={{
-                      transform: "translateY(-4px)",
-                      boxShadow: "xl",
+                      transform: "translateY(-6px)",
+                      boxShadow: "0 20px 60px rgba(0, 0, 0, 0.3)",
+                      borderColor: "rgba(255, 245, 226, 0.15)",
                     }}
                   >
-                    <Heading mb={3} as="h4" size="md">
-                      {effect.title}
+                    <Text fontSize="2xl" mb={3}>
+                      {effect.title.split(" ")[0]}
+                    </Text>
+                    <Heading mb={3} as="h4" fontSize="md" fontWeight="600">
+                      {effect.title.split(" ").slice(1).join(" ")}
                     </Heading>
                     <Box
-                      width="32px"
-                      height="3px"
+                      width="24px"
+                      height="2px"
                       borderRadius="full"
                       bg={accent}
                       mb={3}
                     />
-                    <Text lineHeight={1.7}>{effect.description}</Text>
+                    <Text lineHeight={1.7} fontSize="sm" opacity={0.85}>
+                      {effect.description}
+                    </Text>
                   </Box>
                 </ScrollReveal>
               ))}

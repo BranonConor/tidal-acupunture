@@ -121,8 +121,6 @@ export const Hero: React.FC<HeroProps> = ({
         <Image src={bgImage} minWidth={["1000px", "1300px", "1600px"]} />
       </MotionBox>
 
-      {/* Faded sun/moon orbs scattered among the waves */}
-
       {/* Content */}
       <Flex
         position="relative"
@@ -137,6 +135,29 @@ export const Hero: React.FC<HeroProps> = ({
         justifyContent="center"
         minHeight="100vh"
       >
+        {/* Sun/Moon entrance animation */}
+        <MotionBox
+          initial={{ y: 60, opacity: 0 }}
+          animate={{ y: 0, opacity: 1 }}
+          transition={{
+            type: "spring",
+            stiffness: 200,
+            damping: 12,
+            mass: 0.8,
+            delay: 0.1,
+          }}
+          mb={[4, 5, 6]}
+          alignSelf="flex-start"
+        >
+          <Image
+            src={useColorModeValue("/ball-gold.svg", "/ball-mint.svg")}
+            width={["36px", "48px", "56px"]}
+            height={["36px", "48px", "56px"]}
+            alt=""
+            draggable={false}
+          />
+        </MotionBox>
+
         <MotionHeading
           as="h1"
           fontSize={["3xl", "5xl", "6xl", "7xl"]}

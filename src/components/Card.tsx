@@ -21,7 +21,7 @@ export const Card: React.FC<ICardProps> = ({
   priceItem,
 }) => {
   return (
-    <Box py={8} borderRadius={2} color={color}>
+    <Box borderRadius={2} color={color}>
       {icon && <Image src={icon} pb={4} />}
       <Heading as="h3" size="xl" pb={4}>
         {title}
