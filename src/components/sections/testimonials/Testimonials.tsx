@@ -217,15 +217,18 @@ export const Testimonials: React.FC = () => {
       </Box>
 
       {/* Read more modal */}
-      <Modal isOpen={isOpen} onClose={onClose} isCentered size="lg">
+      <Modal isOpen={isOpen} onClose={onClose} isCentered size={["full", "lg", "lg"]}>
         <ModalOverlay bg="rgba(0, 0, 0, 0.6)" backdropFilter="blur(4px)" />
         <ModalContent
           bg={modalBg}
-          borderRadius={24}
+          borderRadius={[16, 24]}
           border="1px solid"
           borderColor={modalBorder}
-          p={[4, 6, 8]}
-          mx={4}
+          p={[5, 6, 8]}
+          mx={[3, 4, 6]}
+          my={[4, 6, 8]}
+          maxHeight={["calc(100vh - 32px)", "calc(100vh - 48px)", "80vh"]}
+          overflow="hidden"
         >
           <ModalCloseButton
             top={4}
@@ -233,7 +236,7 @@ export const Testimonials: React.FC = () => {
             color={textColor}
             _hover={{ color: accentColor }}
           />
-          <ModalBody p={0}>
+          <ModalBody p={0} overflowY="auto">
             {activeTestimonial && (
               <Flex flexDirection="column" position="relative">
                 {/* Decorative quote mark */}
