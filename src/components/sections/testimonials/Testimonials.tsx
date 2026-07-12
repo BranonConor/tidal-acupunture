@@ -227,8 +227,8 @@ export const Testimonials: React.FC = () => {
           p={[5, 6, 8]}
           mx={[3, 4, 6]}
           my={[4, 6, 8]}
-          height={["calc(100vh - 32px)", "calc(100vh - 48px)", "70vh"]}
-          maxHeight={["calc(100vh - 32px)", "calc(100vh - 48px)", "70vh"]}
+          height={["calc(100vh - 32px)", "450px", "450px"]}
+          maxHeight={["calc(100vh - 32px)", "450px", "450px"]}
           overflow="hidden"
         >
           <ModalCloseButton
