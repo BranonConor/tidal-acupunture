@@ -229,13 +229,13 @@ export const Testimonials: React.FC = () => {
           top={["88px", "auto"]}
           left={["16px", "auto"]}
           right={["16px", "auto"]}
-          bottom={["16px", "auto"]}
+          bottom={["32px", "auto"]}
           mx={["0", "auto"]}
           my={["0", "auto"]}
           width={["calc(100vw - 32px)", "500px", "520px"]}
           maxWidth={["calc(100vw - 32px)", "500px", "520px"]}
-          height={["calc(100vh - 88px - 16px)", "500px", "520px"]}
-          maxHeight={["calc(100vh - 88px - 16px)", "500px", "520px"]}
+          height={["calc(100vh - 88px - 32px)", "500px", "520px"]}
+          maxHeight={["calc(100vh - 88px - 32px)", "500px", "520px"]}
           overflow="hidden"
           display="flex"
           flexDirection="column"
