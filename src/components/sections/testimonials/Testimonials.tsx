@@ -217,7 +217,7 @@ export const Testimonials: React.FC = () => {
       </Box>
 
       {/* Read more modal */}
-      <Modal isOpen={isOpen} onClose={onClose} isCentered={[false, true, true] as any} size={["full", "lg", "lg"]}>
+      <Modal isOpen={isOpen} onClose={onClose} isCentered size="xl">
         <ModalOverlay bg="rgba(0, 0, 0, 0.6)" backdropFilter="blur(4px)" />
         <ModalContent
           bg={modalBg}
@@ -225,9 +225,15 @@ export const Testimonials: React.FC = () => {
           border="1px solid"
           borderColor={modalBorder}
           p={0}
-          mx={[4, 4, 6]}
-          mt={["88px", 6, 8]}
-          mb={[4, 6, 8]}
+          position={["fixed", "relative"]}
+          top={["88px", "auto"]}
+          left={["16px", "auto"]}
+          right={["16px", "auto"]}
+          bottom={["16px", "auto"]}
+          mx={["0", "auto"]}
+          my={["0", "auto"]}
+          width={["calc(100vw - 32px)", "500px", "520px"]}
+          maxWidth={["calc(100vw - 32px)", "500px", "520px"]}
           height={["calc(100vh - 88px - 16px)", "500px", "520px"]}
           maxHeight={["calc(100vh - 88px - 16px)", "500px", "520px"]}
           overflow="hidden"
