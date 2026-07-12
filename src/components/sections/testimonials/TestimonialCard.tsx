@@ -6,10 +6,12 @@ import { Testimonial } from "./testimonialData";
 
 interface TestimonialCardProps {
   testimonial: Testimonial;
+  readMoreAction?: () => void;
 }
 
 export const TestimonialCard: React.FC<TestimonialCardProps> = ({
   testimonial,
+  readMoreAction,
 }) => {
   const cardBg = useColorModeValue("white", "brand.deepMoss");
   const borderColor = useColorModeValue(
@@ -71,13 +73,33 @@ export const TestimonialCard: React.FC<TestimonialCardProps> = ({
         color={textColor}
         fontSize={["sm", "md"]}
         lineHeight={1.8}
-        mb={6}
+        mb={readMoreAction ? 2 : 6}
         flex={1}
         position="relative"
         zIndex={1}
       >
         {testimonial.quote}
       </Text>
+
+      {readMoreAction && (
+        <Text
+          as="button"
+          onClick={readMoreAction}
+          fontSize="sm"
+          fontWeight="600"
+          color={accentColor}
+          cursor="pointer"
+          mb={6}
+          _hover={{ opacity: 0.8 }}
+          transition="0.2s ease opacity"
+          textAlign="left"
+          bg="transparent"
+          border="none"
+          p={0}
+        >
+          Read more →
+        </Text>
+      )}
 
       {/* Attribution */}
       <Flex

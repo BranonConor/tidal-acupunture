@@ -7,16 +7,24 @@ import {
   Text,
   Button,
   useColorModeValue,
+  Modal,
+  ModalOverlay,
+  ModalContent,
+  ModalBody,
+  ModalCloseButton,
+  useDisclosure,
 } from "@chakra-ui/react";
 import Link from "next/link";
-import React, { useRef } from "react";
+import React, { useRef, useState } from "react";
 import { motion } from "framer-motion";
 import { ScrollReveal } from "../../ScrollReveal";
 import { Eyebrow } from "../../editorial/Eyebrow";
 import { TestimonialCard } from "./TestimonialCard";
-import { testimonials } from "./testimonialData";
+import { testimonials, Testimonial } from "./testimonialData";
 
 const MotionFlex = motion(Flex);
+
+const CHAR_LIMIT = 180;
 
 export const Testimonials: React.FC = () => {
   const bg = useColorModeValue("brand.sand", "brand.royalMoss");
@@ -31,15 +39,31 @@ export const Testimonials: React.FC = () => {
     "rgba(8, 40, 48, 0.2)",
     "rgba(255, 245, 226, 0.2)"
   );
+  const modalBg = useColorModeValue("white", "brand.deepMoss");
+  const modalBorder = useColorModeValue(
+    "rgba(8, 40, 48, 0.1)",
+    "rgba(255, 245, 226, 0.1)"
+  );
+  const quoteMarkColor = useColorModeValue(
+    "rgba(240, 191, 64, 0.15)",
+    "rgba(174, 234, 187, 0.1)"
+  );
   const scrollRef = useRef<HTMLDivElement>(null);
+  const { isOpen, onOpen, onClose } = useDisclosure();
+  const [activeTestimonial, setActiveTestimonial] = useState<Testimonial | null>(null);
 
-  const featured = testimonials.slice(0, 6);
+  const featured = testimonials.slice(0, 7);
 
   const scroll = (direction: "left" | "right") => {
     if (scrollRef.current) {
       const amount = direction === "left" ? -360 : 360;
       scrollRef.current.scrollBy({ left: amount, behavior: "smooth" });
     }
+  };
+
+  const openModal = (testimonial: Testimonial) => {
+    setActiveTestimonial(testimonial);
+    onOpen();
   };
 
   return (
@@ -100,21 +124,33 @@ export const Testimonials: React.FC = () => {
           role="region"
           aria-label="Patient testimonials carousel"
         >
-          {featured.map((testimonial, i) => (
-            <MotionFlex
-              key={testimonial.id}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: i * 0.1 }}
-              minWidth={["280px", "320px", "360px"]}
-              maxWidth={["280px", "320px", "360px"]}
-              scrollSnapAlign="start"
-              flexShrink={0}
-            >
-              <TestimonialCard testimonial={testimonial} />
-            </MotionFlex>
-          ))}
+          {featured.map((testimonial, i) => {
+            const isTruncated = testimonial.quote.length > CHAR_LIMIT;
+            const displayQuote = isTruncated
+              ? testimonial.quote.slice(0, CHAR_LIMIT).trimEnd() + "…"
+              : testimonial.quote;
+
+            return (
+              <MotionFlex
+                key={testimonial.id}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: i * 0.1 }}
+                minWidth={["280px", "320px", "360px"]}
+                maxWidth={["280px", "320px", "360px"]}
+                scrollSnapAlign="start"
+                flexShrink={0}
+              >
+                <TestimonialCard
+                  testimonial={{ ...testimonial, quote: displayQuote }}
+                  readMoreAction={
+                    isTruncated ? () => openModal(testimonial) : undefined
+                  }
+                />
+              </MotionFlex>
+            );
+          })}
         </Flex>
 
         {/* Navigation arrows */}
@@ -179,6 +215,91 @@ export const Testimonials: React.FC = () => {
           </Box>
         </Flex>
       </Box>
+
+      {/* Read more modal */}
+      <Modal isOpen={isOpen} onClose={onClose} isCentered size="lg">
+        <ModalOverlay bg="rgba(0, 0, 0, 0.6)" backdropFilter="blur(4px)" />
+        <ModalContent
+          bg={modalBg}
+          borderRadius={24}
+          border="1px solid"
+          borderColor={modalBorder}
+          p={[4, 6, 8]}
+          mx={4}
+        >
+          <ModalCloseButton
+            top={4}
+            right={4}
+            color={textColor}
+            _hover={{ color: accentColor }}
+          />
+          <ModalBody p={0}>
+            {activeTestimonial && (
+              <Flex flexDirection="column" position="relative">
+                {/* Decorative quote mark */}
+                <Text
+                  position="absolute"
+                  top={-4}
+                  left={0}
+                  fontSize="8xl"
+                  fontWeight="bold"
+                  color={quoteMarkColor}
+                  lineHeight={1}
+                  pointerEvents="none"
+                  userSelect="none"
+                >
+                  &ldquo;
+                </Text>
+
+                <Box
+                  width="32px"
+                  height="3px"
+                  borderRadius="full"
+                  bg={accentColor}
+                  mb={6}
+                />
+                <Text
+                  color={textColor}
+                  fontSize={["md", "lg"]}
+                  lineHeight={1.9}
+                  mb={8}
+                  position="relative"
+                  zIndex={1}
+                >
+                  {activeTestimonial.quote}
+                </Text>
+                <Flex
+                  flexDirection="column"
+                  borderTop="1px solid"
+                  borderColor={modalBorder}
+                  pt={4}
+                >
+                  <Heading
+                    as="h4"
+                    fontSize="md"
+                    fontWeight="700"
+                    color={textColor}
+                  >
+                    {activeTestimonial.name}
+                  </Heading>
+                  <Text fontSize="sm" color={subtleText} mt={1}>
+                    {activeTestimonial.condition}
+                  </Text>
+                  <Flex mt={2} gap={0.5}>
+                    {Array.from({ length: activeTestimonial.rating }).map(
+                      (_, i) => (
+                        <Text key={i} fontSize="sm" color={accentColor}>
+                          ★
+                        </Text>
+                      )
+                    )}
+                  </Flex>
+                </Flex>
+              </Flex>
+            )}
+          </ModalBody>
+        </ModalContent>
+      </Modal>
     </Flex>
   );
 };
