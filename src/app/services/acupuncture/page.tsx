@@ -209,7 +209,7 @@ export default function Page() {
             body={[
               "Each acupuncture regimen at TIDAL begins with our New Patient Consult + Treatment visit, where we gather crucial medical history and learn more about who you are as a person + provide an initial acupuncture treatment.",
               "From there, we'll recommend any number of follow-up sessions ranging from 30-60 minutes depending on your case. We may also recommend other services as well to catalyze your healing journey further. And don't worry - we'll make sure you're as informed as possible on our recommendations so you know what may/may not be optimal for your case and condition.",
-              "We are also working on packages, memberships, and more exciting ways to provide you with ample options for your plan of care - more on that soon! Until then contact us any time if you have questions. We can't wait to meet you!",
+              "We can't wait to meet you!",
             ]}
           />
         </Flex>
