@@ -23,6 +23,14 @@ export const Testimonials: React.FC = () => {
   const textColor = useColorModeValue("brand.royalMoss", "brand.sand");
   const subtleText = useColorModeValue("brand.darkWave", "brand.wave");
   const accentColor = useColorModeValue("brand.gold", "brand.mint");
+  const arrowBg = useColorModeValue(
+    "rgba(8, 40, 48, 0.06)",
+    "rgba(255, 245, 226, 0.06)"
+  );
+  const arrowBorder = useColorModeValue(
+    "rgba(8, 40, 48, 0.2)",
+    "rgba(255, 245, 226, 0.2)"
+  );
   const scrollRef = useRef<HTMLDivElement>(null);
 
   const featured = testimonials.slice(0, 6);
@@ -43,7 +51,6 @@ export const Testimonials: React.FC = () => {
       px={[6, 8, 12]}
       py={[16, 20, 24]}
       position="relative"
-      overflow="hidden"
     >
       <Box maxWidth="1200px" width="100%">
         <ScrollReveal>
@@ -62,117 +69,118 @@ export const Testimonials: React.FC = () => {
             fontSize={["md", "lg"]}
             lineHeight={1.8}
             maxWidth="600px"
-            mb={[8, 10, 12]}
+            mb={6}
           >
             Real stories from real patients. Hear how TIDAL has helped people
             find relief, balance, and vitality.
           </Text>
-        </ScrollReveal>
 
-        {/* Carousel */}
-        <Box position="relative">
+          {/* Navigation arrows + CTA — beneath subtitle, consistent with other sections */}
           <Flex
-            ref={scrollRef}
-            overflowX="auto"
-            gap={[4, 5, 6]}
-            pb={4}
-            scrollSnapType="x mandatory"
-            sx={{
-              "&::-webkit-scrollbar": { display: "none" },
-              scrollbarWidth: "none",
-            }}
-            role="region"
-            aria-label="Patient testimonials carousel"
-          >
-            {featured.map((testimonial, i) => (
-              <MotionFlex
-                key={testimonial.id}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: i * 0.1 }}
-                minWidth={["280px", "320px", "360px"]}
-                maxWidth={["280px", "320px", "360px"]}
-                scrollSnapAlign="start"
-                flexShrink={0}
-              >
-                <TestimonialCard testimonial={testimonial} />
-              </MotionFlex>
-            ))}
-          </Flex>
-
-          {/* Navigation arrows */}
-          <Flex
-            mt={6}
             gap={3}
             alignItems="center"
-            justifyContent="space-between"
+            mb={[8, 10, 12]}
           >
-            <Flex gap={2}>
-              <Box
-                as="button"
-                aria-label="Scroll testimonials left"
-                onClick={() => scroll("left")}
-                width="40px"
-                height="40px"
-                borderRadius="full"
-                border="1px solid"
-                borderColor={useColorModeValue(
-                  "rgba(8, 40, 48, 0.15)",
-                  "rgba(255, 245, 226, 0.15)"
-                )}
-                display="flex"
-                alignItems="center"
-                justifyContent="center"
-                cursor="pointer"
-                transition="0.2s ease all"
-                _hover={{
-                  borderColor: accentColor,
-                  color: accentColor,
-                }}
-                color={textColor}
-                bg="transparent"
-              >
-                ←
-              </Box>
-              <Box
-                as="button"
-                aria-label="Scroll testimonials right"
-                onClick={() => scroll("right")}
-                width="40px"
-                height="40px"
-                borderRadius="full"
-                border="1px solid"
-                borderColor={useColorModeValue(
-                  "rgba(8, 40, 48, 0.15)",
-                  "rgba(255, 245, 226, 0.15)"
-                )}
-                display="flex"
-                alignItems="center"
-                justifyContent="center"
-                cursor="pointer"
-                transition="0.2s ease all"
-                _hover={{
-                  borderColor: accentColor,
-                  color: accentColor,
-                }}
-                color={textColor}
-                bg="transparent"
-              >
-                →
-              </Box>
-            </Flex>
-
+            <Box
+              as="button"
+              aria-label="Scroll testimonials left"
+              onClick={() => scroll("left")}
+              width="44px"
+              height="44px"
+              borderRadius="full"
+              border="2px solid"
+              borderColor={arrowBorder}
+              bg={arrowBg}
+              display="flex"
+              alignItems="center"
+              justifyContent="center"
+              cursor="pointer"
+              transition="0.2s ease all"
+              fontWeight="bold"
+              fontSize="lg"
+              _hover={{
+                borderColor: accentColor,
+                color: accentColor,
+                bg: useColorModeValue(
+                  "rgba(240, 191, 64, 0.08)",
+                  "rgba(174, 234, 187, 0.08)"
+                ),
+              }}
+              color={textColor}
+            >
+              ←
+            </Box>
+            <Box
+              as="button"
+              aria-label="Scroll testimonials right"
+              onClick={() => scroll("right")}
+              width="44px"
+              height="44px"
+              borderRadius="full"
+              border="2px solid"
+              borderColor={arrowBorder}
+              bg={arrowBg}
+              display="flex"
+              alignItems="center"
+              justifyContent="center"
+              cursor="pointer"
+              transition="0.2s ease all"
+              fontWeight="bold"
+              fontSize="lg"
+              _hover={{
+                borderColor: accentColor,
+                color: accentColor,
+                bg: useColorModeValue(
+                  "rgba(240, 191, 64, 0.08)",
+                  "rgba(174, 234, 187, 0.08)"
+                ),
+              }}
+              color={textColor}
+            >
+              →
+            </Box>
             <Button
               as={Link}
               href="/testimonials"
-              variant="secondary"
+              variant="primary"
               size="sm"
+              ml={2}
             >
               See all testimonials
             </Button>
           </Flex>
-        </Box>
+        </ScrollReveal>
+
+        {/* Carousel */}
+        <Flex
+          ref={scrollRef}
+          overflowX="auto"
+          gap={[4, 5, 6]}
+          py={2}
+          scrollSnapType="x mandatory"
+          sx={{
+            "&::-webkit-scrollbar": { display: "none" },
+            scrollbarWidth: "none",
+          }}
+          role="region"
+          aria-label="Patient testimonials carousel"
+        >
+          {featured.map((testimonial, i) => (
+            <MotionFlex
+              key={testimonial.id}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: i * 0.1 }}
+              minWidth={["280px", "320px", "360px"]}
+              maxWidth={["280px", "320px", "360px"]}
+              scrollSnapAlign="start"
+              flexShrink={0}
+            >
+              <TestimonialCard testimonial={testimonial} />
+            </MotionFlex>
+          ))}
+        </Flex>
       </Box>
     </Flex>
   );
