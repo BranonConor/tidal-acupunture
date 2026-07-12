@@ -224,22 +224,25 @@ export const Testimonials: React.FC = () => {
           borderRadius={[16, 24]}
           border="1px solid"
           borderColor={modalBorder}
-          p={[5, 6, 8]}
+          p={0}
           mx={[3, 4, 6]}
           my={[4, 6, 8]}
-          height={["calc(100vh - 32px)", "450px", "450px"]}
-          maxHeight={["calc(100vh - 32px)", "450px", "450px"]}
+          height={["calc(100vh - 32px)", "500px", "520px"]}
+          maxHeight={["calc(100vh - 32px)", "500px", "520px"]}
           overflow="hidden"
+          display="flex"
+          flexDirection="column"
         >
           <ModalCloseButton
             top={4}
             right={4}
             color={textColor}
             _hover={{ color: accentColor }}
+            zIndex={2}
           />
-          <ModalBody p={0} overflowY="auto">
+          <ModalBody p={[5, 6, 8]} overflowY="auto" flex={1}>
             {activeTestimonial && (
-              <Flex flexDirection="column" position="relative">
+              <Flex flexDirection="column" position="relative" height="100%">
                 {/* Decorative quote mark */}
                 <Text
                   position="absolute"
@@ -266,42 +269,47 @@ export const Testimonials: React.FC = () => {
                   color={textColor}
                   fontSize={["md", "lg"]}
                   lineHeight={1.9}
-                  mb={8}
                   position="relative"
                   zIndex={1}
                 >
                   {activeTestimonial.quote}
                 </Text>
-                <Flex
-                  flexDirection="column"
-                  borderTop="1px solid"
-                  borderColor={modalBorder}
-                  pt={4}
-                >
-                  <Heading
-                    as="h4"
-                    fontSize="md"
-                    fontWeight="700"
-                    color={textColor}
-                  >
-                    {activeTestimonial.name}
-                  </Heading>
-                  <Text fontSize="sm" color={subtleText} mt={1}>
-                    {activeTestimonial.condition}
-                  </Text>
-                  <Flex mt={2} gap={0.5}>
-                    {Array.from({ length: activeTestimonial.rating }).map(
-                      (_, i) => (
-                        <Text key={i} fontSize="sm" color={accentColor}>
-                          ★
-                        </Text>
-                      )
-                    )}
-                  </Flex>
-                </Flex>
               </Flex>
             )}
           </ModalBody>
+
+          {/* Fixed footer with attribution */}
+          {activeTestimonial && (
+            <Flex
+              flexDirection="column"
+              borderTop="1px solid"
+              borderColor={modalBorder}
+              px={[5, 6, 8]}
+              py={4}
+              flexShrink={0}
+            >
+              <Heading
+                as="h4"
+                fontSize="md"
+                fontWeight="700"
+                color={textColor}
+              >
+                {activeTestimonial.name}
+              </Heading>
+              <Text fontSize="sm" color={subtleText} mt={1}>
+                {activeTestimonial.condition}
+              </Text>
+              <Flex mt={2} gap={0.5}>
+                {Array.from({ length: activeTestimonial.rating }).map(
+                  (_, i) => (
+                    <Text key={i} fontSize="sm" color={accentColor}>
+                      ★
+                    </Text>
+                  )
+                )}
+              </Flex>
+            </Flex>
+          )}
         </ModalContent>
       </Modal>
     </Flex>
