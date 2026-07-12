@@ -44,7 +44,7 @@ export const FeatureRow: React.FC<FeatureRowProps> = ({
   cta,
   id,
 }) => {
-  const textColor = "brand.royalMoss";
+  const textColor = useColorModeValue("brand.royalMoss", "brand.sand");
   const accent = useColorModeValue("brand.gold", "brand.mint");
 
   const desktopAreas =

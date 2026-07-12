@@ -19,10 +19,10 @@ import { Eyebrow } from "@/components/editorial/Eyebrow";
 import { ScrollReveal } from "@/components/ScrollReveal";
 
 export default function Page() {
-  const cardBg = useColorModeValue("brand.wave", "brand.mauve");
-  const textColor = "brand.royalMoss";
+  const cardBg = useColorModeValue("brand.wave", "brand.royalMoss");
+  const textColor = useColorModeValue("brand.royalMoss", "brand.sand");
   const accent = useColorModeValue("brand.gold", "brand.mint");
-  const effectCardBg = useColorModeValue("brand.darkWave", "brand.royalMoss");
+  const effectCardBg = useColorModeValue("brand.darkWave", "brand.deepMoss");
 
   const effects = [
     {
