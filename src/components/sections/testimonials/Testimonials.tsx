@@ -74,81 +74,15 @@ export const Testimonials: React.FC = () => {
             Real stories from real patients. Hear how TIDAL has helped people
             find relief, balance, and vitality.
           </Text>
-
-          {/* Navigation arrows + CTA — beneath subtitle, consistent with other sections */}
-          <Flex
-            gap={3}
-            alignItems="center"
+          <Button
+            as={Link}
+            href="/testimonials"
+            variant="primary"
+            size="sm"
             mb={[8, 10, 12]}
           >
-            <Box
-              as="button"
-              aria-label="Scroll testimonials left"
-              onClick={() => scroll("left")}
-              width="44px"
-              height="44px"
-              borderRadius="full"
-              border="2px solid"
-              borderColor={arrowBorder}
-              bg={arrowBg}
-              display="flex"
-              alignItems="center"
-              justifyContent="center"
-              cursor="pointer"
-              transition="0.2s ease all"
-              fontWeight="bold"
-              fontSize="lg"
-              _hover={{
-                borderColor: accentColor,
-                color: accentColor,
-                bg: useColorModeValue(
-                  "rgba(240, 191, 64, 0.08)",
-                  "rgba(174, 234, 187, 0.08)"
-                ),
-              }}
-              color={textColor}
-            >
-              ←
-            </Box>
-            <Box
-              as="button"
-              aria-label="Scroll testimonials right"
-              onClick={() => scroll("right")}
-              width="44px"
-              height="44px"
-              borderRadius="full"
-              border="2px solid"
-              borderColor={arrowBorder}
-              bg={arrowBg}
-              display="flex"
-              alignItems="center"
-              justifyContent="center"
-              cursor="pointer"
-              transition="0.2s ease all"
-              fontWeight="bold"
-              fontSize="lg"
-              _hover={{
-                borderColor: accentColor,
-                color: accentColor,
-                bg: useColorModeValue(
-                  "rgba(240, 191, 64, 0.08)",
-                  "rgba(174, 234, 187, 0.08)"
-                ),
-              }}
-              color={textColor}
-            >
-              →
-            </Box>
-            <Button
-              as={Link}
-              href="/testimonials"
-              variant="primary"
-              size="sm"
-              ml={2}
-            >
-              See all testimonials
-            </Button>
-          </Flex>
+            See all testimonials
+          </Button>
         </ScrollReveal>
 
         {/* Carousel */}
@@ -156,7 +90,8 @@ export const Testimonials: React.FC = () => {
           ref={scrollRef}
           overflowX="auto"
           gap={[4, 5, 6]}
-          py={2}
+          pt={2}
+          pb={6}
           scrollSnapType="x mandatory"
           sx={{
             "&::-webkit-scrollbar": { display: "none" },
@@ -180,6 +115,68 @@ export const Testimonials: React.FC = () => {
               <TestimonialCard testimonial={testimonial} />
             </MotionFlex>
           ))}
+        </Flex>
+
+        {/* Navigation arrows */}
+        <Flex gap={2} mt={2}>
+          <Box
+            as="button"
+            aria-label="Scroll testimonials left"
+            onClick={() => scroll("left")}
+            width="44px"
+            height="44px"
+            borderRadius="full"
+            border="2px solid"
+            borderColor={arrowBorder}
+            bg={arrowBg}
+            display="flex"
+            alignItems="center"
+            justifyContent="center"
+            cursor="pointer"
+            transition="0.2s ease all"
+            fontWeight="bold"
+            fontSize="lg"
+            _hover={{
+              borderColor: accentColor,
+              color: accentColor,
+              bg: useColorModeValue(
+                "rgba(240, 191, 64, 0.08)",
+                "rgba(174, 234, 187, 0.08)"
+              ),
+            }}
+            color={textColor}
+          >
+            ←
+          </Box>
+          <Box
+            as="button"
+            aria-label="Scroll testimonials right"
+            onClick={() => scroll("right")}
+            width="44px"
+            height="44px"
+            borderRadius="full"
+            border="2px solid"
+            borderColor={arrowBorder}
+            bg={arrowBg}
+            display="flex"
+            alignItems="center"
+            justifyContent="center"
+            cursor="pointer"
+            transition="0.2s ease all"
+            fontWeight="bold"
+            fontSize="lg"
+            _hover={{
+              borderColor: accentColor,
+              color: accentColor,
+              bg: useColorModeValue(
+                "rgba(240, 191, 64, 0.08)",
+                "rgba(174, 234, 187, 0.08)"
+              ),
+            }}
+            color={textColor}
+          >
+            →
+          </Box>
         </Flex>
       </Box>
     </Flex>

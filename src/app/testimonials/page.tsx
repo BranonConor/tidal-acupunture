@@ -13,7 +13,6 @@ import {
 import {
   Box,
   Flex,
-  Grid,
   Heading,
   Text,
   useColorModeValue,
@@ -132,11 +131,12 @@ export default function Page() {
             </Flex>
           </ScrollReveal>
 
-          {/* Masonry-style grid */}
-          <Grid
-            gridTemplateColumns={["1fr", "1fr 1fr", "1fr 1fr 1fr"]}
-            gridGap={[4, 5, 6]}
-            alignItems="start"
+          {/* Masonry columns layout */}
+          <Box
+            sx={{
+              columnCount: [1, 2, 3],
+              columnGap: ["16px", "20px", "24px"],
+            }}
           >
             {filtered.map((testimonial, i) => (
               <MotionBox
@@ -144,11 +144,13 @@ export default function Page() {
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.4, delay: i * 0.05 }}
+                mb={[4, 5, 6]}
+                sx={{ breakInside: "avoid" }}
               >
                 <TestimonialCard testimonial={testimonial} />
               </MotionBox>
             ))}
-          </Grid>
+          </Box>
 
           {filtered.length === 0 && (
             <Flex

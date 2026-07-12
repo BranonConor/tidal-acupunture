@@ -1,13 +1,14 @@
 import {
   Box,
-  Divider,
   useColorModeValue,
   Grid,
   Heading,
   Flex,
+  Text,
 } from "@chakra-ui/react";
 import React from "react";
 import { SpotlightCard } from "../../SpotlightCard";
+import { Eyebrow } from "../../editorial/Eyebrow";
 
 interface ServicesSpotlightProps {
   title?: string;
@@ -24,6 +25,7 @@ export const ServicesSpotlight: React.FC<ServicesSpotlightProps> = ({
 }) => {
   const bg = useColorModeValue("brand.wave", "brand.mauve");
   const textColor = useColorModeValue("brand.royalMoss", "brand.royalMoss");
+  const accentColor = useColorModeValue("brand.gold", "brand.mint");
   const mode = useColorModeValue("light", "dark");
   const spotlightServices = [
     {
@@ -71,10 +73,12 @@ export const ServicesSpotlight: React.FC<ServicesSpotlightProps> = ({
         width="100%"
         py={[16, 24]}
       >
-        <Heading as="h2" size="2xl">
+        <Eyebrow color={textColor} accentColor={accentColor}>
+          Explore
+        </Eyebrow>
+        <Heading as="h2" fontSize={["2xl", "3xl", "4xl"]} mb={8}>
           {title}
         </Heading>
-        <Divider borderColor={textColor} mb={8} />
         <Grid
           my={8}
           gridGap={8}

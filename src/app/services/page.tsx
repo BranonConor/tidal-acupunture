@@ -35,14 +35,18 @@ export default function Page() {
         title="Our Services & Pricing"
         description="We offer a wide variety of services, all of which are tailored to YOU."
       />
-      <Box
-        py={[16, 20, 24]}
-        px={[6, 8, 12]}
-        maxWidth="1200px"
-        position="relative"
-        overflowX="hidden"
+      <Flex
         width="100%"
+        justifyContent="center"
+        px={[6, 8, 12]}
       >
+        <Box
+          py={[16, 20, 24]}
+          maxWidth="1200px"
+          position="relative"
+          overflowX="hidden"
+          width="100%"
+        >
         <ScrollReveal>
           <Eyebrow color={accent}>Menu</Eyebrow>
           <Heading as="h2" fontSize={["2xl", "3xl", "4xl"]} color={textColor}>
@@ -88,6 +92,7 @@ export default function Page() {
           </Flex>
         </ScrollReveal>
       </Box>
+      </Flex>
       <ServicesSpotlight />
       <ContactUs />
       <Footer />
