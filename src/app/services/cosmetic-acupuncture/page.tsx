@@ -10,7 +10,7 @@ import { PageLayout } from "@/components/PageLayout";
 import { FeatureRow } from "@/components/editorial/FeatureRow";
 
 export default function Page() {
-  const cardBg = useColorModeValue("brand.wave", "brand.royalMoss");
+  const cardBg = useColorModeValue("brand.sand", "brand.royalMoss");
   const textColor = useColorModeValue("brand.royalMoss", "brand.sand");
 
   return (
