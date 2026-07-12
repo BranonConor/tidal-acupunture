@@ -22,7 +22,8 @@ export default function Page() {
   const cardBg = useColorModeValue("brand.sand", "brand.royalMoss");
   const textColor = useColorModeValue("brand.royalMoss", "brand.sand");
   const accent = useColorModeValue("brand.gold", "brand.mint");
-  const effectCardBg = useColorModeValue("brand.darkWave", "brand.deepMoss");
+  const effectCardBg = useColorModeValue("brand.wave", "brand.deepMoss");
+  const effectCardText = useColorModeValue("brand.royalMoss", "brand.sand");
 
   const effects = [
     {
@@ -156,7 +157,7 @@ export default function Page() {
                 <ScrollReveal key={effect.title} delay={(i % 4) * 0.08}>
                   <Box
                     bg={effectCardBg}
-                    color="brand.sand"
+                    color={effectCardText}
                     padding={6}
                     borderRadius={24}
                     height="100%"
@@ -165,11 +166,20 @@ export default function Page() {
                     overflow="hidden"
                     transition="0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94) all"
                     border="1px solid"
-                    borderColor="rgba(255, 245, 226, 0.08)"
+                    borderColor={useColorModeValue(
+                      "rgba(8, 40, 48, 0.08)",
+                      "rgba(255, 245, 226, 0.08)"
+                    )}
                     _hover={{
                       transform: "translateY(-6px)",
-                      boxShadow: "0 20px 60px rgba(0, 0, 0, 0.3)",
-                      borderColor: "rgba(255, 245, 226, 0.15)",
+                      boxShadow: useColorModeValue(
+                        "0 20px 60px rgba(0, 0, 0, 0.08)",
+                        "0 20px 60px rgba(0, 0, 0, 0.3)"
+                      ),
+                      borderColor: useColorModeValue(
+                        "rgba(8, 40, 48, 0.15)",
+                        "rgba(255, 245, 226, 0.15)"
+                      ),
                     }}
                   >
                     <Text fontSize="2xl" mb={3}>
