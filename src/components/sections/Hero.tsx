@@ -124,7 +124,7 @@ export const Hero: React.FC<HeroProps> = ({
       {/* Content */}
       <Flex
         position="relative"
-        zIndex={1}
+        zIndex={2}
         maxWidth="1200px"
         width="100%"
         px={[6, 8, 12]}
